@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/qt/qml/Antro/">
+    <file alias="Main.qml">D:/Antro/Antro/Main.qml</file>
+    <file alias="LoginScreen.qml">D:/Antro/Antro/LoginScreen.qml</file>
+  </qresource>
+</RCC>
+

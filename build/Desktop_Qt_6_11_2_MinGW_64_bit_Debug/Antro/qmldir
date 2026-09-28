@@ -1,0 +1,7 @@
+module Antro
+typeinfo appAntro.qmltypes
+prefer :/qt/qml/Antro/
+Main 254.0 Main.qml
+LoginScreen 254.0 LoginScreen.qml
+depends QtQuick
+

@@ -1,0 +1,6 @@
+--resource
+D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc
+--resource
+D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc
+/qt/qml/Antro/Main.qml
+/qt/qml/Antro/LoginScreen.qml
