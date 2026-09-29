@@ -1,0 +1,8 @@
+# Pasta de compilação do CMake
+build/
+CMakeUserPresets.json
+
+# Configurações de IDEs
+.vscode/
+.qtcreator/
+*.user
