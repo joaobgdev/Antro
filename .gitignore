@@ -1,8 +1,14 @@
-# Pasta de compilação do CMake
+# Arquivos e pastas de build
 build/
-CMakeUserPresets.json
+build*/
+*.exe
+*.o
+*.obj
+*.dll
+*.a
 
-# Configurações de IDEs
-.vscode/
+# Arquivos locais de IDE (Qt Creator e VS Code)
 .qtcreator/
 *.user
+.vscode/*
+!.vscode/settings.json
