@@ -31,7 +31,6 @@ float Pedido::calcularValorTotal() const {
 }
 
 void Pedido::imprimirResumo() const {
-    cout << "\n==========================================" << endl;
     cout << "Resumo do Pedido #" << id;
     if (consumidor) {
         cout << " | Cliente: " << consumidor->getNome();
@@ -47,8 +46,6 @@ void Pedido::imprimirResumo() const {
         case StatusPedido::RETIRADO: cout << "RETIRADO"; break;
         case StatusPedido::ABANDONADO: cout << "ABANDONADO"; break;
     }
-    cout << "\n------------------------------------------" << endl;
-
     for (const auto& item : itens) {
         cout << "- " << item.getProduto()->getNome()
              << " | Solicitado: " << item.getQtdSolicitada()
@@ -56,7 +53,5 @@ void Pedido::imprimirResumo() const {
              << " | Subtotal: R$ " << fixed << setprecision(2)
              << item.calcularSubtotal() << endl;
     }
-    cout << "------------------------------------------" << endl;
     cout << "VALOR TOTAL: R$ " << fixed << setprecision(2) << calcularValorTotal() << endl;
-    cout << "==========================================" << endl;
 }

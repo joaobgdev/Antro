@@ -2,33 +2,45 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Antro VERSION 0.1 LANGUAGES CXX)
 
+# Configuração do padrão C++17
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
-qt_standard_project_setup(REQUIRES 6.10)
+qt_standard_project_setup()
 
-# Content of downloaded design from Figma to Qt or similar
+# Conteúdo importado do Figma/Qt (se existir)
 if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/importedcontent/CMakeLists.txt")
     add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/importedcontent)
 endif()
 
-qt_add_executable(appAntro
+# Ficheiros de código C++ do projeto
+set(SOURCES
+    src/models/produto.cpp
+    src/models/itemPedido.cpp
+    src/models/pedido.cpp
+    src/models/consumidor.cpp
+    src/services/GerenciadorFeira.cpp
     main.cpp
 )
 
+# Criação do executável com suporte nativo ao Qt 6
+qt_add_executable(appAntro ${SOURCES})
+
+# Mapeamento da pasta de cabeçalhos (.hpp)
+target_include_directories(appAntro PRIVATE include)
+
+# Módulo de interface QML
 qt_add_qml_module(appAntro
     URI Antro
+    VERSION 1.0
     QML_FILES
         Main.qml
-        QML_FILES LoginScreen.qml
+        ui/LoginScreen.qml
 )
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
 set_target_properties(appAntro PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appAntro
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
