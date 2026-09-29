@@ -1,0 +1,5 @@
+{
+    "cmake.configureArgs": [
+        "-DCMAKE_PREFIX_PATH=C:/Qt/6.11.2/mingw_64"
+    ]
+}
