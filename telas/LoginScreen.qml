@@ -105,6 +105,13 @@ Page {
                     }
                     onClicked: loginPage.currentRole = "feirante"
                 }
+                Button {
+                    text: "Entrar"
+                    onClicked: {
+                        // Navega para a tela do catálogo trocando o item atual do StackView
+                        stackView.push("CatalogoScreen.qml")
+                    }
+                }
             }
 
         // Informações Usuário

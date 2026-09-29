@@ -18,7 +18,7 @@ endif()
 # Ficheiros de código C++ do projeto
 set(SOURCES
     src/models/produto.cpp
-    src/models/itemPedido.cpp
+    src/models/itempedido.cpp
     src/models/pedido.cpp
     src/models/consumidor.cpp
     src/services/GerenciadorFeira.cpp
@@ -37,7 +37,8 @@ qt_add_qml_module(appAntro
     VERSION 1.0
     QML_FILES
         Main.qml
-        ui/LoginScreen.qml
+        telas/LoginScreen.qml
+        telas/CatalogoScreen.qml
 )
 
 set_target_properties(appAntro PROPERTIES
