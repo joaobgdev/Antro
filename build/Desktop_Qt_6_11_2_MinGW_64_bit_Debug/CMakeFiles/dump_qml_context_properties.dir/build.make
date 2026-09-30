@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for dump_qml_context_properties.
 
@@ -68,8 +68,8 @@ include CMakeFiles/dump_qml_context_properties.dir/progress.make
 CMakeFiles/dump_qml_context_properties: .qt/contextPropertyDump.ini
 
 .qt/contextPropertyDump.ini: D:/Qt/6.11.2/mingw_64/bin/qmlcontextpropertydump.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/contextPropertyDump.ini file for qmllint"
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcontextpropertydump.exe --cpp-source-directory D:/Antro/Antro --build-directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/contextPropertyDump.ini file for qmllint"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcontextpropertydump.exe --cpp-source-directory "D:/Antro/Antro 2/Antro" --build-directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 dump_qml_context_properties: .qt/contextPropertyDump.ini
 dump_qml_context_properties: CMakeFiles/dump_qml_context_properties
@@ -85,6 +85,6 @@ CMakeFiles/dump_qml_context_properties.dir/clean:
 .PHONY : CMakeFiles/dump_qml_context_properties.dir/clean
 
 CMakeFiles/dump_qml_context_properties.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\dump_qml_context_properties.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\dump_qml_context_properties.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/dump_qml_context_properties.dir/depend
 

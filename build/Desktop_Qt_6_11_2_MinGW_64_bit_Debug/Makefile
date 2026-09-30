@@ -56,10 +56,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -479,6 +479,30 @@ build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s
 
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj
+
+# target to build an object file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+
 build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.obj
 
@@ -502,30 +526,6 @@ build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.s: build/Desk
 build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.s
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.s
-
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.obj
-
-# target to build an object file
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj
-
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.i: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.i
-
-# target to preprocess a source file
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i
-
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.s: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.s
-
-# target to generate assembly for a file
-build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s
-.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s
 
 build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.obj
@@ -575,6 +575,78 @@ build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loade
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s
 
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj
+
+# target to build an object file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj
+
+# target to build an object file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj
+
+# target to build an object file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.i: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.i
+
+# target to preprocess a source file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i
+
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.s: build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s
+.PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -598,6 +670,222 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+src/models/agricultor.obj: src/models/agricultor.cpp.obj
+.PHONY : src/models/agricultor.obj
+
+# target to build an object file
+src/models/agricultor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj
+.PHONY : src/models/agricultor.cpp.obj
+
+src/models/agricultor.i: src/models/agricultor.cpp.i
+.PHONY : src/models/agricultor.i
+
+# target to preprocess a source file
+src/models/agricultor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/agricultor.cpp.i
+.PHONY : src/models/agricultor.cpp.i
+
+src/models/agricultor.s: src/models/agricultor.cpp.s
+.PHONY : src/models/agricultor.s
+
+# target to generate assembly for a file
+src/models/agricultor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/agricultor.cpp.s
+.PHONY : src/models/agricultor.cpp.s
+
+src/models/consumidor.obj: src/models/consumidor.cpp.obj
+.PHONY : src/models/consumidor.obj
+
+# target to build an object file
+src/models/consumidor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj
+.PHONY : src/models/consumidor.cpp.obj
+
+src/models/consumidor.i: src/models/consumidor.cpp.i
+.PHONY : src/models/consumidor.i
+
+# target to preprocess a source file
+src/models/consumidor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/consumidor.cpp.i
+.PHONY : src/models/consumidor.cpp.i
+
+src/models/consumidor.s: src/models/consumidor.cpp.s
+.PHONY : src/models/consumidor.s
+
+# target to generate assembly for a file
+src/models/consumidor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/consumidor.cpp.s
+.PHONY : src/models/consumidor.cpp.s
+
+src/models/itempedido.obj: src/models/itempedido.cpp.obj
+.PHONY : src/models/itempedido.obj
+
+# target to build an object file
+src/models/itempedido.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj
+.PHONY : src/models/itempedido.cpp.obj
+
+src/models/itempedido.i: src/models/itempedido.cpp.i
+.PHONY : src/models/itempedido.i
+
+# target to preprocess a source file
+src/models/itempedido.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/itempedido.cpp.i
+.PHONY : src/models/itempedido.cpp.i
+
+src/models/itempedido.s: src/models/itempedido.cpp.s
+.PHONY : src/models/itempedido.s
+
+# target to generate assembly for a file
+src/models/itempedido.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/itempedido.cpp.s
+.PHONY : src/models/itempedido.cpp.s
+
+src/models/pedido.obj: src/models/pedido.cpp.obj
+.PHONY : src/models/pedido.obj
+
+# target to build an object file
+src/models/pedido.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj
+.PHONY : src/models/pedido.cpp.obj
+
+src/models/pedido.i: src/models/pedido.cpp.i
+.PHONY : src/models/pedido.i
+
+# target to preprocess a source file
+src/models/pedido.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/pedido.cpp.i
+.PHONY : src/models/pedido.cpp.i
+
+src/models/pedido.s: src/models/pedido.cpp.s
+.PHONY : src/models/pedido.s
+
+# target to generate assembly for a file
+src/models/pedido.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/pedido.cpp.s
+.PHONY : src/models/pedido.cpp.s
+
+src/models/produto.obj: src/models/produto.cpp.obj
+.PHONY : src/models/produto.obj
+
+# target to build an object file
+src/models/produto.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/produto.cpp.obj
+.PHONY : src/models/produto.cpp.obj
+
+src/models/produto.i: src/models/produto.cpp.i
+.PHONY : src/models/produto.i
+
+# target to preprocess a source file
+src/models/produto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/produto.cpp.i
+.PHONY : src/models/produto.cpp.i
+
+src/models/produto.s: src/models/produto.cpp.s
+.PHONY : src/models/produto.s
+
+# target to generate assembly for a file
+src/models/produto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/produto.cpp.s
+.PHONY : src/models/produto.cpp.s
+
+src/models/usuario.obj: src/models/usuario.cpp.obj
+.PHONY : src/models/usuario.obj
+
+# target to build an object file
+src/models/usuario.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj
+.PHONY : src/models/usuario.cpp.obj
+
+src/models/usuario.i: src/models/usuario.cpp.i
+.PHONY : src/models/usuario.i
+
+# target to preprocess a source file
+src/models/usuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/usuario.cpp.i
+.PHONY : src/models/usuario.cpp.i
+
+src/models/usuario.s: src/models/usuario.cpp.s
+.PHONY : src/models/usuario.s
+
+# target to generate assembly for a file
+src/models/usuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/models/usuario.cpp.s
+.PHONY : src/models/usuario.cpp.s
+
+src/services/GerenciadorFeira.obj: src/services/GerenciadorFeira.cpp.obj
+.PHONY : src/services/GerenciadorFeira.obj
+
+# target to build an object file
+src/services/GerenciadorFeira.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj
+.PHONY : src/services/GerenciadorFeira.cpp.obj
+
+src/services/GerenciadorFeira.i: src/services/GerenciadorFeira.cpp.i
+.PHONY : src/services/GerenciadorFeira.i
+
+# target to preprocess a source file
+src/services/GerenciadorFeira.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.i
+.PHONY : src/services/GerenciadorFeira.cpp.i
+
+src/services/GerenciadorFeira.s: src/services/GerenciadorFeira.cpp.s
+.PHONY : src/services/GerenciadorFeira.s
+
+# target to generate assembly for a file
+src/services/GerenciadorFeira.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.s
+.PHONY : src/services/GerenciadorFeira.cpp.s
+
+src/services/RepositorioUsuario.obj: src/services/RepositorioUsuario.cpp.obj
+.PHONY : src/services/RepositorioUsuario.obj
+
+# target to build an object file
+src/services/RepositorioUsuario.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj
+.PHONY : src/services/RepositorioUsuario.cpp.obj
+
+src/services/RepositorioUsuario.i: src/services/RepositorioUsuario.cpp.i
+.PHONY : src/services/RepositorioUsuario.i
+
+# target to preprocess a source file
+src/services/RepositorioUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.i
+.PHONY : src/services/RepositorioUsuario.cpp.i
+
+src/services/RepositorioUsuario.s: src/services/RepositorioUsuario.cpp.s
+.PHONY : src/services/RepositorioUsuario.s
+
+# target to generate assembly for a file
+src/services/RepositorioUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.s
+.PHONY : src/services/RepositorioUsuario.cpp.s
+
+src/ui/AuthController.obj: src/ui/AuthController.cpp.obj
+.PHONY : src/ui/AuthController.obj
+
+# target to build an object file
+src/ui/AuthController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj
+.PHONY : src/ui/AuthController.cpp.obj
+
+src/ui/AuthController.i: src/ui/AuthController.cpp.i
+.PHONY : src/ui/AuthController.i
+
+# target to preprocess a source file
+src/ui/AuthController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.i
+.PHONY : src/ui/AuthController.cpp.i
+
+src/ui/AuthController.s: src/ui/AuthController.cpp.s
+.PHONY : src/ui/AuthController.s
+
+# target to generate assembly for a file
+src/ui/AuthController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.s
+.PHONY : src/ui/AuthController.cpp.s
 
 # Help Target
 help:
@@ -639,21 +927,57 @@ help:
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.obj
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.i
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.s
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.obj
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.i
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.s
-	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.obj
-	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.i
-	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.s
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.obj
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.i
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.s
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.obj
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.i
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.s
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.i
+	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/models/agricultor.obj
+	@echo ... src/models/agricultor.i
+	@echo ... src/models/agricultor.s
+	@echo ... src/models/consumidor.obj
+	@echo ... src/models/consumidor.i
+	@echo ... src/models/consumidor.s
+	@echo ... src/models/itempedido.obj
+	@echo ... src/models/itempedido.i
+	@echo ... src/models/itempedido.s
+	@echo ... src/models/pedido.obj
+	@echo ... src/models/pedido.i
+	@echo ... src/models/pedido.s
+	@echo ... src/models/produto.obj
+	@echo ... src/models/produto.i
+	@echo ... src/models/produto.s
+	@echo ... src/models/usuario.obj
+	@echo ... src/models/usuario.i
+	@echo ... src/models/usuario.s
+	@echo ... src/services/GerenciadorFeira.obj
+	@echo ... src/services/GerenciadorFeira.i
+	@echo ... src/services/GerenciadorFeira.s
+	@echo ... src/services/RepositorioUsuario.obj
+	@echo ... src/services/RepositorioUsuario.i
+	@echo ... src/services/RepositorioUsuario.s
+	@echo ... src/ui/AuthController.obj
+	@echo ... src/ui/AuthController.i
+	@echo ... src/ui/AuthController.s
 .PHONY : help
 
 

@@ -53,10 +53,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -95,22 +95,22 @@ clean: CMakeFiles/appAntro_autogen.dir/clean
 # Target rules for target CMakeFiles/appAntro.dir
 
 # All Build rule for target.
-CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_autogen.dir/all
 CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_qmlimportscan.dir/all
-CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_copy_res.dir/all
-CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
-CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_copy_qml.dir/all
+CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_autogen.dir/all
 CMakeFiles/appAntro.dir/all: CMakeFiles/generate_qmlls_build_ini_file.dir/all
+CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_copy_res.dir/all
+CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_copy_qml.dir/all
+CMakeFiles/appAntro.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target appAntro"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target appAntro"
 .PHONY : CMakeFiles/appAntro.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 39
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro.dir/rule
 
 # Convenience name for target.
@@ -129,14 +129,14 @@ CMakeFiles/appAntro.dir/clean:
 CMakeFiles/appAntro_qmltyperegistration.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmltyperegistration.dir\build.make CMakeFiles/appAntro_qmltyperegistration.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmltyperegistration.dir\build.make CMakeFiles/appAntro_qmltyperegistration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=25,26,27,28,29 "Built target appAntro_qmltyperegistration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=40,41,42,43,44 "Built target appAntro_qmltyperegistration"
 .PHONY : CMakeFiles/appAntro_qmltyperegistration.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_qmltyperegistration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_qmltyperegistration.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_qmltyperegistration.dir/rule
 
 # Convenience name for target.
@@ -155,14 +155,14 @@ CMakeFiles/appAntro_qmltyperegistration.dir/clean:
 CMakeFiles/all_qmltyperegistrations.dir/all: CMakeFiles/appAntro_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmltyperegistrations.dir\build.make CMakeFiles/all_qmltyperegistrations.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmltyperegistrations.dir\build.make CMakeFiles/all_qmltyperegistrations.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target all_qmltyperegistrations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target all_qmltyperegistrations"
 .PHONY : CMakeFiles/all_qmltyperegistrations.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmltyperegistrations.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_qmltyperegistrations.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/all_qmltyperegistrations.dir/rule
 
 # Convenience name for target.
@@ -181,14 +181,14 @@ CMakeFiles/all_qmltyperegistrations.dir/clean:
 CMakeFiles/appAntro_qmllint.dir/all: CMakeFiles/all_qmltyperegistrations.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint.dir\build.make CMakeFiles/appAntro_qmllint.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint.dir\build.make CMakeFiles/appAntro_qmllint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target appAntro_qmllint"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target appAntro_qmllint"
 .PHONY : CMakeFiles/appAntro_qmllint.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_qmllint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_qmllint.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_qmllint.dir/rule
 
 # Convenience name for target.
@@ -207,14 +207,14 @@ CMakeFiles/appAntro_qmllint.dir/clean:
 CMakeFiles/appAntro_qmllint_json.dir/all: CMakeFiles/all_qmltyperegistrations.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint_json.dir\build.make CMakeFiles/appAntro_qmllint_json.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint_json.dir\build.make CMakeFiles/appAntro_qmllint_json.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target appAntro_qmllint_json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target appAntro_qmllint_json"
 .PHONY : CMakeFiles/appAntro_qmllint_json.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_qmllint_json.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_qmllint_json.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_qmllint_json.dir/rule
 
 # Convenience name for target.
@@ -233,14 +233,14 @@ CMakeFiles/appAntro_qmllint_json.dir/clean:
 CMakeFiles/appAntro_qmllint_module.dir/all: CMakeFiles/all_qmltyperegistrations.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint_module.dir\build.make CMakeFiles/appAntro_qmllint_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmllint_module.dir\build.make CMakeFiles/appAntro_qmllint_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target appAntro_qmllint_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target appAntro_qmllint_module"
 .PHONY : CMakeFiles/appAntro_qmllint_module.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_qmllint_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_qmllint_module.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_qmllint_module.dir/rule
 
 # Convenience name for target.
@@ -259,14 +259,14 @@ CMakeFiles/appAntro_qmllint_module.dir/clean:
 CMakeFiles/all_qmllint.dir/all: CMakeFiles/appAntro_qmllint.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint.dir\build.make CMakeFiles/all_qmllint.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint.dir\build.make CMakeFiles/all_qmllint.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target all_qmllint"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target all_qmllint"
 .PHONY : CMakeFiles/all_qmllint.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_qmllint.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/all_qmllint.dir/rule
 
 # Convenience name for target.
@@ -285,14 +285,14 @@ CMakeFiles/all_qmllint.dir/clean:
 CMakeFiles/all_qmllint_json.dir/all: CMakeFiles/appAntro_qmllint_json.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint_json.dir\build.make CMakeFiles/all_qmllint_json.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint_json.dir\build.make CMakeFiles/all_qmllint_json.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target all_qmllint_json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target all_qmllint_json"
 .PHONY : CMakeFiles/all_qmllint_json.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint_json.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_qmllint_json.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/all_qmllint_json.dir/rule
 
 # Convenience name for target.
@@ -311,14 +311,14 @@ CMakeFiles/all_qmllint_json.dir/clean:
 CMakeFiles/all_qmllint_module.dir/all: CMakeFiles/appAntro_qmllint_module.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint_module.dir\build.make CMakeFiles/all_qmllint_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_qmllint_module.dir\build.make CMakeFiles/all_qmllint_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target all_qmllint_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target all_qmllint_module"
 .PHONY : CMakeFiles/all_qmllint_module.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_qmllint_module.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/all_qmllint_module.dir/rule
 
 # Convenience name for target.
@@ -337,14 +337,14 @@ CMakeFiles/all_qmllint_module.dir/clean:
 CMakeFiles/dump_qml_context_properties.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dump_qml_context_properties.dir\build.make CMakeFiles/dump_qml_context_properties.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dump_qml_context_properties.dir\build.make CMakeFiles/dump_qml_context_properties.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=31 "Built target dump_qml_context_properties"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=46 "Built target dump_qml_context_properties"
 .PHONY : CMakeFiles/dump_qml_context_properties.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dump_qml_context_properties.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/dump_qml_context_properties.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/dump_qml_context_properties.dir/rule
 
 # Convenience name for target.
@@ -363,14 +363,14 @@ CMakeFiles/dump_qml_context_properties.dir/clean:
 CMakeFiles/clean_qml_context_properties.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\clean_qml_context_properties.dir\build.make CMakeFiles/clean_qml_context_properties.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\clean_qml_context_properties.dir\build.make CMakeFiles/clean_qml_context_properties.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=30 "Built target clean_qml_context_properties"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=45 "Built target clean_qml_context_properties"
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/clean_qml_context_properties.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/clean_qml_context_properties.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/rule
 
 # Convenience name for target.
@@ -389,14 +389,14 @@ CMakeFiles/clean_qml_context_properties.dir/clean:
 CMakeFiles/appAntro_copy_qml.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_copy_qml.dir\build.make CMakeFiles/appAntro_copy_qml.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_copy_qml.dir\build.make CMakeFiles/appAntro_copy_qml.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=22 "Built target appAntro_copy_qml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=37 "Built target appAntro_copy_qml"
 .PHONY : CMakeFiles/appAntro_copy_qml.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_copy_qml.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_copy_qml.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_copy_qml.dir/rule
 
 # Convenience name for target.
@@ -415,14 +415,14 @@ CMakeFiles/appAntro_copy_qml.dir/clean:
 CMakeFiles/appAntro_copy_res.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_copy_res.dir\build.make CMakeFiles/appAntro_copy_res.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_copy_res.dir\build.make CMakeFiles/appAntro_copy_res.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=23 "Built target appAntro_copy_res"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=38 "Built target appAntro_copy_res"
 .PHONY : CMakeFiles/appAntro_copy_res.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_copy_res.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_copy_res.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_copy_res.dir/rule
 
 # Convenience name for target.
@@ -441,14 +441,14 @@ CMakeFiles/appAntro_copy_res.dir/clean:
 CMakeFiles/generate_qmlls_build_ini_file.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\generate_qmlls_build_ini_file.dir\build.make CMakeFiles/generate_qmlls_build_ini_file.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\generate_qmlls_build_ini_file.dir\build.make CMakeFiles/generate_qmlls_build_ini_file.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=32 "Built target generate_qmlls_build_ini_file"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=47 "Built target generate_qmlls_build_ini_file"
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/generate_qmlls_build_ini_file.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/generate_qmlls_build_ini_file.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/rule
 
 # Convenience name for target.
@@ -468,14 +468,14 @@ CMakeFiles/module_appAntro_aotstats_target.dir/all: CMakeFiles/appAntro_qmltyper
 CMakeFiles/module_appAntro_aotstats_target.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\module_appAntro_aotstats_target.dir\build.make CMakeFiles/module_appAntro_aotstats_target.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\module_appAntro_aotstats_target.dir\build.make CMakeFiles/module_appAntro_aotstats_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=33,34,35 "Built target module_appAntro_aotstats_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=48,49,50,51,52 "Built target module_appAntro_aotstats_target"
 .PHONY : CMakeFiles/module_appAntro_aotstats_target.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/module_appAntro_aotstats_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/module_appAntro_aotstats_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/module_appAntro_aotstats_target.dir/rule
 
 # Convenience name for target.
@@ -491,18 +491,18 @@ CMakeFiles/module_appAntro_aotstats_target.dir/clean:
 # Target rules for target CMakeFiles/all_aotstats.dir
 
 # All Build rule for target.
-CMakeFiles/all_aotstats.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 CMakeFiles/all_aotstats.dir/all: CMakeFiles/module_appAntro_aotstats_target.dir/all
+CMakeFiles/all_aotstats.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_aotstats.dir\build.make CMakeFiles/all_aotstats.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\all_aotstats.dir\build.make CMakeFiles/all_aotstats.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=1 "Built target all_aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=1 "Built target all_aotstats"
 .PHONY : CMakeFiles/all_aotstats.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_aotstats.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_aotstats.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/all_aotstats.dir/rule
 
 # Convenience name for target.
@@ -521,14 +521,14 @@ CMakeFiles/all_aotstats.dir/clean:
 CMakeFiles/appAntro_qmlimportscan.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmlimportscan.dir\build.make CMakeFiles/appAntro_qmlimportscan.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_qmlimportscan.dir\build.make CMakeFiles/appAntro_qmlimportscan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=24 "Built target appAntro_qmlimportscan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=39 "Built target appAntro_qmlimportscan"
 .PHONY : CMakeFiles/appAntro_qmlimportscan.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_qmlimportscan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_qmlimportscan.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_qmlimportscan.dir/rule
 
 # Convenience name for target.
@@ -545,19 +545,19 @@ CMakeFiles/appAntro_qmlimportscan.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/appAntro_autogen_timestamp_deps.dir/all: CMakeFiles/appAntro_qmlimportscan.dir/all
+CMakeFiles/appAntro_autogen_timestamp_deps.dir/all: CMakeFiles/generate_qmlls_build_ini_file.dir/all
 CMakeFiles/appAntro_autogen_timestamp_deps.dir/all: CMakeFiles/appAntro_copy_res.dir/all
 CMakeFiles/appAntro_autogen_timestamp_deps.dir/all: CMakeFiles/appAntro_copy_qml.dir/all
-CMakeFiles/appAntro_autogen_timestamp_deps.dir/all: CMakeFiles/generate_qmlls_build_ini_file.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_autogen_timestamp_deps.dir\build.make CMakeFiles/appAntro_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_autogen_timestamp_deps.dir\build.make CMakeFiles/appAntro_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target appAntro_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num= "Built target appAntro_autogen_timestamp_deps"
 .PHONY : CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
@@ -576,14 +576,14 @@ CMakeFiles/appAntro_autogen_timestamp_deps.dir/clean:
 CMakeFiles/appAntro_autogen.dir/all: CMakeFiles/appAntro_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_autogen.dir\build.make CMakeFiles/appAntro_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro_autogen.dir\build.make CMakeFiles/appAntro_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=21 "Built target appAntro_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=36 "Built target appAntro_autogen"
 .PHONY : CMakeFiles/appAntro_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appAntro_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appAntro_autogen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/appAntro_autogen.dir/rule
 
 # Convenience name for target.

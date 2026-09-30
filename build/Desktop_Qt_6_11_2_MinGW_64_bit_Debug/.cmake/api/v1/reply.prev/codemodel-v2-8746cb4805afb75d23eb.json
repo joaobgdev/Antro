@@ -1,0 +1,223 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-2d97fed21af3a68ad73c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Antro",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-ea2625dbf1a7407d2373.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-e709ccb24868acc21be1.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-f9d59ad17aea8b3959a8.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-e876b00604b4ddea3d13.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-24e175ea6c1ba071b004.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro-Debug-6dd0363d7560de3b6abf.json",
+					"name" : "appAntro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_autogen-Debug-8bf770882d95193b6392.json",
+					"name" : "appAntro_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_autogen_timestamp_deps-Debug-259741a06c50043deef9.json",
+					"name" : "appAntro_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_copy_qml-Debug-2c8ce4663cf029214629.json",
+					"name" : "appAntro_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_copy_res-Debug-8872b8f0fc1c5a42d462.json",
+					"name" : "appAntro_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_qmlimportscan-Debug-c8bc3076c4696e10532c.json",
+					"name" : "appAntro_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_qmllint-Debug-5c2814af39602bbaecae.json",
+					"name" : "appAntro_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_qmllint_json-Debug-93c94f9e4b39bb63f023.json",
+					"name" : "appAntro_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_qmllint_module-Debug-42d8d4c7a707f83052ab.json",
+					"name" : "appAntro_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appAntro_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appAntro_qmltyperegistration-Debug-596181a39af06e4f37b8.json",
+					"name" : "appAntro_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_qml_context_properties-Debug-01d0583ee1ef53c0c621.json",
+					"name" : "clean_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dump_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dump_qml_context_properties-Debug-9424654009bd56ebb2cd.json",
+					"name" : "dump_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-86cd9f04464080465e26.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appAntro_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appAntro_aotstats_target-Debug-59a59deec9558c1bcfa6.json",
+					"name" : "module_appAntro_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug",
+		"source" : "D:/Antro/Antro 2/Antro"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

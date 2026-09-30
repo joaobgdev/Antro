@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for appAntro_autogen_timestamp_deps.
 
@@ -77,6 +77,6 @@ CMakeFiles/appAntro_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/appAntro_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/appAntro_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_autogen_timestamp_deps.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/appAntro_autogen_timestamp_deps.dir/depend
 
