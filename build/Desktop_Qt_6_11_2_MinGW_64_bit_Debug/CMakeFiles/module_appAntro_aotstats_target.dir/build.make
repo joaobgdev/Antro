@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for module_appAntro_aotstats_target.
 
@@ -68,41 +68,77 @@ include CMakeFiles/module_appAntro_aotstats_target.dir/progress.make
 CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotstats
 
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats
-.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/module_appAntro.aotstatslist
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_appAntro.aotstats"
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlaotstats.exe aggregate D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/module_appAntro.aotstatslist D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/module_appAntro.aotstats
-
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: D:/Antro/Antro/LoginScreen.qml
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: Antro/appAntro.qmltypes
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating .rcc/qmlcache/appAntro_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/LoginScreen.qml -I D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug -I D:/Qt/6.11.2/mingw_64/qml -i D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc --dump-aot-stats --module-id=Antro(appAntro) -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp D:/Antro/Antro/LoginScreen.qml
-
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_LoginScreen_qml.cpp.aotstats
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_appAntro.aotstats"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlaotstats.exe aggregate "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/module_appAntro.aotstatslist" "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/module_appAntro.aotstats"
 
 .rcc/qmlcache/appAntro_Main_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
-.rcc/qmlcache/appAntro_Main_qml.cpp: D:/Antro/Antro/Main.qml
+.rcc/qmlcache/appAntro_Main_qml.cpp: D:/Antro/Antro\ 2/Antro/Main.qml
 .rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/qmake_Antro.qrc
 .rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_Main_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_Main_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating .rcc/qmlcache/appAntro_Main_qml.cpp, .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/Main.qml -I D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug -I D:/Qt/6.11.2/mingw_64/qml -i D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc --dump-aot-stats --module-id=Antro(appAntro) -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp D:/Antro/Antro/Main.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Generating .rcc/qmlcache/appAntro_Main_qml.cpp, .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/Main.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp" "D:/Antro/Antro 2/Antro/Main.qml"
 
 .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats: .rcc/qmlcache/appAntro_Main_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_Main_qml.cpp.aotstats
 
-module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp
-module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Generating .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/CatalogoScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/CatalogoScreen.qml"
+
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.aotstats
+
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/HomeScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/HomeScreen.qml"
+
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.aotstats
+
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/LoginScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/LoginScreen.qml"
+
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.aotstats
+
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_Main_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotstats
 module_appAntro_aotstats_target: CMakeFiles/module_appAntro_aotstats_target
 module_appAntro_aotstats_target: CMakeFiles/module_appAntro_aotstats_target.dir/build.make
@@ -117,6 +153,6 @@ CMakeFiles/module_appAntro_aotstats_target.dir/clean:
 .PHONY : CMakeFiles/module_appAntro_aotstats_target.dir/clean
 
 CMakeFiles/module_appAntro_aotstats_target.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\module_appAntro_aotstats_target.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\module_appAntro_aotstats_target.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/module_appAntro_aotstats_target.dir/depend
 

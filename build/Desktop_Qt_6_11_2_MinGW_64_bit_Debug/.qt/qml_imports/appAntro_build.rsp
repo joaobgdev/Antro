@@ -1,14 +1,15 @@
 -rootPath
-D:/Antro/Antro
+D:/Antro/Antro 2/Antro
 -cmake-output
 -output-file
-D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qml_imports/appAntro_build.cmake
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qml_imports/appAntro_build.cmake
 -importPath
-D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug
 -importPath
-D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro
 -importPath
 D:/Qt/6.11.2/mingw_64/qml
 -qrcFiles
-D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc
-D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc
+D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc

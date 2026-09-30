@@ -1,0 +1,235 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                }
+            ],
+            "className": "AuthController",
+            "lineNumber": 14,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "perfil",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "nome",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telefone",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "senha",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "nomeBanca",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "codigoOCS",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 32,
+                    "name": "cadastrar",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "perfil",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "nome",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telefone",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "senha",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "nomeBanca",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "isCloned": true,
+                    "lineNumber": 32,
+                    "name": "cadastrar",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "perfil",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "nome",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telefone",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "senha",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "isCloned": true,
+                    "lineNumber": 32,
+                    "name": "cadastrar",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "telefone",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "senha",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 35,
+                    "name": "entrar",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "lineNumber": 36,
+                    "name": "sair",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 19,
+                    "name": "logado",
+                    "notify": "usuarioChanged",
+                    "override": false,
+                    "read": "logado",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 20,
+                    "name": "nomeUsuario",
+                    "notify": "usuarioChanged",
+                    "override": false,
+                    "read": "nomeUsuario",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 21,
+                    "name": "perfilUsuario",
+                    "notify": "usuarioChanged",
+                    "override": false,
+                    "read": "perfilUsuario",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 22,
+                    "name": "subtituloUsuario",
+                    "notify": "usuarioChanged",
+                    "override": false,
+                    "read": "subtituloUsuario",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "AuthController",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 39,
+                    "name": "usuarioChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "mensagem",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 40,
+                    "name": "falhaAutenticacao",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "AuthController.hpp",
+    "outputRevision": 69
+}

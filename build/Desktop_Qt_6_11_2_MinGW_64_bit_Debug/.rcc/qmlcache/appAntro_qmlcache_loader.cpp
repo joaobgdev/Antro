@@ -12,7 +12,21 @@ namespace _qt_qml_Antro_Main_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_Antro_LoginScreen_qml { 
+namespace _qt_qml_Antro_telas_LoginScreen_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_Antro_telas_HomeScreen_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_Antro_telas_CatalogoScreen_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -34,7 +48,9 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Antro/Main.qml"), &QmlCacheGeneratedCode::_qt_qml_Antro_Main_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Antro/LoginScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_Antro_LoginScreen_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Antro/telas/LoginScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_Antro_telas_LoginScreen_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Antro/telas/HomeScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_Antro_telas_HomeScreen_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/Antro/telas/CatalogoScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_Antro_telas_CatalogoScreen_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

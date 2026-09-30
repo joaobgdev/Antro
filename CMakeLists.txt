@@ -6,7 +6,7 @@ project(Antro VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
 qt_standard_project_setup()
 
@@ -23,6 +23,16 @@ set(SOURCES
     src/models/consumidor.cpp
     src/services/GerenciadorFeira.cpp
     main.cpp
+
+    include/models/produto.hpp
+    include/models/itempedido.hpp
+    include/models/pedido.hpp
+    include/models/usuario.hpp
+    include/models/consumidor.hpp
+    include/models/agricultor.hpp
+    include/services/GerenciadorFeira.hpp
+    include/services/RepositorioUsuario.hpp
+    include/ui/AuthController.hpp
 )
 
 # Criação do executável com suporte nativo ao Qt 6
@@ -49,7 +59,7 @@ set_target_properties(appAntro PROPERTIES
 )
 
 target_link_libraries(appAntro
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::Sql
 )
 
 install(TARGETS appAntro

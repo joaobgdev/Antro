@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for appAntro_qmlimportscan.
 
@@ -70,10 +70,13 @@ CMakeFiles/appAntro_qmlimportscan: .qt/qml_imports/appAntro_build.cmake
 .qt/qml_imports/appAntro_build.cmake: D:/Qt/6.11.2/mingw_64/bin/qmlimportscanner.exe
 .qt/qml_imports/appAntro_build.cmake: .qt/rcc/qmake_Antro.qrc
 .qt/qml_imports/appAntro_build.cmake: .qt/rcc/appAntro_raw_qml_0.qrc
-.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro/Main.qml
-.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro/LoginScreen.qml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for appAntro"
-	cd /d D:\Antro\Antro && call D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlimportscanner.exe @D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qml_imports/appAntro_build.rsp
+.qt/qml_imports/appAntro_build.cmake: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro\ 2/Antro/Main.qml
+.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+.qt/qml_imports/appAntro_build.cmake: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for appAntro"
+	cd /d "D:\Antro\Antro 2\Antro" && call "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\bin\qt_setup_tool_path.bat" D:/Qt/6.11.2/mingw_64/bin/qmlimportscanner.exe "@D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qml_imports/appAntro_build.rsp"
 
 appAntro_qmlimportscan: .qt/qml_imports/appAntro_build.cmake
 appAntro_qmlimportscan: CMakeFiles/appAntro_qmlimportscan
@@ -89,6 +92,6 @@ CMakeFiles/appAntro_qmlimportscan.dir/clean:
 .PHONY : CMakeFiles/appAntro_qmlimportscan.dir/clean
 
 CMakeFiles/appAntro_qmlimportscan.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_qmlimportscan.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_qmlimportscan.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/appAntro_qmlimportscan.dir/depend
 

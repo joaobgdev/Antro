@@ -1,5 +1,5 @@
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: \
- D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp \
+ D:\Antro\Antro\ 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp \
  D:/Qt/6.11.2/mingw_64/include/QtQml/qqmlprivate.h \
  D:/Qt/6.11.2/mingw_64/include/QtQml/qjsprimitivevalue.h \
  D:/Qt/6.11.2/mingw_64/include/QtQml/qtqmlglobal.h \

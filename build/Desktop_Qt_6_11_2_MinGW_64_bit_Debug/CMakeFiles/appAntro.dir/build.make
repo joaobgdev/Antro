@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/appAntro.dir/depend.make
@@ -70,9 +70,9 @@ include CMakeFiles/appAntro.dir/flags.make
 
 meta_types/qt6appantro_metatypes.json.gen: D:/Qt/6.11.2/mingw_64/bin/moc.exe
 meta_types/qt6appantro_metatypes.json.gen: meta_types/appAntro_json_file_list.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running moc --collect-json for target appAntro"
-	D:\Qt\6.11.2\mingw_64\bin\moc.exe -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json.gen --collect-json @D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy_if_different D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json.gen D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Running moc --collect-json for target appAntro"
+	D:\Qt\6.11.2\mingw_64\bin\moc.exe -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json.gen" --collect-json "@D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy_if_different "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json.gen" "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json"
 
 appantro_qmltyperegistrations.cpp: qmltypes/appAntro_foreign_types.txt
 appantro_qmltyperegistrations.cpp: meta_types/qt6appantro_metatypes.json
@@ -83,10 +83,11 @@ appantro_qmltyperegistrations.cpp: D:/Qt/6.11.2/mingw_64/metatypes/qt6network_me
 appantro_qmltyperegistrations.cpp: D:/Qt/6.11.2/mingw_64/metatypes/qt6quick_metatypes.json
 appantro_qmltyperegistrations.cpp: D:/Qt/6.11.2/mingw_64/metatypes/qt6gui_metatypes.json
 appantro_qmltyperegistrations.cpp: D:/Qt/6.11.2/mingw_64/metatypes/qt6opengl_metatypes.json
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target appAntro"
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmltyperegistrar.exe --generate-qmltypes=D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/appAntro.qmltypes --import-name=Antro --major-version=254 --minor-version=254 @D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/qmltypes/appAntro_foreign_types.txt -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appantro_qmltyperegistrations.cpp D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qmltypes
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qmltypes/appAntro.qmltypes
+appantro_qmltyperegistrations.cpp: D:/Qt/6.11.2/mingw_64/metatypes/qt6sql_metatypes.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target appAntro"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmltyperegistrar.exe "--generate-qmltypes=D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/appAntro.qmltypes" --import-name=Antro --major-version=1 --minor-version=0 "@D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/qmltypes/appAntro_foreign_types.txt" -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appantro_qmltyperegistrations.cpp" "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/qt6appantro_metatypes.json"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qmltypes"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qmltypes/appAntro.qmltypes"
 
 Antro/appAntro.qmltypes: appantro_qmltyperegistrations.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate Antro\appAntro.qmltypes
@@ -94,208 +95,452 @@ Antro/appAntro.qmltypes: appantro_qmltyperegistrations.cpp
 .qt/rcc/qrc_qmake_Antro.cpp: Antro/qmldir
 .qt/rcc/qrc_qmake_Antro.cpp: .qt/rcc/qmake_Antro.qrc
 .qt/rcc/qrc_qmake_Antro.cpp: D:/Qt/6.11.2/mingw_64/bin/rcc.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_Antro"
-	D:\Qt\6.11.2\mingw_64\bin\rcc.exe --output D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp --name qmake_Antro D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc --no-zstd
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Running rcc for resource qmake_Antro"
+	D:\Qt\6.11.2\mingw_64\bin\rcc.exe --output "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp" --name qmake_Antro "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --no-zstd
 
 .rcc/qmlcache/appAntro_qmlcache_loader.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
 .rcc/qmlcache/appAntro_qmlcache_loader.cpp: .rcc/qmlcache/appAntro_qml_loader_file_list.rsp
 .rcc/qmlcache/appAntro_qmlcache_loader.cpp: .qt/rcc/qmake_Antro.qrc
 .rcc/qmlcache/appAntro_qmlcache_loader.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/appAntro_qmlcache_loader.cpp"
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --resource-name qmlcache_appAntro -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp @D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qml_loader_file_list.rsp
+.rcc/qmlcache/appAntro_qmlcache_loader.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Generating .rcc/qmlcache/appAntro_qmlcache_loader.cpp"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --resource-name qmlcache_appAntro -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp" "@D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qml_loader_file_list.rsp"
 
 .rcc/qmlcache/appAntro_Main_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
-.rcc/qmlcache/appAntro_Main_qml.cpp: D:/Antro/Antro/Main.qml
+.rcc/qmlcache/appAntro_Main_qml.cpp: D:/Antro/Antro\ 2/Antro/Main.qml
 .rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/qmake_Antro.qrc
 .rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_Main_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_Main_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_Main_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/appAntro_Main_qml.cpp, .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/Main.qml -I D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug -I D:/Qt/6.11.2/mingw_64/qml -i D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc --dump-aot-stats --module-id=Antro(appAntro) -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp D:/Antro/Antro/Main.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/appAntro_Main_qml.cpp, .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/Main.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp" "D:/Antro/Antro 2/Antro/Main.qml"
 
 .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats: .rcc/qmlcache/appAntro_Main_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_Main_qml.cpp.aotstats
 
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: D:/Antro/Antro/LoginScreen.qml
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: Antro/appAntro.qmltypes
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/appAntro_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache
-	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/LoginScreen.qml -I D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug -I D:/Qt/6.11.2/mingw_64/qml -i D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc --resource D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc --dump-aot-stats --module-id=Antro(appAntro) -o D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp D:/Antro/Antro/LoginScreen.qml
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/LoginScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/LoginScreen.qml"
 
-.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_LoginScreen_qml.cpp.aotstats
+.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.aotstats
 
-.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro/Main.qml
-.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro/LoginScreen.qml
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Generating .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/HomeScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/HomeScreen.qml"
+
+.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.aotstats
+
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Generating .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache"
+	call .qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/CatalogoScreen.qml -I "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug" -I D:/Qt/6.11.2/mingw_64/qml -i "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/qmldir" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qmake_Antro.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --resource "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --dump-aot-stats --module-id=Antro(appAntro) -o "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp" "D:/Antro/Antro 2/Antro/telas/CatalogoScreen.qml"
+
+.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.aotstats
+
+.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro\ 2/Antro/Main.qml
+.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+.qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
 .qt/rcc/qrc_appAntro_raw_qml_0.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
 .qt/rcc/qrc_appAntro_raw_qml_0.cpp: D:/Qt/6.11.2/mingw_64/bin/rcc.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Running rcc for resource appAntro_raw_qml_0"
-	D:\Qt\6.11.2\mingw_64\bin\rcc.exe --output D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp --name appAntro_raw_qml_0 D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc --no-zstd
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Running rcc for resource appAntro_raw_qml_0"
+	D:\Qt\6.11.2\mingw_64\bin\rcc.exe --output "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp" --name appAntro_raw_qml_0 "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0.qrc" --no-zstd
+
+.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp: Antro/telas/qmldir
+.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp: D:/Qt/6.11.2/mingw_64/bin/rcc.exe
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Running rcc for resource appAntro_raw_qml_0_extra_qmldirs"
+	D:\Qt\6.11.2\mingw_64\bin\rcc.exe --output "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp" --name appAntro_raw_qml_0_extra_qmldirs "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc" --no-zstd
 
 appAntro_autogen/timestamp: D:/Qt/6.11.2/mingw_64/bin/moc.exe
 appAntro_autogen/timestamp: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Automatic MOC and UIC for target appAntro"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/AutogenInfo.json Debug
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appAntro_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Automatic MOC and UIC for target appAntro"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/AutogenInfo.json" Debug
+	D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appAntro_autogen/timestamp"
 
 meta_types/appAntro_json_file_list.txt: D:/Qt/6.11.2/mingw_64/bin/cmake_automoc_parser.exe
 meta_types/appAntro_json_file_list.txt: appAntro_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Running AUTOMOC file extraction for target appAntro"
-	D:\Qt\6.11.2\mingw_64\bin\cmake_automoc_parser.exe --cmake-autogen-cache-file D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/ParseCache.txt --cmake-autogen-info-file D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/AutogenInfo.json --output-file-path D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt --timestamp-file-path D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt.timestamp --cmake-autogen-include-dir-path D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appAntro_autogen/include
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Running AUTOMOC file extraction for target appAntro"
+	D:\Qt\6.11.2\mingw_64\bin\cmake_automoc_parser.exe --cmake-autogen-cache-file "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/ParseCache.txt" --cmake-autogen-info-file "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appAntro_autogen.dir/AutogenInfo.json" --output-file-path "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt" --timestamp-file-path "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/meta_types/appAntro_json_file_list.txt.timestamp" --cmake-autogen-include-dir-path "D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appAntro_autogen/include"
 
 meta_types/qt6appantro_metatypes.json: meta_types/qt6appantro_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating meta_types/qt6appantro_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Generating meta_types/qt6appantro_metatypes.json"
 	D:\Qt\Tools\CMake_64\bin\cmake.exe -E true
 
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj: appAntro_autogen/mocs_compilation.cpp
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp"
 
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp > CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp" > CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.i
 
 CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp -o CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appAntro_autogen\mocs_compilation.cpp" -o CMakeFiles\appAntro.dir\appAntro_autogen\mocs_compilation.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/produto.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/produto.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/produto.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/produto.cpp
+CMakeFiles/appAntro.dir/src/models/produto.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/appAntro.dir/src/models/produto.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/produto.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\produto.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\produto.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\produto.cpp"
+
+CMakeFiles/appAntro.dir/src/models/produto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/produto.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\produto.cpp" > CMakeFiles\appAntro.dir\src\models\produto.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/produto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/produto.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\produto.cpp" -o CMakeFiles\appAntro.dir\src\models\produto.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/itempedido.cpp
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\itempedido.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\itempedido.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\itempedido.cpp"
+
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/itempedido.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\itempedido.cpp" > CMakeFiles\appAntro.dir\src\models\itempedido.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/itempedido.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/itempedido.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\itempedido.cpp" -o CMakeFiles\appAntro.dir\src\models\itempedido.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/pedido.cpp
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\pedido.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\pedido.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\pedido.cpp"
+
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/pedido.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\pedido.cpp" > CMakeFiles\appAntro.dir\src\models\pedido.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/pedido.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/pedido.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\pedido.cpp" -o CMakeFiles\appAntro.dir\src\models\pedido.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/usuario.cpp
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\usuario.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\usuario.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\usuario.cpp"
+
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/usuario.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\usuario.cpp" > CMakeFiles\appAntro.dir\src\models\usuario.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/usuario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/usuario.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\usuario.cpp" -o CMakeFiles\appAntro.dir\src\models\usuario.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/consumidor.cpp
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\consumidor.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\consumidor.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\consumidor.cpp"
+
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/consumidor.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\consumidor.cpp" > CMakeFiles\appAntro.dir\src\models\consumidor.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/consumidor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/consumidor.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\consumidor.cpp" -o CMakeFiles\appAntro.dir\src\models\consumidor.cpp.s
+
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj: D:/Antro/Antro\ 2/Antro/src/models/agricultor.cpp
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj -MF CMakeFiles\appAntro.dir\src\models\agricultor.cpp.obj.d -o CMakeFiles\appAntro.dir\src\models\agricultor.cpp.obj -c "D:\Antro\Antro 2\Antro\src\models\agricultor.cpp"
+
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/models/agricultor.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\models\agricultor.cpp" > CMakeFiles\appAntro.dir\src\models\agricultor.cpp.i
+
+CMakeFiles/appAntro.dir/src/models/agricultor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/models/agricultor.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\models\agricultor.cpp" -o CMakeFiles\appAntro.dir\src\models\agricultor.cpp.s
+
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj: D:/Antro/Antro\ 2/Antro/src/services/GerenciadorFeira.cpp
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj -MF CMakeFiles\appAntro.dir\src\services\GerenciadorFeira.cpp.obj.d -o CMakeFiles\appAntro.dir\src\services\GerenciadorFeira.cpp.obj -c "D:\Antro\Antro 2\Antro\src\services\GerenciadorFeira.cpp"
+
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\services\GerenciadorFeira.cpp" > CMakeFiles\appAntro.dir\src\services\GerenciadorFeira.cpp.i
+
+CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\services\GerenciadorFeira.cpp" -o CMakeFiles\appAntro.dir\src\services\GerenciadorFeira.cpp.s
+
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj: D:/Antro/Antro\ 2/Antro/src/services/RepositorioUsuario.cpp
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj -MF CMakeFiles\appAntro.dir\src\services\RepositorioUsuario.cpp.obj.d -o CMakeFiles\appAntro.dir\src\services\RepositorioUsuario.cpp.obj -c "D:\Antro\Antro 2\Antro\src\services\RepositorioUsuario.cpp"
+
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\services\RepositorioUsuario.cpp" > CMakeFiles\appAntro.dir\src\services\RepositorioUsuario.cpp.i
+
+CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\services\RepositorioUsuario.cpp" -o CMakeFiles\appAntro.dir\src\services\RepositorioUsuario.cpp.s
+
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj: D:/Antro/Antro\ 2/Antro/src/ui/AuthController.cpp
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj -MF CMakeFiles\appAntro.dir\src\ui\AuthController.cpp.obj.d -o CMakeFiles\appAntro.dir\src\ui\AuthController.cpp.obj -c "D:\Antro\Antro 2\Antro\src\ui\AuthController.cpp"
+
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\src\ui\AuthController.cpp" > CMakeFiles\appAntro.dir\src\ui\AuthController.cpp.i
+
+CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\src\ui\AuthController.cpp" -o CMakeFiles\appAntro.dir\src\ui\AuthController.cpp.s
 
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
-CMakeFiles/appAntro.dir/main.cpp.obj: D:/Antro/Antro/main.cpp
+CMakeFiles/appAntro.dir/main.cpp.obj: D:/Antro/Antro\ 2/Antro/main.cpp
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/appAntro.dir/main.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/main.cpp.obj -MF CMakeFiles\appAntro.dir\main.cpp.obj.d -o CMakeFiles\appAntro.dir\main.cpp.obj -c D:\Antro\Antro\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/appAntro.dir/main.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/main.cpp.obj -MF CMakeFiles\appAntro.dir\main.cpp.obj.d -o CMakeFiles\appAntro.dir\main.cpp.obj -c "D:\Antro\Antro 2\Antro\main.cpp"
 
 CMakeFiles/appAntro.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/main.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\main.cpp > CMakeFiles\appAntro.dir\main.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\main.cpp" > CMakeFiles\appAntro.dir\main.cpp.i
 
 CMakeFiles/appAntro.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/main.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\main.cpp -o CMakeFiles\appAntro.dir\main.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\main.cpp" -o CMakeFiles\appAntro.dir\main.cpp.s
 
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: appantro_qmltyperegistrations.cpp
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -MD -MT CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj -MF CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj.d -o CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -MD -MT CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj -MF CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj.d -o CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp"
 
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp > CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp" > CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.i
 
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp -o CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appantro_qmltyperegistrations.cpp" -o CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.s
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj: .qt/rcc/qrc_qmake_Antro.cpp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp"
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.i
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_Antro.cpp.s
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: .rcc/qmlcache/appAntro_qmlcache_loader.cpp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp"
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.i
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.s
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: .rcc/qmlcache/appAntro_Main_qml.cpp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp"
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.i
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_Main_qml.cpp.s
 
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/flags.make
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp"
 
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp.i
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.i
 
-CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_LoginScreen_qml.cpp.s
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.s
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp"
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.i
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.s
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp"
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.i
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.s
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: .qt/rcc/qrc_appAntro_raw_qml_0.cpp
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj -c D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp"
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.i
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.i
 
 CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s"
-	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.s
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.s
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: .qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj -MF CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj.d -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj -c "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp"
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp" > CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+
+CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp" -o CMakeFiles\appAntro.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
 
 # Object files for target appAntro
 appAntro_OBJECTS = \
 "CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/produto.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj" \
 "CMakeFiles/appAntro.dir/main.cpp.obj" \
 "CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj" \
 "CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj" \
 "CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj" \
 "CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj" \
-"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj" \
-"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"
+"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj" \
+"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj" \
+"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj" \
+"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj" \
+"CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj"
 
 # External object files for target appAntro
 appAntro_EXTERNAL_OBJECTS =
 
 appAntro.exe: CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/produto.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/main.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_Antro.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_Main_qml.cpp.obj
-appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_LoginScreen_qml.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build.make
 appAntro.exe: D:/Qt/6.11.2/mingw_64/lib/libQt6Quick.a
+appAntro.exe: D:/Qt/6.11.2/mingw_64/lib/libQt6Sql.a
 appAntro.exe: D:/Qt/6.11.2/mingw_64/lib/libQt6OpenGL.a
 appAntro.exe: D:/Qt/6.11.2/mingw_64/lib/libQt6Gui.a
 appAntro.exe: D:/Qt/6.11.2/mingw_64/lib/libQt6Qml.a
@@ -306,7 +551,7 @@ appAntro.exe: appAntro.exe.manifest
 appAntro.exe: CMakeFiles/appAntro.dir/linkLibs.rsp
 appAntro.exe: CMakeFiles/appAntro.dir/objects1.rsp
 appAntro.exe: CMakeFiles/appAntro.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable appAntro.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable appAntro.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\appAntro.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -318,18 +563,23 @@ CMakeFiles/appAntro.dir/clean:
 .PHONY : CMakeFiles/appAntro.dir/clean
 
 CMakeFiles/appAntro.dir/depend: .qt/rcc/qrc_appAntro_raw_qml_0.cpp
+CMakeFiles/appAntro.dir/depend: .qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp
 CMakeFiles/appAntro.dir/depend: .qt/rcc/qrc_qmake_Antro.cpp
-CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp
-CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats
 CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_Main_qml.cpp
 CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_Main_qml.cpp.aotstats
 CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_qmlcache_loader.cpp
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
+CMakeFiles/appAntro.dir/depend: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats
 CMakeFiles/appAntro.dir/depend: Antro/appAntro.qmltypes
 CMakeFiles/appAntro.dir/depend: appAntro_autogen/timestamp
 CMakeFiles/appAntro.dir/depend: appantro_qmltyperegistrations.cpp
 CMakeFiles/appAntro.dir/depend: meta_types/appAntro_json_file_list.txt
 CMakeFiles/appAntro.dir/depend: meta_types/qt6appantro_metatypes.json
 CMakeFiles/appAntro.dir/depend: meta_types/qt6appantro_metatypes.json.gen
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/appAntro.dir/depend
 

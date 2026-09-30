@@ -20,6 +20,6 @@ Window {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: "LoginScreen.qml"
+        initialItem: "telas/LoginScreen.qml"
     }
 }

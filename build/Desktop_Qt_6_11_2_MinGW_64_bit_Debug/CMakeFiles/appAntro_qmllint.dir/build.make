@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for appAntro_qmllint.
 
@@ -66,10 +66,12 @@ include CMakeFiles/appAntro_qmllint.dir/compiler_depend.make
 include CMakeFiles/appAntro_qmllint.dir/progress.make
 
 CMakeFiles/appAntro_qmllint: D:/Qt/6.11.2/mingw_64/bin/qmllint.exe
-CMakeFiles/appAntro_qmllint: D:/Antro/Antro/Main.qml
-CMakeFiles/appAntro_qmllint: D:/Antro/Antro/LoginScreen.qml
+CMakeFiles/appAntro_qmllint: D:/Antro/Antro\ 2/Antro/Main.qml
+CMakeFiles/appAntro_qmllint: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+CMakeFiles/appAntro_qmllint: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+CMakeFiles/appAntro_qmllint: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
 CMakeFiles/appAntro_qmllint: .rcc/qmllint/appAntro.rsp
-	cd /d D:\Antro\Antro && call D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.11.2/mingw_64/bin/qmllint.exe @D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmllint/appAntro.rsp
+	cd /d "D:\Antro\Antro 2\Antro" && call "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\bin\qt_setup_tool_path.bat" D:/Qt/6.11.2/mingw_64/bin/qmllint.exe "@D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmllint/appAntro.rsp"
 
 appAntro_qmllint: CMakeFiles/appAntro_qmllint
 appAntro_qmllint: CMakeFiles/appAntro_qmllint.dir/build.make
@@ -84,6 +86,6 @@ CMakeFiles/appAntro_qmllint.dir/clean:
 .PHONY : CMakeFiles/appAntro_qmllint.dir/clean
 
 CMakeFiles/appAntro_qmllint.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_qmllint.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_qmllint.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/appAntro_qmllint.dir/depend
 

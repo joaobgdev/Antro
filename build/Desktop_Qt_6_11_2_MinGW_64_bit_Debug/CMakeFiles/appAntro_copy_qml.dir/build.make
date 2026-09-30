@@ -52,10 +52,10 @@ RM = D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Antro\Antro
+CMAKE_SOURCE_DIR = "D:\Antro\Antro 2\Antro"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug
+CMAKE_BINARY_DIR = "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug"
 
 # Utility rule file for appAntro_copy_qml.
 
@@ -68,10 +68,12 @@ include CMakeFiles/appAntro_copy_qml.dir/progress.make
 CMakeFiles/appAntro_copy_qml: .qt/appAntro_qml.txt
 
 .qt/appAntro_qml.txt: D:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
-.qt/appAntro_qml.txt: D:/Antro/Antro/Main.qml
-.qt/appAntro_qml.txt: D:/Antro/Antro/LoginScreen.qml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying appAntro qml sources into build dir"
-	D:\Qt\Tools\CMake_64\bin\cmake.exe -DFILES_INFO_PATH=D:/Antro/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/appAntro_qml.cmake -P D:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
+.qt/appAntro_qml.txt: D:/Antro/Antro\ 2/Antro/Main.qml
+.qt/appAntro_qml.txt: D:/Antro/Antro\ 2/Antro/telas/LoginScreen.qml
+.qt/appAntro_qml.txt: D:/Antro/Antro\ 2/Antro/telas/HomeScreen.qml
+.qt/appAntro_qml.txt: D:/Antro/Antro\ 2/Antro/telas/CatalogoScreen.qml
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Copying appAntro qml sources into build dir"
+	D:\Qt\Tools\CMake_64\bin\cmake.exe "-DFILES_INFO_PATH=D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/appAntro_qml.cmake" -P D:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 
 appAntro_copy_qml: .qt/appAntro_qml.txt
 appAntro_copy_qml: CMakeFiles/appAntro_copy_qml
@@ -87,6 +89,6 @@ CMakeFiles/appAntro_copy_qml.dir/clean:
 .PHONY : CMakeFiles/appAntro_copy_qml.dir/clean
 
 CMakeFiles/appAntro_copy_qml.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Antro\Antro D:\Antro\Antro D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug D:\Antro\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_copy_qml.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug" "D:\Antro\Antro 2\Antro\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles\appAntro_copy_qml.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/appAntro_copy_qml.dir/depend
 

@@ -1,4 +1,4 @@
-CMakeFiles/appAntro.dir/main.cpp.obj: D:\Antro\Antro\main.cpp \
+CMakeFiles/appAntro.dir/main.cpp.obj: D:\Antro\Antro\ 2\Antro\main.cpp \
  D:/Qt/6.11.2/mingw_64/include/QtGui/QGuiApplication \
  D:/Qt/6.11.2/mingw_64/include/QtGui/qguiapplication.h \
  D:/Qt/6.11.2/mingw_64/include/QtGui/qtguiglobal.h \

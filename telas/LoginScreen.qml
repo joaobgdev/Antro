@@ -1,20 +1,27 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Antro
 
 Page {
     id: loginPage
-    anchors.fill: parent
 
     // Fundo
     background: Rectangle {
-        anchors.fill: parent
         color: "#F4F8EC"
     }
 
     // Variáveis Iniciais
     property int caixas_size1: 34
     property string currentRole: "comprador"
+    property string mode: "entrar"          // "entrar" ou "cadastrar"
+    readonly property bool isRegister: mode === "cadastrar"
+    property string errorMessage: ""
+
+    Connections {
+        target: AuthController
+        function onFalhaAutenticacao(mensagem) { loginPage.errorMessage = mensagem }
+    }
 
     // Bloco Central
     Rectangle {
@@ -52,8 +59,55 @@ Page {
 
             Item { Layout.preferredHeight: 4 }
 
-            // Escolher Perfil
+            // Abas Entrar / Cadastrar
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 10
+
+                Button {
+                    text: "Entrar"
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1   // larguras iguais
+                    implicitHeight: 38
+                    background: Rectangle {
+                        color: !loginPage.isRegister ? "#3B5A3D" : "#F4F8EC"
+                        radius: 6
+                        border.color: "#EAE6D6"
+                    }
+                    contentItem: Text {
+                        text: parent.text
+                        color: !loginPage.isRegister ? "white" : "#3B5A3D"
+                        font.bold: true
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    onClicked: { loginPage.mode = "entrar"; loginPage.errorMessage = "" }
+                }
+
+                Button {
+                    text: "Cadastrar"
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: 1   // larguras iguais
+                    implicitHeight: 38
+                    background: Rectangle {
+                        color: loginPage.isRegister ? "#3B5A3D" : "#F4F8EC"
+                        radius: 6
+                        border.color: "#EAE6D6"
+                    }
+                    contentItem: Text {
+                        text: parent.text
+                        color: loginPage.isRegister ? "white" : "#3B5A3D"
+                        font.bold: true
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    onClicked: { loginPage.mode = "cadastrar"; loginPage.errorMessage = "" }
+                }
+            }
+
+            // Escolher Perfil (só no cadastro)
             Text {
+                visible: loginPage.isRegister
                 text: "Selecione o seu perfil:"
                 font.pixelSize: 14
                 font.bold: true
@@ -61,6 +115,7 @@ Page {
             }
 
             RowLayout {
+                visible: loginPage.isRegister
                 Layout.fillWidth: true
                 spacing: 10
 
@@ -68,6 +123,7 @@ Page {
                 Button {
                     text: "Sou Comprador"
                     Layout.fillWidth: true
+                    Layout.preferredWidth: 1   // larguras iguais
                     implicitHeight: 38
 
                     background: Rectangle {
@@ -89,6 +145,7 @@ Page {
                 Button {
                     text: "Sou Feirante"
                     Layout.fillWidth: true
+                    Layout.preferredWidth: 1   // larguras iguais
                     implicitHeight: 38
 
                     background: Rectangle {
@@ -114,10 +171,11 @@ Page {
                 }
             }
 
-        // Informações Usuário
+            // Informações Usuário
             TextField {
                 id: txtName
                 placeholderText: "Nome Completo"
+                visible: loginPage.isRegister
                 Layout.fillWidth: true
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
@@ -148,9 +206,26 @@ Page {
             }
 
             TextField {
+                id: txtPassword
+                placeholderText: "Senha"
+                echoMode: TextInput.Password
+                Layout.fillWidth: true
+                implicitHeight: caixas_size1
+                verticalAlignment: Text.AlignVCenter
+                leftPadding: 12
+                color: "#2B3A2C"
+                placeholderTextColor: "#859B74"
+                background: Rectangle {
+                    color: "#F4F8EC"
+                    radius: 6
+                    border.color: "#EAE6D6"
+                }
+            }
+
+            TextField {
                 id: txtMarketName
                 placeholderText: "Nome da Feira / Banca"
-                visible: loginPage.currentRole === "feirante"
+                visible: loginPage.isRegister && loginPage.currentRole === "feirante"
                 Layout.fillWidth: true
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
@@ -167,7 +242,7 @@ Page {
             TextField {
                 id: txtOCSNumber
                 placeholderText: "Código OCS"
-                visible: loginPage.currentRole === "feirante"
+                visible: loginPage.isRegister && loginPage.currentRole === "feirante"
                 Layout.fillWidth: true
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
@@ -181,11 +256,21 @@ Page {
                 }
             }
 
+            // Mensagem de erro
+            Text {
+                text: loginPage.errorMessage
+                visible: text !== ""
+                color: "#B23A3A"
+                font.pixelSize: 13
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+
             Item { Layout.preferredHeight: 6 }
 
-            // Botão Cadastro
+            // Botão principal
             Button {
-                text: "Cadastrar e Entrar"
+                text: loginPage.isRegister ? "Cadastrar e Entrar" : "Entrar"
                 Layout.fillWidth: true
                 implicitHeight: 44
 
@@ -204,11 +289,22 @@ Page {
                 }
 
                 onClicked: {
-                    if (loginPage.currentRole === "feirante") {
-                        stackView.replace("feiranteDashboard.qml")
+                    loginPage.errorMessage = ""
+                    let ok = false
+                    if (loginPage.isRegister) {
+                        ok = AuthController.cadastrar(
+                            loginPage.currentRole,
+                            txtName.text,
+                            txtPhone.text,
+                            txtPassword.text,
+                            txtMarketName.text,
+                            txtOCSNumber.text)
                     } else {
-                        stackView.replace("BuyerDashboard.qml")
+                        ok = AuthController.entrar(txtPhone.text, txtPassword.text)
                     }
+
+                    if (ok)
+                        loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
                 }
             }
         }

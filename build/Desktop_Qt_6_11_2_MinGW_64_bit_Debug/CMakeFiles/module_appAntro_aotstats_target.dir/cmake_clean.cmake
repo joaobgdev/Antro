@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
-  ".rcc/qmlcache/appAntro_LoginScreen_qml.cpp"
-  ".rcc/qmlcache/appAntro_LoginScreen_qml.cpp.aotstats"
   ".rcc/qmlcache/appAntro_Main_qml.cpp"
   ".rcc/qmlcache/appAntro_Main_qml.cpp.aotstats"
+  ".rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp"
+  ".rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats"
+  ".rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp"
+  ".rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats"
+  ".rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp"
+  ".rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats"
   ".rcc/qmlcache/module_appAntro.aotstats"
   "CMakeFiles/module_appAntro_aotstats_target"
 )
