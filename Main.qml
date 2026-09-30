@@ -20,6 +20,6 @@ Window {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: Qt.resolvedUrl("telas/LoginScreen.qml")
+        initialItem: "telas/LoginScreen.qml"
     }
 }

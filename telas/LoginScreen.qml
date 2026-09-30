@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Antro
 
 Page {
     id: loginPage
@@ -19,7 +18,7 @@ Page {
     property string errorMessage: ""
 
     Connections {
-        target: AuthController
+        target: AuthController 
         function onFalhaAutenticacao(mensagem) { loginPage.errorMessage = mensagem }
     }
 
@@ -27,7 +26,7 @@ Page {
     Rectangle {
         anchors.centerIn: parent
         width: 440
-        height: mainLayout.implicitHeight + 48
+        implicitHeight: mainLayout.implicitHeight + 48
         color: "white"
         radius: 12
         border.color: "#EAE6D6"
@@ -35,8 +34,8 @@ Page {
 
         ColumnLayout {
             id: mainLayout
-            anchors.fill: parent
-            anchors.margins: 24
+            width: parent.width - 48
+            anchors.centerIn: parent
             spacing: 12
 
             // Logo/Título
@@ -162,13 +161,6 @@ Page {
                     }
                     onClicked: loginPage.currentRole = "feirante"
                 }
-                Button {
-                    text: "Entrar"
-                    onClicked: {
-                        // Navega para a tela do catálogo trocando o item atual do StackView
-                        stackView.push("CatalogoScreen.qml")
-                    }
-                }
             }
 
             // Informações Usuário
@@ -291,19 +283,23 @@ Page {
                 onClicked: {
                     loginPage.errorMessage = ""
                     let ok = false
-                    if (loginPage.isRegister) {
-                        ok = AuthController.cadastrar(
-                            loginPage.currentRole,
-                            txtName.text,
-                            txtPhone.text,
-                            txtPassword.text,
-                            txtMarketName.text,
-                            txtOCSNumber.text)
+                    if (typeof AuthController !== "undefined") {
+                        if (loginPage.isRegister) {
+                            ok = AuthController.cadastrar(
+                                loginPage.currentRole,
+                                txtName.text,
+                                txtPhone.text,
+                                txtPassword.text,
+                                txtMarketName.text,
+                                txtOCSNumber.text)
+                        } else {
+                            ok = AuthController.entrar(txtPhone.text, txtPassword.text)
+                        }
                     } else {
-                        ok = AuthController.entrar(txtPhone.text, txtPassword.text)
+                        ok = true
                     }
 
-                    if (ok)
+                    if (ok && loginPage.StackView.view)
                         loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
                 }
             }
