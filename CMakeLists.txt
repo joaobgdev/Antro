@@ -21,7 +21,11 @@ set(SOURCES
     src/models/itempedido.cpp
     src/models/pedido.cpp
     src/models/consumidor.cpp
+    src/models/agricultor.cpp
+    src/models/usuario.cpp
     src/services/GerenciadorFeira.cpp
+    src/services/RepositorioUsuario.cpp
+    src/ui/AuthController.cpp
     main.cpp
 
     include/models/produto.hpp
@@ -45,6 +49,9 @@ target_include_directories(appAntro PRIVATE include)
 qt_add_qml_module(appAntro
     URI Antro
     VERSION 1.0
+    SOURCES
+        include/ui/AuthController.hpp
+        src/ui/AuthController.cpp
     QML_FILES
         Main.qml
         telas/LoginScreen.qml
