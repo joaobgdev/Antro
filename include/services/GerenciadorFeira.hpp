@@ -5,8 +5,8 @@
 #include <queue>
 #include <unordered_map>
 #include <iostream>
-#include "models/produto.hpp"
-#include "models/pedido.hpp"
+#include "models/Produto.hpp"
+#include "models/Pedido.hpp"
 
 using namespace std;
 

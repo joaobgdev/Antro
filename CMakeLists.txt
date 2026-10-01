@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
-qt_standard_project_setup(REQUIRES 6.5)
+qt_standard_project_setup()
 
 # Conteúdo importado do Figma/Qt (se existir)
 if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/importedcontent/CMakeLists.txt")
@@ -20,9 +20,9 @@ set(SOURCES
     src/models/produto.cpp
     src/models/itempedido.cpp
     src/models/pedido.cpp
-    src/models/usuario.cpp
     src/models/consumidor.cpp
     src/models/agricultor.cpp
+    src/models/usuario.cpp
     src/services/GerenciadorFeira.cpp
     src/services/RepositorioUsuario.cpp
     src/ui/AuthController.cpp
@@ -39,24 +39,50 @@ set(SOURCES
     include/ui/AuthController.hpp
 )
 
-# Criação do executável com suporte nativo ao Qt 6
-qt_add_executable(appAntro ${SOURCES})
+# qui si lasque
+qt_add_executable(appAntro 
+src/models/produto.cpp
+    src/models/itempedido.cpp
+    src/models/pedido.cpp
+    src/models/consumidor.cpp
+    src/models/agricultor.cpp
+    src/models/usuario.cpp
+    src/services/GerenciadorFeira.cpp
+    src/services/RepositorioUsuario.cpp
+    src/ui/AuthController.cpp
+    main.cpp
+
+    include/models/produto.hpp
+    include/models/itempedido.hpp
+    include/models/pedido.hpp
+    include/models/usuario.hpp
+    include/models/consumidor.hpp
+    include/models/agricultor.hpp
+    include/services/GerenciadorFeira.hpp
+    include/services/RepositorioUsuario.hpp
+    include/ui/AuthController.hpp)
 
 # Mapeamento da pasta de cabeçalhos (.hpp)
-# include/ui também entra na lista: o gerador de tipos QML inclui "AuthController.hpp" sem prefixo
-target_include_directories(appAntro PRIVATE include include/ui)
+target_include_directories(appAntro PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
-# Gera qmldir automaticamente para subpastas como telas/ (remove o aviso QTP0004)
-qt_policy(SET QTP0004 NEW)
 
 # Módulo de interface QML
 qt_add_qml_module(appAntro
     URI Antro
     VERSION 1.0
+    SOURCES
+        include/ui/AuthController.hpp
+        src/ui/AuthController.cpp
+        include/services/RepositorioUsuario.hpp
+        src/services/RepositorioUsuario.cpp
     QML_FILES
         Main.qml
-        telas/LoginScreen.qml
         telas/HomeScreen.qml
+        telas/LoginScreen.qml
         telas/CatalogoScreen.qml
 )
 
@@ -75,4 +101,12 @@ install(TARGETS appAntro
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
+
+target_link_libraries(appAntro
+    PRIVATE 
+        Qt6::Quick
+        Qt6::Sql
 )

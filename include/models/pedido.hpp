@@ -4,8 +4,8 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
-#include "models/itempedido.hpp"
-#include "models/consumidor.hpp"
+#include "models/ItemPedido.hpp"
+#include "models/Consumidor.hpp"
 
 using namespace std;
 

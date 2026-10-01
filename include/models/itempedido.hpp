@@ -1,7 +1,7 @@
 #ifndef ITEMPEDIDO_HPP
 #define ITEMPEDIDO_HPP
 
-#include "models/produto.hpp"
+#include "models/Produto.hpp"
 
 using namespace std;
 
