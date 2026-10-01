@@ -96,7 +96,7 @@ Page {
             }
             Button {
                 text: "Abrir catálogo"
-                onClicked: homePage.StackView.view.push(Qt.resolvedUrl("CatalogoScreen.qml"))
+                onClicked: homePage.StackView.view.push(Qt.resolvedUrl("telas/CatalogoScreen.qml"))
             }
         }
 

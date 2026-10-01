@@ -298,9 +298,14 @@ Page {
                     } else {
                         ok = true
                     }
-
-                    if (ok && loginPage.StackView.view)
-                        loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
+                    if (ok) {
+                        // Navegar para a tela de catálogo
+                        console.log("To tentando filho ")
+                        if (loginPage.StackView.view) {
+                            loginPage.StackView.view.replace(Qt.resolvedUrl("telas/HomeScreen.qml"))
+                        }
+                    }
+                    
                 }
             }
         }

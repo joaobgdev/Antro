@@ -14,8 +14,8 @@
 class AuthController : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
+    //QML_ELEMENT
+    //QML_SINGLETON
     Q_PROPERTY(bool logado READ logado NOTIFY usuarioChanged)
     Q_PROPERTY(QString nomeUsuario READ nomeUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString perfilUsuario READ perfilUsuario NOTIFY usuarioChanged)
