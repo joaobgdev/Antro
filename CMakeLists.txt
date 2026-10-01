@@ -81,6 +81,7 @@ qt_add_qml_module(appAntro
         src/services/RepositorioUsuario.cpp
     QML_FILES
         Main.qml
+        telas/HomeScreen.qml
         telas/LoginScreen.qml
         telas/CatalogoScreen.qml
 )

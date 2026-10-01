@@ -299,10 +299,9 @@ Page {
                         ok = true
                     }
                     if (ok) {
-                        // Navegar para a tela de catálogo
-                        console.log("To tentando filho ")
+                        // Navegar para a tela do home
                         if (loginPage.StackView.view) {
-                            loginPage.StackView.view.replace(Qt.resolvedUrl("telas/HomeScreen.qml"))
+                            loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
                         }
                     }
                     
