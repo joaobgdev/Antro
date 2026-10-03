@@ -1,13 +1,7 @@
-#include "include/ui/AuthController.hpp"
+#include "ui/AuthController.hpp"
 
 #include <QCryptographicHash>
 #include <QRandomGenerator>
-
-// Banco de Dados
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
 
 #include "models/agricultor.hpp"
 #include "models/consumidor.hpp"

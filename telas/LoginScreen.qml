@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Antro
 
 Page {
     id: loginPage
@@ -18,7 +19,7 @@ Page {
     property string errorMessage: ""
 
     Connections {
-        target: AuthController 
+        target: AuthController
         function onFalhaAutenticacao(mensagem) { loginPage.errorMessage = mensagem }
     }
 
@@ -26,7 +27,7 @@ Page {
     Rectangle {
         anchors.centerIn: parent
         width: 440
-        implicitHeight: mainLayout.implicitHeight + 48
+        height: mainLayout.implicitHeight + 48
         color: "white"
         radius: 12
         border.color: "#EAE6D6"
@@ -34,8 +35,8 @@ Page {
 
         ColumnLayout {
             id: mainLayout
-            width: parent.width - 48
-            anchors.centerIn: parent
+            anchors.fill: parent
+            anchors.margins: 24
             spacing: 12
 
             // Logo/Título
@@ -283,28 +284,20 @@ Page {
                 onClicked: {
                     loginPage.errorMessage = ""
                     let ok = false
-                    if (typeof AuthController !== "undefined") {
-                        if (loginPage.isRegister) {
-                            ok = AuthController.cadastrar(
-                                loginPage.currentRole,
-                                txtName.text,
-                                txtPhone.text,
-                                txtPassword.text,
-                                txtMarketName.text,
-                                txtOCSNumber.text)
-                        } else {
-                            ok = AuthController.entrar(txtPhone.text, txtPassword.text)
-                        }
+                    if (loginPage.isRegister) {
+                        ok = AuthController.cadastrar(
+                            loginPage.currentRole,
+                            txtName.text,
+                            txtPhone.text,
+                            txtPassword.text,
+                            txtMarketName.text,
+                            txtOCSNumber.text)
                     } else {
-                        ok = true
+                        ok = AuthController.entrar(txtPhone.text, txtPassword.text)
                     }
-                    if (ok) {
-                        // Navegar para a tela do home
-                        if (loginPage.StackView.view) {
-                            loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
-                        }
-                    }
-                    
+
+                    if (ok)
+                        loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
                 }
             }
         }
