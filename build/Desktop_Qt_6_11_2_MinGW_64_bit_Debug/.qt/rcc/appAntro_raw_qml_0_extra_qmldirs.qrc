@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/Antro/">
-    <file alias="telas/qmldir">D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/Antro/telas/qmldir</file>
-  </qresource>
-</RCC>
-

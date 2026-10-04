@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/Antro/">
-    <file alias="Main.qml">D:/Antro/Antro 2/Antro/Main.qml</file>
-    <file alias="telas/LoginScreen.qml">D:/Antro/Antro 2/Antro/telas/LoginScreen.qml</file>
-    <file alias="telas/HomeScreen.qml">D:/Antro/Antro 2/Antro/telas/HomeScreen.qml</file>
-    <file alias="telas/CatalogoScreen.qml">D:/Antro/Antro 2/Antro/telas/CatalogoScreen.qml</file>
-  </qresource>
-</RCC>
-

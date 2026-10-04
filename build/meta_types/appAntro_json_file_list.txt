@@ -1,0 +1,2 @@
+C:/Users/Malu/Projeto-EDOO/build/appAntro_autogen/include/../JCP2AIONHY/moc_AuthController.cpp.json
+C:/Users/Malu/Projeto-EDOO/build/appAntro_autogen/include/../JCP2AIONHY/moc_CompradorController.cpp.json

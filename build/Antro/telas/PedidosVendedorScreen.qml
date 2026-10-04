@@ -122,7 +122,7 @@ Page {
 
                 Image {
                     anchors.fill: parent
-                    anchors.margins: 12
+                    anchors.margins: 4
 
                     source: Qt.resolvedUrl("../assets/AntroBege.svg")
 
@@ -301,9 +301,10 @@ Page {
                         Label {
                             text: pedidosPendentes.count + " pedidos"
 
-                            font.pixelSize: 13
+                            font.pixelSize: 18
+                            font.bold: true
 
-                            color: "#77817C"
+                            color: "#22543D"
                         }
 
                         Item {
@@ -476,81 +477,78 @@ Page {
                 
                 // CONFIRMADOS
                 
-
                 Rectangle {
                     Layout.preferredWidth: 380
-
-                    Layout.minimumHeight: 560
+                    Layout.preferredHeight: 600
                     Layout.alignment: Qt.AlignTop
 
                     radius: 14
-
                     color: "#F1F6F2"
 
                     ColumnLayout {
                         anchors.fill: parent
                         anchors.margins: 22
-
                         spacing: 12
 
                         Label {
                             text: "Confirmados"
-
                             font.pixelSize: 22
                             font.bold: true
-
                             color: "#17201B"
                         }
 
+                        // quantidade maior
                         Label {
-                            text: pedidosConfirmados.count + " pedidos"
-
-                            font.pixelSize: 13
-
-                            color: "#77817C"
+                            text: pedidosConfirmados.count + (pedidosConfirmados.count === 1 ? " pedido" : " pedidos")
+                            font.pixelSize: 18
+                            font.bold: true
+                            color: "#22543D"
                         }
 
                         Item {
                             Layout.preferredHeight: 3
                         }
 
-                        Repeater {
+                        ListView {
+                            id: listaConfirmados
+
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+
+                            clip: true
+                            spacing: 12
                             model: pedidosConfirmados
+
+                            ScrollBar.vertical: ScrollBar {
+                                policy: ScrollBar.AsNeeded
+                            }
 
                             delegate: Rectangle {
                                 required property int pedidoId
                                 required property string cliente
                                 required property string horario
 
-                                Layout.fillWidth: true
-                                Layout.preferredHeight: 72
+                                width: listaConfirmados.width
+                                height: 78
 
                                 radius: 10
-
                                 color: "white"
 
                                 RowLayout {
                                     anchors.fill: parent
                                     anchors.margins: 14
-
                                     spacing: 12
 
-                                    // Ícone verde
                                     Rectangle {
                                         Layout.preferredWidth: 34
                                         Layout.preferredHeight: 34
-
                                         radius: 17
-
                                         color: "#E2F0E7"
 
                                         Label {
                                             anchors.centerIn: parent
-
                                             text: "✓"
-
                                             color: "#22543D"
-
                                             font.pixelSize: 17
                                             font.bold: true
                                         }
@@ -558,70 +556,28 @@ Page {
 
                                     ColumnLayout {
                                         Layout.fillWidth: true
-
                                         spacing: 0
 
-                                        // Número maior
                                         Label {
                                             text: "#" + pedidoId
-
                                             font.pixelSize: 20
                                             font.bold: true
-
                                             color: "#17201B"
                                         }
 
                                         Label {
                                             text: cliente
-
                                             font.pixelSize: 13
-
                                             color: "#66706A"
                                         }
                                     }
 
                                     Label {
                                         text: horario
-
                                         font.pixelSize: 12
-
                                         color: "#9AA39E"
                                     }
                                 }
-                            }
-                        }
-
-                        Item {
-                            Layout.fillHeight: true
-                        }
-
-                        Button {
-                            text: "Ver todos os confirmados"
-
-                            Layout.fillWidth: true
-
-                            implicitHeight: 44
-
-                            background: Rectangle {
-                                radius: 8
-
-                                color: "transparent"
-
-                                border.color: "#AFC5B6"
-                            }
-
-                            contentItem: Text {
-                                text: parent.text
-
-                                color: "#22543D"
-
-                                font.pixelSize: 13
-
-                                horizontalAlignment:
-                                    Text.AlignHCenter
-
-                                verticalAlignment:
-                                    Text.AlignVCenter
                             }
                         }
                     }

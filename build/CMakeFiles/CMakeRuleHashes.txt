@@ -4,8 +4,13 @@ b5cdcb7adcbe63376b33e6dcd77be462 .qt/appAntro_qml.txt
 2f8627c6d92001e27405481539855fe8 .qt/appAntro_res.txt
 93c6adf93b0622b42e29f67398de5d6d .qt/contextPropertyDump.ini
 1b106a1ca0b1c26e8be8ac1427a5429a .qt/qml_imports/appAntro_build.cmake
+231ed55f17b68f9568b02498a7ebd9c6 .qt/rcc/qrc_appAntro_raw_qml_0.cpp
+c55bac0732bcc4a5056ec4431639da07 .qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp
+2fd5bb3685d6b816ffc250354e009f75 .qt/rcc/qrc_appAntro_raw_res_0.cpp
+49fac56ee33c46088381a869aa72c9b1 .qt/rcc/qrc_qmake_Antro.cpp
 05bcf399212315245fb558a4b78e57ec .rcc/qmlcache/all_aotstats.aotstats
 d84ed8eaf2f3d7550f07dc87750ac38e .rcc/qmlcache/appAntro_Main_qml.cpp
+1f221977dbf580fc094816db0735ebef .rcc/qmlcache/appAntro_qmlcache_loader.cpp
 403b2090ecfd32090218f186e57e05fb .rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp
 7f3bfa2068c73a6241826b19b43594d8 .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
 f504f6645a0bce7649754417036175c4 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp

@@ -455,6 +455,78 @@ appantro_qmltyperegistrations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.s
 .PHONY : appantro_qmltyperegistrations.cpp.s
 
+build/.qt/rcc/qrc_appAntro_raw_qml_0.obj: build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.obj
+
+# target to build an object file
+build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj
+
+build/.qt/rcc/qrc_appAntro_raw_qml_0.i: build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i
+
+build/.qt/rcc/qrc_appAntro_raw_qml_0.s: build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.s
+
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj: build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj
+
+# target to build an object file
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj
+
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i: build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i
+
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s: build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.s
+
+build/.qt/rcc/qrc_appAntro_raw_res_0.obj: build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.obj
+
+# target to build an object file
+build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj
+
+build/.qt/rcc/qrc_appAntro_raw_res_0.i: build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.i
+
+# target to preprocess a source file
+build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.i
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.i
+
+build/.qt/rcc/qrc_appAntro_raw_res_0.s: build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.s
+
+# target to generate assembly for a file
+build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.s
+.PHONY : build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.s
+
 build/.qt/rcc/qrc_qmake_Antro.obj: build/.qt/rcc/qrc_qmake_Antro.cpp.obj
 .PHONY : build/.qt/rcc/qrc_qmake_Antro.obj
 
@@ -527,6 +599,102 @@ build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s
 .PHONY : build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.s
 
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.obj: build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.i: build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.s: build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.s
+
 build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj
 .PHONY : build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj
 
@@ -550,6 +718,78 @@ build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.s: build/.rcc/qmlcache/appAnt
 build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.obj: build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.i: build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.s: build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -876,6 +1116,15 @@ help:
 	@echo ... appantro_qmltyperegistrations.obj
 	@echo ... appantro_qmltyperegistrations.i
 	@echo ... appantro_qmltyperegistrations.s
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0.obj
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0.i
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0.s
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.obj
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.i
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.s
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_res_0.obj
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_res_0.i
+	@echo ... build/.qt/rcc/qrc_appAntro_raw_res_0.s
 	@echo ... build/.qt/rcc/qrc_qmake_Antro.obj
 	@echo ... build/.qt/rcc/qrc_qmake_Antro.i
 	@echo ... build/.qt/rcc/qrc_qmake_Antro.s
@@ -885,9 +1134,30 @@ help:
 	@echo ... build/.rcc/qmlcache/appAntro_qmlcache_loader.obj
 	@echo ... build/.rcc/qmlcache/appAntro_qmlcache_loader.i
 	@echo ... build/.rcc/qmlcache/appAntro_qmlcache_loader.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.s
 	@echo ... build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.obj
 	@echo ... build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.i
 	@echo ... build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
