@@ -55,6 +55,15 @@ QString AuthController::subtituloUsuario() const
     return m_usuario ? QString::fromStdString(m_usuario->getSubtitulo()) : QString();
 }
 
+QString AuthController::telefoneUsuario() const
+{
+    return m_usuario
+        ? QString::fromStdString(
+            m_usuario->getTelefone()
+        )
+        : QString();
+}
+
 std::unique_ptr<Usuario> AuthController::criarUsuario(const QString &perfil, const QString &nome,
                                                       const QString &telefone,
                                                       const QString &nomeBanca,

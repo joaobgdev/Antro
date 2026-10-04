@@ -28,7 +28,7 @@
 			{
 				"command" : 6,
 				"file" : 2,
-				"line" : 42,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -52,7 +52,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 1821,
+				"line" : 1823,
 				"parent" : 4
 			},
 			{
@@ -90,20 +90,20 @@
 	[
 		{
 			"backtrace" : 9,
-			"id" : "appAntro_qmllint::@6890427a1f51a3e7e1df"
+			"id" : "appAntro_qmllint_json::@6890427a1f51a3e7e1df"
 		}
 	],
 	"folder" : 
 	{
 		"name" : "QtInternalTargets/QmlLinter"
 	},
-	"id" : "all_qmllint::@6890427a1f51a3e7e1df",
-	"name" : "all_qmllint",
+	"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+	"name" : "all_qmllint_json",
 	"orderDependencies" : 
 	[
 		{
 			"backtrace" : 9,
-			"id" : "appAntro_qmllint::@6890427a1f51a3e7e1df"
+			"id" : "appAntro_qmllint_json::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

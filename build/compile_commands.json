@@ -73,6 +73,18 @@
 },
 {
   "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\ui\\VendedorController.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\ui\\VendedorController.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/ui/VendedorController.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\services\\RepositorioVendedor.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\services\\RepositorioVendedor.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/services/RepositorioVendedor.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
   "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\main.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\main.cpp",
   "file": "C:/Users/Malu/Projeto-EDOO/main.cpp",
   "output": "CMakeFiles/appAntro.dir/main.cpp.obj"

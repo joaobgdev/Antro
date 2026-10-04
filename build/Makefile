@@ -1103,6 +1103,30 @@ src/services/RepositorioUsuario.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.s
 .PHONY : src/services/RepositorioUsuario.cpp.s
 
+src/services/RepositorioVendedor.obj: src/services/RepositorioVendedor.cpp.obj
+.PHONY : src/services/RepositorioVendedor.obj
+
+# target to build an object file
+src/services/RepositorioVendedor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj
+.PHONY : src/services/RepositorioVendedor.cpp.obj
+
+src/services/RepositorioVendedor.i: src/services/RepositorioVendedor.cpp.i
+.PHONY : src/services/RepositorioVendedor.i
+
+# target to preprocess a source file
+src/services/RepositorioVendedor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.i
+.PHONY : src/services/RepositorioVendedor.cpp.i
+
+src/services/RepositorioVendedor.s: src/services/RepositorioVendedor.cpp.s
+.PHONY : src/services/RepositorioVendedor.s
+
+# target to generate assembly for a file
+src/services/RepositorioVendedor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.s
+.PHONY : src/services/RepositorioVendedor.cpp.s
+
 src/ui/AuthController.obj: src/ui/AuthController.cpp.obj
 .PHONY : src/ui/AuthController.obj
 
@@ -1150,6 +1174,30 @@ src/ui/CompradorController.s: src/ui/CompradorController.cpp.s
 src/ui/CompradorController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/CompradorController.cpp.s
 .PHONY : src/ui/CompradorController.cpp.s
+
+src/ui/VendedorController.obj: src/ui/VendedorController.cpp.obj
+.PHONY : src/ui/VendedorController.obj
+
+# target to build an object file
+src/ui/VendedorController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj
+.PHONY : src/ui/VendedorController.cpp.obj
+
+src/ui/VendedorController.i: src/ui/VendedorController.cpp.i
+.PHONY : src/ui/VendedorController.i
+
+# target to preprocess a source file
+src/ui/VendedorController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.i
+.PHONY : src/ui/VendedorController.cpp.i
+
+src/ui/VendedorController.s: src/ui/VendedorController.cpp.s
+.PHONY : src/ui/VendedorController.s
+
+# target to generate assembly for a file
+src/ui/VendedorController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.s
+.PHONY : src/ui/VendedorController.cpp.s
 
 # Help Target
 help:
@@ -1269,12 +1317,18 @@ help:
 	@echo ... src/services/RepositorioUsuario.obj
 	@echo ... src/services/RepositorioUsuario.i
 	@echo ... src/services/RepositorioUsuario.s
+	@echo ... src/services/RepositorioVendedor.obj
+	@echo ... src/services/RepositorioVendedor.i
+	@echo ... src/services/RepositorioVendedor.s
 	@echo ... src/ui/AuthController.obj
 	@echo ... src/ui/AuthController.i
 	@echo ... src/ui/AuthController.s
 	@echo ... src/ui/CompradorController.obj
 	@echo ... src/ui/CompradorController.i
 	@echo ... src/ui/CompradorController.s
+	@echo ... src/ui/VendedorController.obj
+	@echo ... src/ui/VendedorController.i
+	@echo ... src/ui/VendedorController.s
 .PHONY : help
 
 

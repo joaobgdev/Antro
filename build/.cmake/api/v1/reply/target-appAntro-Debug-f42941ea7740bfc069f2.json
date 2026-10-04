@@ -28,8 +28,8 @@
 			"qt6_add_qml_module",
 			"qt_add_qml_module",
 			"add_dependencies",
-			"_qt_internal_write_deferred_qmlls_build_ini_file",
 			"_qt_internal_qml_copy_files_to_build_dir",
+			"_qt_internal_write_deferred_qmlls_build_ini_file",
 			"_qt_internal_scan_qml_imports",
 			"_qt_internal_generate_deploy_qml_imports_script",
 			"cmake_language",
@@ -39,9 +39,9 @@
 			"qt6_target_qml_sources",
 			"add_custom_command",
 			"_qt_internal_qml_type_registration",
-			"qt6_extract_metatypes",
 			"_qt_internal_process_resource",
 			"qt6_add_resources",
+			"qt6_extract_metatypes",
 			"_qt_internal_ensure_tooling_target",
 			"target_include_directories",
 			"target_sources",
@@ -85,7 +85,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 39,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
@@ -109,13 +109,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 77,
+				"line" : 82,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 73,
+				"line" : 78,
 				"parent" : 0
 			},
 			{
@@ -211,7 +211,7 @@
 			{
 				"command" : 13,
 				"file" : 1,
-				"line" : 42,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -417,38 +417,38 @@
 				"parent" : 60
 			},
 			{
-				"file" : 1,
-				"line" : -1,
-				"parent" : 0
-			},
-			{
 				"command" : 15,
-				"file" : 21,
-				"line" : 1,
-				"parent" : 62
-			},
-			{
-				"command" : 14,
 				"file" : 10,
-				"line" : 1483,
-				"parent" : 63
-			},
-			{
-				"command" : 16,
-				"file" : 10,
-				"line" : 1051,
+				"line" : 1045,
 				"parent" : 25
 			},
 			{
 				"command" : 14,
 				"file" : 10,
 				"line" : 3229,
-				"parent" : 65
+				"parent" : 62
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
 			},
 			{
 				"command" : 16,
+				"file" : 21,
+				"line" : 1,
+				"parent" : 64
+			},
+			{
+				"command" : 14,
 				"file" : 10,
-				"line" : 1045,
+				"line" : 1483,
+				"parent" : 65
+			},
+			{
+				"command" : 15,
+				"file" : 10,
+				"line" : 1051,
 				"parent" : 25
 			},
 			{
@@ -461,7 +461,7 @@
 				"command" : 21,
 				"file" : 22,
 				"line" : 1,
-				"parent" : 62
+				"parent" : 64
 			},
 			{
 				"command" : 20,
@@ -530,7 +530,25 @@
 				"parent" : 79
 			},
 			{
+				"command" : 27,
+				"file" : 10,
+				"line" : 962,
+				"parent" : 25
+			},
+			{
 				"command" : 26,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 81
+			},
+			{
+				"command" : 24,
+				"file" : 0,
+				"line" : 2605,
+				"parent" : 82
+			},
+			{
+				"command" : 28,
 				"file" : 10,
 				"line" : 4208,
 				"parent" : 79
@@ -539,31 +557,13 @@
 				"command" : 24,
 				"file" : 0,
 				"line" : 1563,
-				"parent" : 81
-			},
-			{
-				"command" : 24,
-				"file" : 0,
-				"line" : 1505,
-				"parent" : 81
-			},
-			{
-				"command" : 28,
-				"file" : 10,
-				"line" : 962,
-				"parent" : 25
-			},
-			{
-				"command" : 27,
-				"file" : 0,
-				"line" : 419,
 				"parent" : 84
 			},
 			{
 				"command" : 24,
 				"file" : 0,
-				"line" : 2605,
-				"parent" : 85
+				"line" : 1505,
+				"parent" : 84
 			},
 			{
 				"command" : 29,
@@ -580,7 +580,7 @@
 			{
 				"command" : 30,
 				"file" : 1,
-				"line" : 40,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -599,7 +599,7 @@
 				"command" : 31,
 				"file" : 0,
 				"line" : 1613,
-				"parent" : 81
+				"parent" : 84
 			},
 			{
 				"command" : 31,
@@ -617,7 +617,7 @@
 				"command" : 33,
 				"file" : 0,
 				"line" : 2666,
-				"parent" : 85
+				"parent" : 82
 			},
 			{
 				"command" : 31,
@@ -776,13 +776,13 @@
 				"parent" : 75
 			},
 			{
-				"command" : 28,
+				"command" : 27,
 				"file" : 10,
 				"line" : 4006,
 				"parent" : 75
 			},
 			{
-				"command" : 27,
+				"command" : 26,
 				"file" : 0,
 				"line" : 419,
 				"parent" : 122
@@ -800,13 +800,13 @@
 				"parent" : 124
 			},
 			{
-				"command" : 28,
+				"command" : 27,
 				"file" : 10,
 				"line" : 4024,
 				"parent" : 75
 			},
 			{
-				"command" : 27,
+				"command" : 26,
 				"file" : 0,
 				"line" : 419,
 				"parent" : 126
@@ -824,13 +824,13 @@
 				"parent" : 128
 			},
 			{
-				"command" : 28,
+				"command" : 27,
 				"file" : 10,
 				"line" : 4060,
 				"parent" : 75
 			},
 			{
-				"command" : 27,
+				"command" : 26,
 				"file" : 0,
 				"line" : 419,
 				"parent" : 130
@@ -1075,10 +1075,10 @@
 				10,
 				11,
 				12,
-				26,
-				28,
-				29,
-				31,
+				13,
+				14,
+				30,
+				32,
 				33,
 				35,
 				37,
@@ -1089,9 +1089,11 @@
 				47,
 				49,
 				51,
-				52,
 				53,
-				54
+				55,
+				56,
+				57,
+				58
 			]
 		},
 		{
@@ -1253,23 +1255,23 @@
 			},
 			"sourceIndexes" : 
 			[
-				25
+				29
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 64,
-			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+			"backtrace" : 63,
+			"id" : "appAntro_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 66,
-			"id" : "appAntro_copy_res::@6890427a1f51a3e7e1df"
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 68,
-			"id" : "appAntro_copy_qml::@6890427a1f51a3e7e1df"
+			"id" : "appAntro_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 74,
@@ -1455,23 +1457,23 @@
 			"id" : "Qt6::qmltyperegistrar::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 82,
+			"backtrace" : 83,
+			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 85,
 			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 83,
-			"id" : "Qt6::cmake_automoc_parser::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 86,
-			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+			"id" : "Qt6::cmake_automoc_parser::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 88,
 			"id" : "appAntro_tooling::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 64,
+			"backtrace" : 66,
 			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -1502,12 +1504,10 @@
 			"sourceIndexes" : 
 			[
 				0,
-				24,
-				25,
-				26,
 				28,
 				29,
-				31,
+				30,
+				32,
 				33,
 				35,
 				37,
@@ -1518,21 +1518,23 @@
 				47,
 				49,
 				51,
-				52,
 				53,
-				54,
 				55,
+				56,
 				57,
 				58,
-				64,
-				67,
-				90,
-				91,
-				92,
-				93,
+				59,
+				61,
+				62,
+				68,
+				71,
 				94,
 				95,
-				96
+				96,
+				97,
+				98,
+				99,
+				100
 			]
 		},
 		{
@@ -1551,9 +1553,9 @@
 				10,
 				11,
 				12,
-				27,
-				30,
-				32,
+				13,
+				14,
+				31,
 				34,
 				36,
 				38,
@@ -1562,15 +1564,15 @@
 				44,
 				46,
 				48,
-				50
+				50,
+				52,
+				54
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				13,
-				14,
 				15,
 				16,
 				17,
@@ -1579,37 +1581,37 @@
 				20,
 				21,
 				22,
-				23
+				23,
+				24,
+				25,
+				26,
+				27
 			]
 		},
 		{
 			"name" : "Resources",
 			"sourceIndexes" : 
 			[
-				56,
-				59,
 				60,
-				61,
-				62,
 				63,
-				65
+				64,
+				65,
+				66,
+				67,
+				69
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				66
+				70
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				68,
-				69,
-				70,
-				71,
 				72,
 				73,
 				74,
@@ -1627,7 +1629,11 @@
 				86,
 				87,
 				88,
-				89
+				89,
+				90,
+				91,
+				92,
+				93
 			]
 		}
 	],
@@ -1761,8 +1767,37 @@
 				4
 			],
 			"compileGroupIndex" : 0,
+			"path" : "src/ui/VendedorController.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/services/RepositorioVendedor.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "include/ui/VendedorController.hpp",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
@@ -1861,6 +1896,15 @@
 				4
 			],
 			"path" : "include/ui/AuthController.hpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "include/services/RepositorioVendedor.hpp",
 			"sourceGroupIndex" : 2
 		},
 		{

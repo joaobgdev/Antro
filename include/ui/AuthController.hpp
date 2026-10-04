@@ -20,6 +20,8 @@ class AuthController : public QObject
     Q_PROPERTY(QString nomeUsuario READ nomeUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString perfilUsuario READ perfilUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString subtituloUsuario READ subtituloUsuario NOTIFY usuarioChanged)
+    Q_PROPERTY(QString telefoneUsuario READ telefoneUsuario NOTIFY usuarioChanged
+)
 
 public:
     explicit AuthController(QObject *parent = nullptr);
@@ -28,6 +30,7 @@ public:
     QString nomeUsuario() const;
     QString perfilUsuario() const;
     QString subtituloUsuario() const;
+    QString telefoneUsuario() const;
 
     Q_INVOKABLE bool cadastrar(const QString &perfil, const QString &nome, const QString &telefone,
                                const QString &senha, const QString &nomeBanca = {},

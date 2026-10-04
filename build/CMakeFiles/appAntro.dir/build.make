@@ -518,11 +518,41 @@ CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.s"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Malu\Projeto-EDOO\src\ui\AuthController.cpp -o CMakeFiles\appAntro.dir\src\ui\AuthController.cpp.s
 
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj: C:/Users/Malu/Projeto-EDOO/src/ui/VendedorController.cpp
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj -MF CMakeFiles\appAntro.dir\src\ui\VendedorController.cpp.obj.d -o CMakeFiles\appAntro.dir\src\ui\VendedorController.cpp.obj -c C:\Users\Malu\Projeto-EDOO\src\ui\VendedorController.cpp
+
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.i"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Malu\Projeto-EDOO\src\ui\VendedorController.cpp > CMakeFiles\appAntro.dir\src\ui\VendedorController.cpp.i
+
+CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.s"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Malu\Projeto-EDOO\src\ui\VendedorController.cpp -o CMakeFiles\appAntro.dir\src\ui\VendedorController.cpp.s
+
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj: CMakeFiles/appAntro.dir/flags.make
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj: C:/Users/Malu/Projeto-EDOO/src/services/RepositorioVendedor.cpp
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj -MF CMakeFiles\appAntro.dir\src\services\RepositorioVendedor.cpp.obj.d -o CMakeFiles\appAntro.dir\src\services\RepositorioVendedor.cpp.obj -c C:\Users\Malu\Projeto-EDOO\src\services\RepositorioVendedor.cpp
+
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.i"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Malu\Projeto-EDOO\src\services\RepositorioVendedor.cpp > CMakeFiles\appAntro.dir\src\services\RepositorioVendedor.cpp.i
+
+CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.s"
+	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Malu\Projeto-EDOO\src\services\RepositorioVendedor.cpp -o CMakeFiles\appAntro.dir\src\services\RepositorioVendedor.cpp.s
+
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/flags.make
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/main.cpp.obj: C:/Users/Malu/Projeto-EDOO/main.cpp
 CMakeFiles/appAntro.dir/main.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/appAntro.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/appAntro.dir/main.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/main.cpp.obj -MF CMakeFiles\appAntro.dir\main.cpp.obj.d -o CMakeFiles\appAntro.dir\main.cpp.obj -c C:\Users\Malu\Projeto-EDOO\main.cpp
 
 CMakeFiles/appAntro.dir/main.cpp.i: cmake_force
@@ -537,7 +567,7 @@ CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAnt
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: appantro_qmltyperegistrations.cpp
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -MD -MT CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj -MF CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj.d -o CMakeFiles\appAntro.dir\appantro_qmltyperegistrations.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\appantro_qmltyperegistrations.cpp
 
 CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.i: cmake_force
@@ -552,7 +582,7 @@ CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAnt
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj: .qt/rcc/qrc_qmake_Antro.cpp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj -MF CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_qmake_Antro.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_qmake_Antro.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.qt\rcc\qrc_qmake_Antro.cpp
 
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.i: cmake_force
@@ -567,7 +597,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CM
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: .rcc/qmlcache/appAntro_qmlcache_loader.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_qmlcache_loader.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_qmlcache_loader.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.i: cmake_force
@@ -582,7 +612,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFile
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: .rcc/qmlcache/appAntro_Main_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_Main_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_Main_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_Main_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.i: cmake_force
@@ -597,7 +627,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.o
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_LoginScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.i: cmake_force
@@ -612,7 +642,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.ob
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_HomeScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.i: cmake_force
@@ -627,7 +657,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.ob
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_BotaoAntro_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_BotaoAntro_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_BotaoAntro_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.i: cmake_force
@@ -642,7 +672,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.c
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PaginaComprador_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PaginaComprador_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_PaginaComprador_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.i: cmake_force
@@ -657,7 +687,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.o
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_FeiraScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_FeiraScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_FeiraScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.i: cmake_force
@@ -672,7 +702,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_SacolaScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_SacolaScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_SacolaScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.i: cmake_force
@@ -687,7 +717,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.i: cmake_force
@@ -702,7 +732,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PedidosVendedorScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PedidosVendedorScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_PedidosVendedorScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.i: cmake_force
@@ -717,7 +747,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PerfilVendedorScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_PerfilVendedorScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_PerfilVendedorScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.i: cmake_force
@@ -732,7 +762,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorS
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.i: cmake_force
@@ -747,7 +777,7 @@ CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedor
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj: .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj -MF CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.rcc\qmlcache\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.rcc\qmlcache\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp
 
 CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.i: cmake_force
@@ -762,7 +792,7 @@ CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: .qt/rcc/qrc_appAntro_raw_qml_0.cpp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj -MF CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_qml_0.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.qt\rcc\qrc_appAntro_raw_qml_0.cpp
 
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.i: cmake_force
@@ -777,7 +807,7 @@ CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj: CMakeFiles
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj: .qt/rcc/qrc_appAntro_raw_res_0.cpp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.obj -MF CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_res_0.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_res_0.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.qt\rcc\qrc_appAntro_raw_res_0.cpp
 
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_res_0.cpp.i: cmake_force
@@ -792,7 +822,7 @@ CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.o
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: CMakeFiles/appAntro.dir/includes_CXX.rsp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: .qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj: CMakeFiles/appAntro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj"
 	C:\Users\Malu\Downloads\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj -MF CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj.d -o CMakeFiles\appAntro.dir\build\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.obj -c C:\Users\Malu\Projeto-EDOO\build\.qt\rcc\qrc_appAntro_raw_qml_0_extra_qmldirs.cpp
 
 CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0_extra_qmldirs.cpp.i: cmake_force
@@ -817,6 +847,8 @@ appAntro_OBJECTS = \
 "CMakeFiles/appAntro.dir/src/services/CatalogoComprador.cpp.obj" \
 "CMakeFiles/appAntro.dir/src/ui/CompradorController.cpp.obj" \
 "CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj" \
+"CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj" \
 "CMakeFiles/appAntro.dir/main.cpp.obj" \
 "CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj" \
 "CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj" \
@@ -852,6 +884,8 @@ appAntro.exe: CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/src/services/CatalogoComprador.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/src/ui/CompradorController.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/ui/VendedorController.cpp.obj
+appAntro.exe: CMakeFiles/appAntro.dir/src/services/RepositorioVendedor.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/main.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj
 appAntro.exe: CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj
@@ -884,7 +918,7 @@ appAntro.exe: appAntro.exe.manifest
 appAntro.exe: CMakeFiles/appAntro.dir/linkLibs.rsp
 appAntro.exe: CMakeFiles/appAntro.dir/objects1.rsp
 appAntro.exe: CMakeFiles/appAntro.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Linking CXX executable appAntro.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Linking CXX executable appAntro.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\appAntro.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

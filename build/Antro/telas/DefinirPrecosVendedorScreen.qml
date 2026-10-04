@@ -12,66 +12,8 @@ Page {
         color: "#FAFBFA"
     }
 
-    ListModel {
-        id: produtosPrecificacao
-
-        ListElement {
-            nomeProduto: "Banana"
-            tipoVenda: "unidade"
-            valor: "2,50"
-        }
-
-        ListElement {
-            nomeProduto: "Maçã"
-            tipoVenda: "unidade"
-            valor: "4,00"
-        }
-
-        ListElement {
-            nomeProduto: "Mamão"
-            tipoVenda: "100g"
-            valor: "1,80"
-        }
-
-        ListElement {
-            nomeProduto: "Manga"
-            tipoVenda: "unidade"
-            valor: "3,50"
-        }
-
-        ListElement {
-            nomeProduto: "Abacaxi"
-            tipoVenda: "100g"
-            valor: "2,20"
-        }
-
-        ListElement {
-            nomeProduto: "Goiaba"
-            tipoVenda: "unidade"
-            valor: "3,00"
-        }
-    }
-
-    function definirTipoVenda(indice, tipo) {
-        produtosPrecificacao.setProperty(indice, "tipoVenda", tipo)
-    }
-
-    function definirValor(indice, novoValor) {
-        produtosPrecificacao.setProperty(indice, "valor", novoValor)
-    }
-
     function salvarPrecos() {
-        console.log("Preços salvos (temporário).")
-
-        for (var i = 0; i < produtosPrecificacao.count; i++) {
-            var item = produtosPrecificacao.get(i)
-
-            console.log(
-                item.nomeProduto,
-                item.tipoVenda,
-                item.valor
-            )
-        }
+        console.log("Preços mantidos no VendedorController (temporário).")
     }
 
     function voltarParaPerfil() {
@@ -374,13 +316,11 @@ Page {
                         spacing: 10
 
                         Repeater {
-                            model: produtosPrecificacao
+                            model: VendedorController.produtos
 
                             delegate: Rectangle {
                                 required property int index
-                                required property string nomeProduto
-                                required property string tipoVenda
-                                required property string valor
+                                required property var modelData
 
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: 74
@@ -405,7 +345,7 @@ Page {
                                     Label {
                                         Layout.preferredWidth: 220
 
-                                        text: nomeProduto
+                                        text: modelData.nome
 
                                         font.pixelSize: 18
                                         font.bold: true
@@ -433,12 +373,12 @@ Page {
                                             radius: 10
 
                                             color:
-                                                tipoVenda === "unidade"
+                                                modelData.tipoVenda === "unidade"
                                                 ? "#EAF3ED"
                                                 : "white"
 
                                             border.color:
-                                                tipoVenda === "unidade"
+                                                modelData.tipoVenda === "unidade"
                                                 ? "#D7E7DD"
                                                 : "#D9DFDB"
 
@@ -457,13 +397,13 @@ Page {
                                                 radius: 10
 
                                                 color:
-                                                    tipoVenda
+                                                    modelData.tipoVenda
                                                     === "unidade"
                                                     ? "#22543D"
                                                     : "transparent"
 
                                                 border.color:
-                                                    tipoVenda
+                                                    modelData.tipoVenda
                                                     === "unidade"
                                                     ? "#22543D"
                                                     : "#7A869A"
@@ -482,7 +422,7 @@ Page {
                                                     color: "white"
 
                                                     visible:
-                                                        tipoVenda
+                                                        modelData.tipoVenda
                                                         === "unidade"
                                                 }
                                             }
@@ -497,11 +437,10 @@ Page {
                                         }
 
                                         onClicked: {
-                                            definirPrecosPage
-                                                .definirTipoVenda(
-                                                    index,
-                                                    "unidade"
-                                                )
+                                            VendedorController.definirTipoVenda(
+                                                index,
+                                                "unidade"
+                                            )
                                         }
                                     }
 
@@ -515,12 +454,12 @@ Page {
                                             radius: 10
 
                                             color:
-                                                tipoVenda === "100g"
+                                                modelData.tipoVenda === "100g"
                                                 ? "#EAF3ED"
                                                 : "white"
 
                                             border.color:
-                                                tipoVenda === "100g"
+                                                modelData.tipoVenda === "100g"
                                                 ? "#D7E7DD"
                                                 : "#D9DFDB"
 
@@ -539,13 +478,13 @@ Page {
                                                 radius: 10
 
                                                 color:
-                                                    tipoVenda
+                                                    modelData.tipoVenda
                                                     === "100g"
                                                     ? "#22543D"
                                                     : "transparent"
 
                                                 border.color:
-                                                    tipoVenda
+                                                    modelData.tipoVenda
                                                     === "100g"
                                                     ? "#22543D"
                                                     : "#7A869A"
@@ -564,7 +503,7 @@ Page {
                                                     color: "white"
 
                                                     visible:
-                                                        tipoVenda
+                                                        modelData.tipoVenda
                                                         === "100g"
                                                 }
                                             }
@@ -579,11 +518,10 @@ Page {
                                         }
 
                                         onClicked: {
-                                            definirPrecosPage
-                                                .definirTipoVenda(
-                                                    index,
-                                                    "100g"
-                                                )
+                                            VendedorController.definirTipoVenda(
+                                                index,
+                                                "100g"
+                                            )
                                         }
                                     }
 
@@ -603,7 +541,14 @@ Page {
                                         Layout.preferredWidth: 180
                                         Layout.preferredHeight: 46
 
-                                        text: "R$ " + valor
+                                        text:
+                                            "R$ "
+                                            + Number(modelData.preco)
+                                                .toLocaleString(
+                                                    Qt.locale("pt_BR"),
+                                                    'f',
+                                                    2
+                                                )
 
                                         leftPadding: 16
 
@@ -623,27 +568,10 @@ Page {
                                         }
 
                                         onEditingFinished: {
-                                            var texto =
-                                                text.trim()
-
-                                            if (
-                                                texto.indexOf("R$")
-                                                === 0
-                                            ) {
-                                                texto =
-                                                    texto
-                                                    .substring(2)
-                                                    .trim()
-                                            }
-
-                                            definirPrecosPage
-                                                .definirValor(
-                                                    index,
-                                                    texto
-                                                )
-
-                                            text =
-                                                "R$ " + texto
+                                            VendedorController.definirPreco(
+                                                index,
+                                                text
+                                            )
                                         }
                                     }
                                 }

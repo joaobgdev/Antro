@@ -11,123 +11,6 @@ Page {
     background: Rectangle {
         color: "#FAFBFA"
     }
-
-    
-    // DADOS TEMPORÁRIOS
-    
-
-    ListModel {
-        id: feirasSelecionadas
-
-        ListElement {
-            nomeFeira: "Feira de Casa Forte"
-        }
-
-        ListElement {
-            nomeFeira: "Feira Agro UFPE"
-        }
-    }
-
-    ListModel {
-        id: produtosSelecionados
-
-        ListElement {
-            nomeProduto: "Banana"
-        }
-
-        ListElement {
-            nomeProduto: "Maçã"
-        }
-
-        ListElement {
-            nomeProduto: "Mamão"
-        }
-
-        ListElement {
-            nomeProduto: "Manga"
-        }
-
-        ListElement {
-            nomeProduto: "Abacaxi"
-        }
-
-        ListElement {
-            nomeProduto: "Goiaba"
-        }
-    }
-
-    
-    // FUNÇÕES
-    
-
-    function feiraSelecionada(nome) {
-        for (var i = 0; i < feirasSelecionadas.count; i++) {
-            if (feirasSelecionadas.get(i).nomeFeira === nome)
-                return true
-        }
-
-        return false
-    }
-
-    function alternarFeira(nome) {
-
-        for (var i = 0; i < feirasSelecionadas.count; i++) {
-
-            if (feirasSelecionadas.get(i).nomeFeira === nome) {
-                feirasSelecionadas.remove(i)
-                return
-            }
-        }
-
-        feirasSelecionadas.append({
-            "nomeFeira": nome
-        })
-    }
-
-    function adicionarFeira() {
-
-        var nome = campoNovaFeira.text.trim()
-
-        if (nome === "")
-            return
-
-        if (!feiraSelecionada(nome)) {
-            feirasSelecionadas.append({
-                "nomeFeira": nome
-            })
-        }
-
-        campoNovaFeira.clear()
-    }
-
-    function produtoExiste(nome) {
-
-        for (var i = 0; i < produtosSelecionados.count; i++) {
-            if (produtosSelecionados.get(i).nomeProduto.toLowerCase()
-                    === nome.toLowerCase()) {
-                return true
-            }
-        }
-
-        return false
-    }
-
-    function adicionarProduto() {
-
-        var nome = campoProduto.text.trim()
-
-        if (nome === "")
-            return
-
-        if (!produtoExiste(nome)) {
-            produtosSelecionados.append({
-                "nomeProduto": nome
-            })
-        }
-
-        campoProduto.clear()
-    }
-
     
     // HEADER
     
@@ -370,14 +253,14 @@ Page {
                                 text: "Feira de Casa Forte"
 
                                 checked:
-                                    editarPerfilPage.feiraSelecionada(
+                                    VendedorController.feiraSelecionada(
                                         "Feira de Casa Forte"
                                     )
 
                                 Layout.fillWidth: true
 
                                 onClicked: {
-                                    editarPerfilPage.alternarFeira(
+                                    VendedorController.alternarFeira(
                                         "Feira de Casa Forte"
                                     )
                                 }
@@ -388,14 +271,14 @@ Page {
                                 text: "Feira da Várzea"
 
                                 checked:
-                                    editarPerfilPage.feiraSelecionada(
+                                    VendedorController.feiraSelecionada(
                                         "Feira da Várzea"
                                     )
 
                                 Layout.fillWidth: true
 
                                 onClicked: {
-                                    editarPerfilPage.alternarFeira(
+                                    VendedorController.alternarFeira(
                                         "Feira da Várzea"
                                     )
                                 }
@@ -406,14 +289,14 @@ Page {
                                 text: "Feira Agro UFPE"
 
                                 checked:
-                                    editarPerfilPage.feiraSelecionada(
+                                    VendedorController.feiraSelecionada(
                                         "Feira Agro UFPE"
                                     )
 
                                 Layout.fillWidth: true
 
                                 onClicked: {
-                                    editarPerfilPage.alternarFeira(
+                                    VendedorController.alternarFeira(
                                         "Feira Agro UFPE"
                                     )
                                 }
@@ -424,14 +307,14 @@ Page {
                                 text: "Feira de Boa Viagem"
 
                                 checked:
-                                    editarPerfilPage.feiraSelecionada(
+                                    VendedorController.feiraSelecionada(
                                         "Feira de Boa Viagem"
                                     )
 
                                 Layout.fillWidth: true
 
                                 onClicked: {
-                                    editarPerfilPage.alternarFeira(
+                                    VendedorController.alternarFeira(
                                         "Feira de Boa Viagem"
                                     )
                                 }
@@ -496,7 +379,13 @@ Page {
                                 }
 
                                 onAccepted: {
-                                    editarPerfilPage.adicionarFeira()
+                                    if (
+                                        VendedorController.adicionarFeira(
+                                            campoNovaFeira.text
+                                        )
+                                    ) {
+                                        campoNovaFeira.clear()
+                                    }
                                 }
                             }
 
@@ -506,7 +395,13 @@ Page {
                                 Layout.preferredWidth: 150
 
                                 onClicked: {
-                                    editarPerfilPage.adicionarFeira()
+                                    if (
+                                        VendedorController.adicionarFeira(
+                                            campoNovaFeira.text
+                                        )
+                                    ) {
+                                        campoNovaFeira.clear()
+                                    }
                                 }
                             }
                         }
@@ -622,7 +517,13 @@ Page {
                                 }
 
                                 onAccepted: {
-                                    editarPerfilPage.adicionarProduto()
+                                    if (
+                                        VendedorController.adicionarProduto(
+                                            campoProduto.text
+                                        )
+                                    ) {
+                                        campoProduto.clear()
+                                    }
                                 }
                             }
 
@@ -656,7 +557,13 @@ Page {
                                 }
 
                                 onClicked: {
-                                    editarPerfilPage.adicionarProduto()
+                                    if (
+                                        VendedorController.adicionarProduto(
+                                            campoProduto.text
+                                        )
+                                    ) {
+                                        campoProduto.clear()
+                                    }
                                 }
                             }
                         }
@@ -671,11 +578,11 @@ Page {
                             spacing: 10
 
                             Repeater {
-                                model: produtosSelecionados
+                                model: VendedorController.produtos
 
                                 delegate: Rectangle {
                                     required property int index
-                                    required property string nomeProduto
+                                    required property var modelData
 
                                     width:
                                         textoProduto.implicitWidth + 48
@@ -694,7 +601,7 @@ Page {
                                         Label {
                                             id: textoProduto
 
-                                            text: nomeProduto
+                                            text: modelData.nome
 
                                             font.pixelSize: 14
 
@@ -730,7 +637,7 @@ Page {
                                             }
 
                                             onClicked: {
-                                                produtosSelecionados.remove(
+                                                VendedorController.removerProduto(
                                                     index
                                                 )
                                             }

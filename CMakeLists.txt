@@ -22,8 +22,12 @@ set(SOURCES
     src/services/CatalogoComprador.cpp
     src/ui/CompradorController.cpp
     src/ui/AuthController.cpp
+    src/ui/VendedorController.cpp
+    src/services/RepositorioVendedor.cpp
+
     main.cpp
 
+    include/ui/VendedorController.hpp
     include/models/produto.hpp
     include/models/itempedido.hpp
     include/models/pedido.hpp
@@ -35,6 +39,7 @@ set(SOURCES
     include/services/CatalogoComprador.hpp
     include/ui/CompradorController.hpp
     include/ui/AuthController.hpp
+    include/services/RepositorioVendedor.hpp
 )
 qt_add_executable(appAntro ${SOURCES})
 target_include_directories(appAntro PRIVATE include include/ui)
