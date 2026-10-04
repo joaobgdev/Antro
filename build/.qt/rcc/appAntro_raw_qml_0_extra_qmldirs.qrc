@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Antro/">
+    <file alias="telas/qmldir">C:/Users/Malu/Projeto-EDOO/build/Antro/telas/qmldir</file>
+  </qresource>
+</RCC>
+

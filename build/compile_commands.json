@@ -1,0 +1,110 @@
+[
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\appAntro_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\appAntro_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/appAntro_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/appAntro.dir/appAntro_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\produto.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\produto.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/produto.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/produto.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\itempedido.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\itempedido.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/itempedido.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/itempedido.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\pedido.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\pedido.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/pedido.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/pedido.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\usuario.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\usuario.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/usuario.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/usuario.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\consumidor.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\consumidor.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/consumidor.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/consumidor.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\models\\agricultor.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\models\\agricultor.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/models/agricultor.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/models/agricultor.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\services\\GerenciadorFeira.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\services\\GerenciadorFeira.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/services/GerenciadorFeira.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/services/GerenciadorFeira.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\services\\RepositorioUsuario.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\services\\RepositorioUsuario.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/services/RepositorioUsuario.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/services/RepositorioUsuario.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\services\\CatalogoComprador.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\services\\CatalogoComprador.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/services/CatalogoComprador.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/services/CatalogoComprador.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\ui\\CompradorController.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\ui\\CompradorController.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/ui/CompradorController.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/ui/CompradorController.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\src\\ui\\AuthController.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\src\\ui\\AuthController.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/src/ui/AuthController.cpp",
+  "output": "CMakeFiles/appAntro.dir/src/ui/AuthController.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\main.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\main.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/main.cpp",
+  "output": "CMakeFiles/appAntro.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -Wa,-mbig-obj -o CMakeFiles\\appAntro.dir\\appantro_qmltyperegistrations.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\appantro_qmltyperegistrations.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/appantro_qmltyperegistrations.cpp",
+  "output": "CMakeFiles/appAntro.dir/appantro_qmltyperegistrations.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.qt\\rcc\\qrc_qmake_Antro.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.qt\\rcc\\qrc_qmake_Antro.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qrc_qmake_Antro.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_qmake_Antro.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_qmlcache_loader.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_qmlcache_loader.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_qmlcache_loader.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_Main_qml.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_Main_qml.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_Main_qml.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_Main_qml.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_telas_LoginScreen_qml.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_telas_LoginScreen_qml.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.obj"
+}
+]

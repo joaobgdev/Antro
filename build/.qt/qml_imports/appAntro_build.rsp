@@ -1,0 +1,16 @@
+-rootPath
+C:/Users/Malu/Projeto-EDOO
+-cmake-output
+-output-file
+C:/Users/Malu/Projeto-EDOO/build/.qt/qml_imports/appAntro_build.cmake
+-importPath
+C:/Users/Malu/Projeto-EDOO/build
+-importPath
+C:/Users/Malu/Projeto-EDOO/build/Antro
+-importPath
+C:/Qt/6.11.2/mingw_64/qml
+-qrcFiles
+C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc
+C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc
+C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc
+C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc

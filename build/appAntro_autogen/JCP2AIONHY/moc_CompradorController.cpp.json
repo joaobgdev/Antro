@@ -1,0 +1,205 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                }
+            ],
+            "className": "CompradorController",
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 1,
+                    "isConst": true,
+                    "lineNumber": 19,
+                    "name": "feiras",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "isConst": true,
+                    "lineNumber": 20,
+                    "name": "feira",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "lineNumber": 21,
+                    "name": "vendedor",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "feiraId",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "lineNumber": 22,
+                    "name": "vendedores",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "feiraId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "vendedorId",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "isConst": true,
+                    "lineNumber": 23,
+                    "name": "produtos",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "feiraId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "vendedorId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "produtoId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "quantidade",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 24,
+                    "name": "adicionar",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "indice",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 25,
+                    "name": "remover",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "lineNumber": 26,
+                    "name": "limpar",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 14,
+                    "name": "sacola",
+                    "notify": "sacolaChanged",
+                    "override": false,
+                    "read": "sacola",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 15,
+                    "name": "tiposNaSacola",
+                    "notify": "sacolaChanged",
+                    "override": false,
+                    "read": "tiposNaSacola",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 16,
+                    "name": "totalEstimado",
+                    "notify": "sacolaChanged",
+                    "override": false,
+                    "read": "totalEstimado",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "CompradorController",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 31,
+                    "name": "sacolaChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "CompradorController.hpp",
+    "outputRevision": 69
+}

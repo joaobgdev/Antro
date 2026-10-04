@@ -1,0 +1,3 @@
+C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E rm -f CMakeFiles\appAntro.dir/objects.a
+C:\Users\Malu\Downloads\mingw64\bin\ar.exe qc CMakeFiles\appAntro.dir/objects.a @CMakeFiles\appAntro.dir\objects1.rsp
+C:\Users\Malu\Downloads\mingw64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\appAntro.dir/objects.a -Wl,--no-whole-archive -o appAntro.exe -Wl,--out-implib,libappAntro.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\appAntro.dir\linkLibs.rsp
