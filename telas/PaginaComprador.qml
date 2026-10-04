@@ -3,45 +3,75 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Antro
 
-
 Page {
     id: pagina
     property string titulo: "Feiras do Recife"
     property bool mostrarVoltar: true
     property bool mostrarSacola: true
-    background: Rectangle { color: "#F4F8EC" }
+    property bool inicio: false
+    font.family: "Segoe UI"
+    background: Rectangle { color: "#FAFBFA" }
     header: Rectangle {
-        implicitHeight: 72
+        implicitHeight: 92
         color: "white"
-        border.color: "#EAE6D6"
+        border.color: "#E2E7E3"
         RowLayout {
             anchors.fill: parent
-            anchors.margins: 16
+            anchors.margins: 20
             spacing: 16
-            Button {
-                text: "Voltar"
+            Rectangle {
+                Layout.preferredWidth: 180
+                Layout.preferredHeight: 52
+                radius: 10
+                color: "#22543D"
+                Row {
+                    anchors.centerIn: parent
+                    spacing: 2
+                    Text { text: "Antro"; font.family: "Georgia"; font.pixelSize: 36; font.bold: true; color: "#EAE6D6" }
+                    Image {
+                        width: 24
+                        height: 40
+                        source: Qt.resolvedUrl("../assets/FolhaMarca.svg")
+                        fillMode: Image.PreserveAspectFit
+                        layer.enabled: false
+                    }
+                }
+            }
+            BotaoAntro {
+                text: "⌂  Home"
+                secundario: true
+                selecionado: pagina.inicio
+                onClicked: {
+                    if (!pagina.inicio && pagina.StackView.view)
+                        pagina.StackView.view.pop(null)
+                }
+            }
+            BotaoAntro {
+                text: "←  Voltar"
+                secundario: true
                 visible: pagina.mostrarVoltar
                 onClicked: pagina.StackView.view.pop()
             }
-            Image {
-                source: Qt.resolvedUrl("../assets/AntroVerde.svg")
-                Layout.preferredWidth: 126
-                Layout.preferredHeight: 40
-                fillMode: Image.PreserveAspectFit
-                sourceSize.width: 252
-                sourceSize.height: 80
-            }
-            Label {
-                text: pagina.titulo
-                Layout.fillWidth: true
-                elide: Text.ElideRight
-                color: "#3B5A3D"
-                font.pixelSize: 18
-            }
-            Button {
+            Item { Layout.fillWidth: true }
+            Label { text: AuthController.nomeUsuario; color: "#59635E"; font.pixelSize: 15 }
+            BotaoAntro {
                 visible: pagina.mostrarSacola
                 text: "Sacola (" + CompradorController.tiposNaSacola + ")"
+                secundario: true
                 onClicked: pagina.StackView.view.push(Qt.resolvedUrl("SacolaScreen.qml"))
+            }
+            BotaoAntro {
+                text: "Sair"
+                secundario: true
+                onClicked: {
+                    var pilha = pagina.StackView.view
+                    var login = Qt.resolvedUrl("LoginScreen.qml")
+                    AuthController.sair()
+                    Qt.callLater(function() {
+                        pilha.clear()
+                        pilha.push(login)
+                    })
+                }
             }
         }
     }
