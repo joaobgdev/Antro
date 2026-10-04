@@ -1,21 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(Antro VERSION 0.1 LANGUAGES CXX)
-
-# Configuração do padrão C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
 qt_standard_project_setup(REQUIRES 6.5)
-
-# Conteúdo importado do Figma/Qt (se existir)
 if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/importedcontent/CMakeLists.txt")
     add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/importedcontent)
 endif()
-
-# Ficheiros de código C++ do projeto
 set(SOURCES
     src/models/produto.cpp
     src/models/itempedido.cpp
@@ -25,6 +19,8 @@ set(SOURCES
     src/models/agricultor.cpp
     src/services/GerenciadorFeira.cpp
     src/services/RepositorioUsuario.cpp
+    src/services/CatalogoComprador.cpp
+    src/ui/CompradorController.cpp
     src/ui/AuthController.cpp
     main.cpp
 
@@ -36,20 +32,13 @@ set(SOURCES
     include/models/agricultor.hpp
     include/services/GerenciadorFeira.hpp
     include/services/RepositorioUsuario.hpp
+    include/services/CatalogoComprador.hpp
+    include/ui/CompradorController.hpp
     include/ui/AuthController.hpp
 )
-
-# Criação do executável com suporte nativo ao Qt 6
 qt_add_executable(appAntro ${SOURCES})
-
-# Mapeamento da pasta de cabeçalhos (.hpp)
-# include/ui também entra na lista: o gerador de tipos QML inclui "AuthController.hpp" sem prefixo
 target_include_directories(appAntro PRIVATE include include/ui)
-
-# Gera qmldir automaticamente para subpastas como telas/ (remove o aviso QTP0004)
 qt_policy(SET QTP0004 NEW)
-
-# Módulo de interface QML
 qt_add_qml_module(appAntro
     URI Antro
     VERSION 1.0
@@ -57,7 +46,14 @@ qt_add_qml_module(appAntro
         Main.qml
         telas/LoginScreen.qml
         telas/HomeScreen.qml
+        telas/PaginaComprador.qml
+        telas/FeiraScreen.qml
+        telas/SacolaScreen.qml
         telas/CatalogoScreen.qml
+    RESOURCES
+        assets/AntroBege.svg
+        assets/AntroFolhinha.svg
+        assets/AntroVerde.svg
 )
 
 set_target_properties(appAntro PROPERTIES
