@@ -647,6 +647,54 @@ build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.s
 
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.s
+
 build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.obj
 .PHONY : build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj
 
@@ -766,6 +814,30 @@ build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.s: build/.rcc/qmlca
 build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s
 .PHONY : build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.s
+
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.obj
+
+# target to build an object file
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj
+
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.i: build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.i
+
+# target to preprocess a source file
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.i
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.i
+
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.s: build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.s
+
+# target to generate assembly for a file
+build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appAntro.dir\build.make CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.s
+.PHONY : build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.s
 
 build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj: build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.obj
 .PHONY : build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj
@@ -1140,6 +1212,12 @@ help:
 	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.obj
 	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.i
 	@echo ... build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.s
 	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.obj
 	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.i
 	@echo ... build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.s
@@ -1155,6 +1233,9 @@ help:
 	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.obj
 	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.i
 	@echo ... build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.s
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.obj
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.i
+	@echo ... build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.s
 	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.obj
 	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.i
 	@echo ... build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.s

@@ -77,6 +77,9 @@ CMakeFiles/appAntro_copy_qml: .qt/appAntro_qml.txt
 .qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml
 .qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/CatalogoScreen.qml
 .qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml
+.qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml
+.qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml
+.qt/appAntro_qml.txt: C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying appAntro qml sources into build dir"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -DFILES_INFO_PATH=C:/Users/Malu/Projeto-EDOO/build/.qt/appAntro_qml.cmake -P C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 

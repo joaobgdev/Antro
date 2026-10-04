@@ -15,11 +15,14 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_Main_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_Main_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp"
+  "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp"
+  "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp"
+  "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp"
   "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.aotstats" "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp"
   )
 

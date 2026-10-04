@@ -10,7 +10,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "aceitarPedido",
-                            "line": 194,
+                            "line": 195,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -18,7 +18,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "recusarPedido",
-                            "line": 207,
+                            "line": 208,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 165,
+                            "line": 166,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 175,
+                            "line": 176,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -82,7 +82,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "contentWidth",
-                            "line": 224,
+                            "line": 225,
                             "message": "Could not find property \"contentWidth\"."
                         },
                         {
@@ -90,7 +90,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 220,
+                            "line": 221,
                             "message": "Could not find property \"fill\"."
                         },
                         {
@@ -98,7 +98,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 227,
+                            "line": 228,
                             "message": ""
                         },
                         {
@@ -106,7 +106,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 285,
+                            "line": 286,
                             "message": ""
                         },
                         {
@@ -114,7 +114,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 302,
+                            "line": 303,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -122,7 +122,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 316,
+                            "line": 317,
                             "message": ""
                         },
                         {
@@ -130,7 +130,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 337,
+                            "line": 338,
                             "message": ""
                         },
                         {
@@ -138,7 +138,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 352,
+                            "line": 353,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -146,7 +146,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 361,
+                            "line": 362,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -154,7 +154,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 372,
+                            "line": 373,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -162,7 +162,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 389,
+                            "line": 390,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -170,7 +170,7 @@
                             "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 433,
+                            "line": 434,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -178,7 +178,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 410,
+                            "line": 411,
                             "message": "Cannot load property hovered from (component in C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml)::parent with type QQuickItem."
                         },
                         {
@@ -186,7 +186,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 419,
+                            "line": 420,
                             "message": "Cannot load property text from (component in C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml)::parent with type QQuickItem."
                         },
                         {
@@ -194,7 +194,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 427,
+                            "line": 428,
                             "message": ""
                         },
                         {
@@ -202,7 +202,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "verticalAlignment",
-                            "line": 430,
+                            "line": 431,
                             "message": ""
                         },
                         {
@@ -210,7 +210,7 @@
                             "column": 54,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 424,
+                            "line": 425,
                             "message": ""
                         },
                         {
@@ -218,7 +218,7 @@
                             "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 444,
+                            "line": 445,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -226,7 +226,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 454,
+                            "line": 455,
                             "message": ""
                         },
                         {
@@ -234,7 +234,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 466,
+                            "line": 467,
                             "message": "Could not find property \"centerIn\"."
                         },
                         {
@@ -242,7 +242,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 483,
+                            "line": 484,
                             "message": ""
                         },
                         {
@@ -250,7 +250,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 489,
+                            "line": 490,
                             "message": ""
                         },
                         {
@@ -258,7 +258,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 502,
+                            "line": 503,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -266,7 +266,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 520,
+                            "line": 521,
                             "message": ""
                         },
                         {
@@ -274,7 +274,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "policy",
-                            "line": 523,
+                            "line": 524,
                             "message": "Could not find property \"policy\"."
                         },
                         {
@@ -282,7 +282,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 531,
+                            "line": 532,
                             "message": "Cannot access value for name listaConfirmados"
                         },
                         {
@@ -290,7 +290,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 538,
+                            "line": 539,
                             "message": ""
                         },
                         {
@@ -298,7 +298,7 @@
                             "column": 63,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 549,
+                            "line": 550,
                             "message": "Could not find property \"centerIn\"."
                         },
                         {
@@ -306,7 +306,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 562,
+                            "line": 563,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -314,7 +314,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 569,
+                            "line": 570,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -322,7 +322,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 576,
+                            "line": 577,
                             "message": "Could not find property \"text\"."
                         }
                     ],

@@ -15,3 +15,6 @@ C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 /qt/qml/Antro/telas/SacolaScreen.qml
 /qt/qml/Antro/telas/CatalogoScreen.qml
 /qt/qml/Antro/telas/PedidosVendedorScreen.qml
+/qt/qml/Antro/telas/PerfilVendedorScreen.qml
+/qt/qml/Antro/telas/EditarPerfilVendedorScreen.qml
+/qt/qml/Antro/telas/DefinirPrecosVendedorScreen.qml

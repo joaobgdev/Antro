@@ -150,10 +150,11 @@ Page {
                 Layout.preferredWidth: 140
 
                 onClicked: {
-                    // Depois:
-                    // pedidosPage.StackView.view.push(
-                    //     Qt.resolvedUrl("PerfilVendedorScreen.qml")
-                    // )
+                    pedidosPage.StackView.view.push(
+                        Qt.resolvedUrl(
+                            "PerfilVendedorScreen.qml"
+                        )
+                    )
                 }
             }
 

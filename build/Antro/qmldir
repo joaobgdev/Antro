@@ -10,5 +10,8 @@ FeiraScreen 1.0 telas/FeiraScreen.qml
 SacolaScreen 1.0 telas/SacolaScreen.qml
 CatalogoScreen 1.0 telas/CatalogoScreen.qml
 PedidosVendedorScreen 1.0 telas/PedidosVendedorScreen.qml
+PerfilVendedorScreen 1.0 telas/PerfilVendedorScreen.qml
+EditarPerfilVendedorScreen 1.0 telas/EditarPerfilVendedorScreen.qml
+DefinirPrecosVendedorScreen 1.0 telas/DefinirPrecosVendedorScreen.qml
 depends QtQuick
 

@@ -76,6 +76,9 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.aotstats
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats
+.rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats
 .rcc/qmlcache/module_appAntro.aotstats: .rcc/qmlcache/module_appAntro.aotstatslist
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating .rcc/qmlcache/module_appAntro.aotstats"
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlaotstats.exe aggregate C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/module_appAntro.aotstatslist C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/module_appAntro.aotstats
@@ -125,6 +128,36 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_CatalogoScreen_qml.cpp.aotstats
 
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_res_0.qrc
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats"
+	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
+	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/DefinirPrecosVendedorScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml
+
+.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats
+
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_res_0.qrc
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats"
+	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
+	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/EditarPerfilVendedorScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml
+
+.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats
+
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: C:/Users/Malu/Projeto-EDOO/telas/FeiraScreen.qml
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
@@ -133,7 +166,7 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/FeiraScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/FeiraScreen.qml
 
@@ -148,7 +181,7 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/HomeScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/HomeScreen.qml
 
@@ -163,7 +196,7 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/LoginScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_LoginScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/LoginScreen.qml
 
@@ -178,7 +211,7 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp, .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp, .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/PaginaComprador.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/PaginaComprador.qml
 
@@ -193,12 +226,27 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/PedidosVendedorScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml
 
 .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats
+
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: .qt/rcc/qmake_Antro.qrc
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0.qrc
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_res_0.qrc
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: Antro/appAntro.qmltypes
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp: Antro/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats"
+	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
+	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/PerfilVendedorScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml
+
+.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats: .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc\qmlcache\appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats
 
 .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp: C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe
 .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp: C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml
@@ -208,7 +256,7 @@ CMakeFiles/module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotsta
 .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp: .qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc
 .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp: Antro/appAntro.qmltypes
 .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp: Antro/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp, .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.aotstats"
 	C:\Users\Malu\Downloads\mingw64\bin\cmake.exe -E make_directory C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache
 	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/Antro/telas/SacolaScreen.qml -I C:/Users/Malu/Projeto-EDOO/build -I C:/Qt/6.11.2/mingw_64/qml -i C:/Users/Malu/Projeto-EDOO/build/Antro/qmldir --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qmake_Antro.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_res_0.qrc --resource C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc --dump-aot-stats --module-id=Antro(appAntro) -o C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml
 
@@ -224,6 +272,10 @@ module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_BotaoAntro_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_CatalogoScreen_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_FeiraScreen_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_HomeScreen_qml.cpp
@@ -234,6 +286,8 @@ module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PaginaComprador_qm
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PaginaComprador_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.aotstats
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp
+module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp
 module_appAntro_aotstats_target: .rcc/qmlcache/appAntro_telas_SacolaScreen_qml.cpp.aotstats
 module_appAntro_aotstats_target: .rcc/qmlcache/module_appAntro.aotstats

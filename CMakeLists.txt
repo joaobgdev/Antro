@@ -52,6 +52,9 @@ qt_add_qml_module(appAntro
         telas/SacolaScreen.qml
         telas/CatalogoScreen.qml
         telas/PedidosVendedorScreen.qml
+        telas/PerfilVendedorScreen.qml
+        telas/EditarPerfilVendedorScreen.qml
+        telas/DefinirPrecosVendedorScreen.qml
     RESOURCES
         assets/FolhaIcone.svg
         assets/FolhaMarca.svg

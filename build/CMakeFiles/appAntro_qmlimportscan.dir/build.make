@@ -81,6 +81,9 @@ CMakeFiles/appAntro_qmlimportscan: .qt/qml_imports/appAntro_build.cmake
 .qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml
 .qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/CatalogoScreen.qml
 .qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml
+.qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml
+.qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml
+.qt/qml_imports/appAntro_build.cmake: C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Malu\Projeto-EDOO\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running qmlimportscanner for appAntro"
 	cd /d C:\Users\Malu\Projeto-EDOO && call C:\Users\Malu\Projeto-EDOO\build\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmlimportscanner.exe @C:/Users/Malu/Projeto-EDOO/build/.qt/qml_imports/appAntro_build.rsp
 

@@ -9,6 +9,9 @@
     <file alias="telas/SacolaScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml</file>
     <file alias="telas/CatalogoScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/CatalogoScreen.qml</file>
     <file alias="telas/PedidosVendedorScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml</file>
+    <file alias="telas/PerfilVendedorScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml</file>
+    <file alias="telas/EditarPerfilVendedorScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml</file>
+    <file alias="telas/DefinirPrecosVendedorScreen.qml">C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml</file>
   </qresource>
 </RCC>
 

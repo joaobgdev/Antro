@@ -28,8 +28,8 @@
 			"qt6_add_qml_module",
 			"qt_add_qml_module",
 			"add_dependencies",
-			"_qt_internal_qml_copy_files_to_build_dir",
 			"_qt_internal_write_deferred_qmlls_build_ini_file",
+			"_qt_internal_qml_copy_files_to_build_dir",
 			"_qt_internal_scan_qml_imports",
 			"_qt_internal_generate_deploy_qml_imports_script",
 			"cmake_language",
@@ -109,13 +109,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 74,
+				"line" : 77,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 70,
+				"line" : 73,
 				"parent" : 0
 			},
 			{
@@ -417,19 +417,24 @@
 				"parent" : 60
 			},
 			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
 				"command" : 15,
-				"file" : 10,
-				"line" : 1045,
-				"parent" : 25
+				"file" : 21,
+				"line" : 1,
+				"parent" : 62
 			},
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 3229,
-				"parent" : 62
+				"line" : 1483,
+				"parent" : 63
 			},
 			{
-				"command" : 15,
+				"command" : 16,
 				"file" : 10,
 				"line" : 1051,
 				"parent" : 25
@@ -438,30 +443,25 @@
 				"command" : 14,
 				"file" : 10,
 				"line" : 3229,
-				"parent" : 64
-			},
-			{
-				"file" : 1,
-				"line" : -1,
-				"parent" : 0
+				"parent" : 65
 			},
 			{
 				"command" : 16,
-				"file" : 21,
-				"line" : 1,
-				"parent" : 66
+				"file" : 10,
+				"line" : 1045,
+				"parent" : 25
 			},
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 1483,
+				"line" : 3229,
 				"parent" : 67
 			},
 			{
 				"command" : 21,
 				"file" : 22,
 				"line" : 1,
-				"parent" : 66
+				"parent" : 62
 			},
 			{
 				"command" : 20,
@@ -512,6 +512,12 @@
 				"parent" : 76
 			},
 			{
+				"command" : 24,
+				"file" : 10,
+				"line" : 1952,
+				"parent" : 76
+			},
+			{
 				"command" : 25,
 				"file" : 10,
 				"line" : 910,
@@ -521,24 +527,24 @@
 				"command" : 24,
 				"file" : 10,
 				"line" : 4313,
-				"parent" : 78
-			},
-			{
-				"command" : 24,
-				"file" : 10,
-				"line" : 1952,
-				"parent" : 76
+				"parent" : 79
 			},
 			{
 				"command" : 26,
 				"file" : 10,
 				"line" : 4208,
-				"parent" : 78
+				"parent" : 79
 			},
 			{
 				"command" : 24,
 				"file" : 0,
 				"line" : 1563,
+				"parent" : 81
+			},
+			{
+				"command" : 24,
+				"file" : 0,
+				"line" : 1505,
 				"parent" : 81
 			},
 			{
@@ -551,19 +557,13 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 419,
-				"parent" : 83
-			},
-			{
-				"command" : 24,
-				"file" : 0,
-				"line" : 2605,
 				"parent" : 84
 			},
 			{
 				"command" : 24,
 				"file" : 0,
-				"line" : 1505,
-				"parent" : 81
+				"line" : 2605,
+				"parent" : 85
 			},
 			{
 				"command" : 29,
@@ -587,13 +587,13 @@
 				"command" : 30,
 				"file" : 10,
 				"line" : 4383,
-				"parent" : 78
+				"parent" : 79
 			},
 			{
 				"command" : 30,
 				"file" : 10,
 				"line" : 4413,
-				"parent" : 78
+				"parent" : 79
 			},
 			{
 				"command" : 31,
@@ -605,19 +605,19 @@
 				"command" : 31,
 				"file" : 10,
 				"line" : 4374,
-				"parent" : 78
+				"parent" : 79
 			},
 			{
 				"command" : 32,
 				"file" : 10,
 				"line" : 4405,
-				"parent" : 78
+				"parent" : 79
 			},
 			{
 				"command" : 33,
 				"file" : 0,
 				"line" : 2666,
-				"parent" : 84
+				"parent" : 85
 			},
 			{
 				"command" : 31,
@@ -740,6 +740,42 @@
 				"parent" : 75
 			},
 			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3700,
+				"parent" : 75
+			},
+			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3914,
+				"parent" : 75
+			},
+			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3700,
+				"parent" : 75
+			},
+			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3914,
+				"parent" : 75
+			},
+			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3700,
+				"parent" : 75
+			},
+			{
+				"command" : 31,
+				"file" : 10,
+				"line" : 3914,
+				"parent" : 75
+			},
+			{
 				"command" : 28,
 				"file" : 10,
 				"line" : 4006,
@@ -749,19 +785,19 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 419,
-				"parent" : 116
+				"parent" : 122
 			},
 			{
 				"command" : 33,
 				"file" : 0,
 				"line" : 2666,
-				"parent" : 117
+				"parent" : 123
 			},
 			{
 				"command" : 31,
 				"file" : 0,
 				"line" : 2206,
-				"parent" : 118
+				"parent" : 124
 			},
 			{
 				"command" : 28,
@@ -773,19 +809,19 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 419,
-				"parent" : 120
+				"parent" : 126
 			},
 			{
 				"command" : 33,
 				"file" : 0,
 				"line" : 2666,
-				"parent" : 121
+				"parent" : 127
 			},
 			{
 				"command" : 31,
 				"file" : 0,
 				"line" : 2206,
-				"parent" : 122
+				"parent" : 128
 			},
 			{
 				"command" : 28,
@@ -797,19 +833,19 @@
 				"command" : 27,
 				"file" : 0,
 				"line" : 419,
-				"parent" : 124
+				"parent" : 130
 			},
 			{
 				"command" : 33,
 				"file" : 0,
 				"line" : 2666,
-				"parent" : 125
+				"parent" : 131
 			},
 			{
 				"command" : 31,
 				"file" : 0,
 				"line" : 2206,
-				"parent" : 126
+				"parent" : 132
 			},
 			{
 				"command" : 34,
@@ -821,7 +857,7 @@
 				"command" : 31,
 				"file" : 0,
 				"line" : 2331,
-				"parent" : 128
+				"parent" : 134
 			},
 			{
 				"command" : 35,
@@ -833,7 +869,7 @@
 				"command" : 31,
 				"file" : 23,
 				"line" : 126,
-				"parent" : 130
+				"parent" : 136
 			}
 		]
 	},
@@ -1050,9 +1086,12 @@
 				41,
 				43,
 				45,
-				46,
 				47,
-				48
+				49,
+				51,
+				52,
+				53,
+				54
 			]
 		},
 		{
@@ -1221,16 +1260,16 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 63,
-			"id" : "appAntro_copy_qml::@6890427a1f51a3e7e1df"
+			"backtrace" : 64,
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 65,
+			"backtrace" : 66,
 			"id" : "appAntro_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 68,
-			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+			"id" : "appAntro_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 74,
@@ -1408,31 +1447,31 @@
 	"orderDependencies" : 
 	[
 		{
-			"backtrace" : 79,
-			"id" : "Qt6::qmltyperegistrar::@6890427a1f51a3e7e1df"
+			"backtrace" : 78,
+			"id" : "Qt6::qmlcachegen::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 80,
-			"id" : "Qt6::qmlcachegen::@6890427a1f51a3e7e1df"
+			"id" : "Qt6::qmltyperegistrar::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 82,
 			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 85,
-			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+			"backtrace" : 83,
+			"id" : "Qt6::cmake_automoc_parser::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 86,
-			"id" : "Qt6::cmake_automoc_parser::@6890427a1f51a3e7e1df"
+			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 88,
 			"id" : "appAntro_tooling::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 68,
+			"backtrace" : 64,
 			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -1476,21 +1515,24 @@
 				41,
 				43,
 				45,
-				46,
 				47,
-				48,
 				49,
 				51,
 				52,
+				53,
+				54,
+				55,
+				57,
 				58,
-				61,
-				81,
-				82,
-				83,
-				84,
-				85,
-				86,
-				87
+				64,
+				67,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96
 			]
 		},
 		{
@@ -1517,7 +1559,10 @@
 				38,
 				40,
 				42,
-				44
+				44,
+				46,
+				48,
+				50
 			]
 		},
 		{
@@ -1541,32 +1586,26 @@
 			"name" : "Resources",
 			"sourceIndexes" : 
 			[
-				50,
-				53,
-				54,
-				55,
 				56,
-				57,
-				59
+				59,
+				60,
+				61,
+				62,
+				63,
+				65
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				60
+				66
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				62,
-				63,
-				64,
-				65,
-				66,
-				67,
 				68,
 				69,
 				70,
@@ -1579,7 +1618,16 @@
 				77,
 				78,
 				79,
-				80
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89
 			]
 		}
 	],
@@ -2039,6 +2087,35 @@
 			"sourceGroupIndex" : 0
 		},
 		{
+			"backtrace" : 116,
+			"backtraces" : 
+			[
+				116
+			],
+			"path" : "telas/PerfilVendedorScreen.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 117,
+			"backtraces" : 
+			[
+				117
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 118,
+			"backtraces" : 
+			[
+				118
+			],
+			"path" : "telas/EditarPerfilVendedorScreen.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
 			"backtrace" : 119,
 			"backtraces" : 
 			[
@@ -2046,14 +2123,45 @@
 			],
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 120,
+			"backtraces" : 
+			[
+				120
+			],
+			"path" : "telas/DefinirPrecosVendedorScreen.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 121,
+			"backtraces" : 
+			[
+				121
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 125,
+			"backtraces" : 
+			[
+				125
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
 			"path" : "build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 123,
+			"backtrace" : 129,
 			"backtraces" : 
 			[
-				123
+				129
 			],
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
@@ -2061,10 +2169,10 @@
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 127,
+			"backtrace" : 133,
 			"backtraces" : 
 			[
-				127
+				133
 			],
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
@@ -2072,115 +2180,115 @@
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/.qt/rcc/qmake_Antro.qrc",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/Antro/qmldir",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/.qt/rcc/appAntro_raw_qml_0.qrc",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/.qt/rcc/appAntro_raw_res_0.qrc",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"path" : "assets/FolhaIcone.svg",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"path" : "assets/FolhaMarca.svg",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"path" : "assets/AntroBege.svg",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"path" : "assets/AntroFolhinha.svg",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"path" : "assets/AntroVerde.svg",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/.qt/rcc/appAntro_raw_qml_0_extra_qmldirs.qrc",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 129,
+			"backtrace" : 135,
 			"backtraces" : 
 			[
-				129
+				135
 			],
 			"isGenerated" : true,
 			"path" : "build/Antro/telas/qmldir",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 131,
+			"backtrace" : 137,
 			"backtraces" : 
 			[
-				131
+				137
 			],
 			"path" : "build/appAntro.exe.manifest",
 			"sourceGroupIndex" : 4
@@ -2323,6 +2431,36 @@
 			],
 			"isGenerated" : true,
 			"path" : "build/.rcc/qmlcache/appAntro_telas_PedidosVendedorScreen_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.rule",
 			"sourceGroupIndex" : 5
 		},
 		{

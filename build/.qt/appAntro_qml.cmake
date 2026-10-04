@@ -20,6 +20,12 @@ set(src_and_dest_list
     "C:/Users/Malu/Projeto-EDOO/build/Antro/telas/CatalogoScreen.qml"
     "C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml"
     "C:/Users/Malu/Projeto-EDOO/build/Antro/telas/PedidosVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/build/Antro/telas/PerfilVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/build/Antro/telas/EditarPerfilVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml"
+    "C:/Users/Malu/Projeto-EDOO/build/Antro/telas/DefinirPrecosVendedorScreen.qml"
 
 )
 set(timestamp_file "C:/Users/Malu/Projeto-EDOO/build/.qt/appAntro_qml.txt")

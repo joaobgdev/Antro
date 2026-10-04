@@ -151,6 +151,24 @@
 },
 {
   "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_telas_PerfilVendedorScreen_qml.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_telas_PerfilVendedorScreen_qml.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_PerfilVendedorScreen_qml.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_telas_EditarPerfilVendedorScreen_qml.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_EditarPerfilVendedorScreen_qml.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
+  "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.rcc\\qmlcache\\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.rcc\\qmlcache\\appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp",
+  "file": "C:/Users/Malu/Projeto-EDOO/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp",
+  "output": "CMakeFiles/appAntro.dir/build/.rcc/qmlcache/appAntro_telas_DefinirPrecosVendedorScreen_qml.cpp.obj"
+},
+{
+  "directory": "C:/Users/Malu/Projeto-EDOO/build",
   "command": "C:\\Users\\Malu\\Downloads\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_SQL_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles\\appAntro.dir\\includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appAntro.dir\\build\\.qt\\rcc\\qrc_appAntro_raw_qml_0.cpp.obj -c C:\\Users\\Malu\\Projeto-EDOO\\build\\.qt\\rcc\\qrc_appAntro_raw_qml_0.cpp",
   "file": "C:/Users/Malu/Projeto-EDOO/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp",
   "output": "CMakeFiles/appAntro.dir/build/.qt/rcc/qrc_appAntro_raw_qml_0.cpp.obj"

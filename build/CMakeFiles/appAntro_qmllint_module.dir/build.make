@@ -75,6 +75,9 @@ CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/FeiraScreen
 CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/SacolaScreen.qml
 CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/CatalogoScreen.qml
 CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/PedidosVendedorScreen.qml
+CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/PerfilVendedorScreen.qml
+CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/EditarPerfilVendedorScreen.qml
+CMakeFiles/appAntro_qmllint_module: C:/Users/Malu/Projeto-EDOO/telas/DefinirPrecosVendedorScreen.qml
 CMakeFiles/appAntro_qmllint_module: .rcc/qmllint/appAntro_module.rsp
 	cd /d C:\Users\Malu\Projeto-EDOO && call C:\Users\Malu\Projeto-EDOO\build\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.2/mingw_64/bin/qmllint.exe @C:/Users/Malu/Projeto-EDOO/build/.rcc/qmllint/appAntro_module.rsp
 
