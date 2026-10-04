@@ -46,11 +46,14 @@ qt_add_qml_module(appAntro
         Main.qml
         telas/LoginScreen.qml
         telas/HomeScreen.qml
+        telas/BotaoAntro.qml
         telas/PaginaComprador.qml
         telas/FeiraScreen.qml
         telas/SacolaScreen.qml
         telas/CatalogoScreen.qml
     RESOURCES
+        assets/FolhaIcone.svg
+        assets/FolhaMarca.svg
         assets/AntroBege.svg
         assets/AntroFolhinha.svg
         assets/AntroVerde.svg

@@ -3,76 +3,40 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Antro
 
-Page {
+PaginaComprador {
     id: homePage
     readonly property bool isFarmer: AuthController.perfilUsuario === "feirante"
-    background: Rectangle { color: "#F4F8EC" }
-
-    header: Rectangle {
-        implicitHeight: 72
-        color: "white"
-        border.color: "#EAE6D6"
-        RowLayout {
-            anchors.fill: parent
-            anchors.leftMargin: 24
-            anchors.rightMargin: 24
-            spacing: 16
-            Image {
-                source: Qt.resolvedUrl("../assets/AntroVerde.svg")
-                Layout.preferredWidth: 126
-                Layout.preferredHeight: 40
-                fillMode: Image.PreserveAspectFit
-                sourceSize.width: 252
-                sourceSize.height: 80
-            }
-            Item { Layout.fillWidth: true }
-            ColumnLayout {
-                spacing: 0
-                Text { text: "Olá, " + AuthController.nomeUsuario + "!"; font.bold: true; color: "#3B5A3D" }
-                Text { text: AuthController.subtituloUsuario; font.pixelSize: 12; color: "#859B74" }
-            }
-            Button {
-                visible: !homePage.isFarmer
-                text: "Sacola (" + CompradorController.tiposNaSacola + ")"
-                onClicked: homePage.StackView.view.push(Qt.resolvedUrl("SacolaScreen.qml"))
-            }
-            Button {
-                text: "Sair"
-                onClicked: {
-                    AuthController.sair()
-                    homePage.StackView.view.replace(Qt.resolvedUrl("LoginScreen.qml"))
-                }
-            }
-        }
-    }
+    inicio: true
+    mostrarVoltar: false
+    mostrarSacola: !isFarmer
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 24
-        spacing: 12
+        anchors.margins: 36
+        spacing: 18
         Label {
             text: homePage.isFarmer ? "Seus produtos" : "Feiras do Recife"
-            font.pixelSize: 26
+            font.pixelSize: 36
             font.bold: true
-            color: "#3B5A3D"
+            color: "#17201B"
         }
         ColumnLayout {
             visible: homePage.isFarmer
-            Label { text: "Você ainda não cadastrou nenhum produto."; color: "#61705F" }
-            Button { text: "Adicionar produto"  }
+            Label { text: "Você ainda não cadastrou nenhum produto."; color: "#66706A" }
+            BotaoAntro { text: "Adicionar produto"  }
             Item { Layout.fillHeight: true }
         }
         Label {
             visible: !homePage.isFarmer
             text: "Escolha uma feira para conhecer os vendedores e seus produtos."
-            color: "#61705F"
+            color: "#66706A"
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         Label {
             visible: !homePage.isFarmer
             text: "Demonstração: vendedores e produtos de exemplo. Confirme os horários com a organização."
-            color: "#61705F"
+            color: "#66706A"
             font.pixelSize: 12
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
@@ -83,27 +47,34 @@ Page {
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 12
+            spacing: 18
             model: CompradorController.feiras()
             ScrollBar.vertical: ScrollBar {}
             delegate: Rectangle {
                 required property var modelData
                 width: listaFeiras.width
-                height: conteudo.implicitHeight + 32
+                height: conteudo.implicitHeight + 56
                 color: "white"
-                radius: 10
-                border.color: "#EAE6D6"
+                radius: 14
+                border.color: "#E4E8E5"
                 RowLayout {
                     id: conteudo
                     anchors.fill: parent
-                    anchors.margins: 16
+                    anchors.margins: 28
+                    Rectangle {
+                        Layout.preferredWidth: 72
+                        Layout.preferredHeight: 72
+                        radius: 36
+                        color: "#E5EEE8"
+                        Label { anchors.centerIn: parent; text: "⌂"; font.pixelSize: 36; color: "#22543D" }
+                    }
                     ColumnLayout {
                         Layout.fillWidth: true
-                        Label { text: modelData.bairro; color: "#61705F"; font.pixelSize: 13 }
-                        Label { text: modelData.nome; font.bold: true; font.pixelSize: 20; color: "#3B5A3D"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        Label { text: modelData.bairro; color: "#66706A"; font.pixelSize: 13 }
+                        Label { text: modelData.nome; font.bold: true; font.pixelSize: 24; color: "#22543D"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
                         Label { text: modelData.local + " · " + modelData.horario; wrapMode: Text.WordWrap; Layout.fillWidth: true }
                     }
-                    Button {
+                    BotaoAntro {
                         text: "Ver vendedores"
                         onClicked: homePage.StackView.view.push(Qt.resolvedUrl("FeiraScreen.qml"), {feiraId: modelData.id})
                     }
