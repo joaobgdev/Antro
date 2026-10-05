@@ -9,6 +9,9 @@ PaginaComprador {
     readonly property var dadosFeira: CompradorController.feira(feiraId)
     titulo: dadosFeira.nome || "Feira não encontrada"
 
+    StackView.onActivated: CompradorController.atualizar()
+    Connections { target: CompradorController; function onProdutosChanged() { listaVendedores.model = CompradorController.vendedores(feiraPage.feiraId) } }
+
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 36

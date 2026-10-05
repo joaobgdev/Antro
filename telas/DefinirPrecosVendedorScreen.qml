@@ -12,17 +12,49 @@ Page {
         color: "#FAFBFA"
     }
 
-    function salvarPrecos() {
-        console.log("Preços mantidos no VendedorController (temporário).")
+    property bool viaEdicao: false
+    property var produtos: []
+    property string aviso: ""
+
+    function atualizar() {
+        produtos = CompradorController.produtosDoFeirante(AuthController.telefoneUsuario)
     }
+
+    function salvarPrecos() {
+        aviso = ""
+        var alterados = []
+        for (var i = 0; i < linhasPreco.count; i++) {
+            var linha = linhasPreco.itemAt(i)
+            var texto = linha.precoTexto.trim().replace("R$", "").trim()
+            if (texto.indexOf(",") >= 0) texto = texto.replace(/\./g, "").replace(",", ".")
+            var valor = Number(texto)
+            if (!isFinite(valor) || valor <= 0) {
+                aviso = "Informe um preço maior que zero para " + linha.modelData.nome + "."
+                return
+            }
+            if (valor !== linha.modelData.preco) alterados.push({produto: linha.modelData, preco: valor})
+        }
+        for (var j = 0; j < alterados.length; j++) {
+            var produto = alterados[j].produto
+            var erro = CompradorController.editarProdutoFeirante(
+                        AuthController.telefoneUsuario, produto.id, alterados[j].preco,
+                        produto.estoque, produto.estoque, produto.feiraIds)
+            if (erro.length > 0) {
+                aviso = "Não foi possível salvar " + produto.nome + ": " + erro
+                return
+            }
+        }
+        aviso = "Preços atualizados."
+        atualizar()
+    }
+
+    Component.onCompleted: atualizar()
+    StackView.onActivated: atualizar()
 
     function voltarParaPerfil() {
         var pilha = definirPrecosPage.StackView.view
-
-        if (pilha) {
-            pilha.pop()
-            pilha.pop()
-        }
+        var indice = pilha.depth - (viaEdicao ? 3 : 2)
+        if (indice >= 0) pilha.pop(pilha.get(indice))
     }
 
     header: Rectangle {
@@ -161,7 +193,7 @@ Page {
 
                 Label {
                     text:
-                        "Escolha como cada produto é vendido "
+                        "Confira como cada produto é vendido "
                         + "e informe o valor correspondente."
 
                     font.pixelSize: 15
@@ -172,6 +204,16 @@ Page {
 
                     Layout.fillWidth: true
                 }
+            }
+
+            Label {
+                text: definirPrecosPage.aviso
+                visible: text.length > 0
+                Layout.fillWidth: true
+                Layout.leftMargin: 40
+                Layout.rightMargin: 40
+                wrapMode: Text.WordWrap
+                color: "#22543D"
             }
 
             Rectangle {
@@ -246,7 +288,7 @@ Page {
 
                             Label {
                                 text:
-                                    "Defina o tipo de venda "
+                                    "Confira a unidade de venda "
                                     + "e o preço de cada item."
 
                                 font.pixelSize: 15
@@ -298,7 +340,7 @@ Page {
                                     text:
                                         "Ex.: se o produto for vendido "
                                         + "por peso, informe o preço "
-                                        + "a cada 100g."
+                                        + "por kg."
 
                                     wrapMode: Text.WordWrap
 
@@ -315,12 +357,19 @@ Page {
 
                         spacing: 10
 
+                        Label {
+                            visible: definirPrecosPage.produtos.length === 0
+                            text: "Nenhum produto cadastrado. Adicione um produto no perfil."
+                            color: "#66706A"
+                        }
+
                         Repeater {
-                            model: VendedorController.produtos
+                            id: linhasPreco
+                            model: definirPrecosPage.produtos
 
                             delegate: Rectangle {
-                                required property int index
                                 required property var modelData
+                                property alias precoTexto: campoPreco.text
 
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: 74
@@ -346,6 +395,7 @@ Page {
                                         Layout.preferredWidth: 220
 
                                         text: modelData.nome
+                                        elide: Text.ElideRight
 
                                         font.pixelSize: 18
                                         font.bold: true
@@ -373,12 +423,12 @@ Page {
                                             radius: 10
 
                                             color:
-                                                modelData.tipoVenda === "unidade"
+                                                !modelData.porPeso
                                                 ? "#EAF3ED"
                                                 : "white"
 
                                             border.color:
-                                                modelData.tipoVenda === "unidade"
+                                                !modelData.porPeso
                                                 ? "#D7E7DD"
                                                 : "#D9DFDB"
 
@@ -397,14 +447,12 @@ Page {
                                                 radius: 10
 
                                                 color:
-                                                    modelData.tipoVenda
-                                                    === "unidade"
+                                                    !modelData.porPeso
                                                     ? "#22543D"
                                                     : "transparent"
 
                                                 border.color:
-                                                    modelData.tipoVenda
-                                                    === "unidade"
+                                                    !modelData.porPeso
                                                     ? "#22543D"
                                                     : "#7A869A"
 
@@ -422,8 +470,7 @@ Page {
                                                     color: "white"
 
                                                     visible:
-                                                        modelData.tipoVenda
-                                                        === "unidade"
+                                                        !modelData.porPeso
                                                 }
                                             }
 
@@ -436,12 +483,7 @@ Page {
                                             }
                                         }
 
-                                        onClicked: {
-                                            VendedorController.definirTipoVenda(
-                                                index,
-                                                "unidade"
-                                            )
-                                        }
+                                        enabled: false
                                     }
 
                                     Button {
@@ -454,12 +496,12 @@ Page {
                                             radius: 10
 
                                             color:
-                                                modelData.tipoVenda === "100g"
+                                                modelData.porPeso
                                                 ? "#EAF3ED"
                                                 : "white"
 
                                             border.color:
-                                                modelData.tipoVenda === "100g"
+                                                modelData.porPeso
                                                 ? "#D7E7DD"
                                                 : "#D9DFDB"
 
@@ -478,14 +520,12 @@ Page {
                                                 radius: 10
 
                                                 color:
-                                                    modelData.tipoVenda
-                                                    === "100g"
+                                                    modelData.porPeso
                                                     ? "#22543D"
                                                     : "transparent"
 
                                                 border.color:
-                                                    modelData.tipoVenda
-                                                    === "100g"
+                                                    modelData.porPeso
                                                     ? "#22543D"
                                                     : "#7A869A"
 
@@ -503,13 +543,12 @@ Page {
                                                     color: "white"
 
                                                     visible:
-                                                        modelData.tipoVenda
-                                                        === "100g"
+                                                        modelData.porPeso
                                                 }
                                             }
 
                                             Text {
-                                                text: "Por 100g"
+                                                text: "Por kg"
 
                                                 color: "#22543D"
 
@@ -517,12 +556,7 @@ Page {
                                             }
                                         }
 
-                                        onClicked: {
-                                            VendedorController.definirTipoVenda(
-                                                index,
-                                                "100g"
-                                            )
-                                        }
+                                        enabled: false
                                     }
 
                                     Item {
@@ -538,6 +572,7 @@ Page {
                                     }
 
                                     TextField {
+                                        id: campoPreco
                                         Layout.preferredWidth: 180
                                         Layout.preferredHeight: 46
 
@@ -567,12 +602,7 @@ Page {
                                             border.width: 1
                                         }
 
-                                        onEditingFinished: {
-                                            VendedorController.definirPreco(
-                                                index,
-                                                text
-                                            )
-                                        }
+
                                     }
                                 }
                             }

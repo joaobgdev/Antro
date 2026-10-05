@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QVector>
+#include <QVariantList>
 #include "services/CatalogoComprador.hpp"
 
 // Uma linha de produto do feirante (tela "Seus produtos")
@@ -22,8 +23,9 @@ public:
     RepositorioCatalogo() = default;
     ~RepositorioCatalogo();
 
-    bool abrir();   // abre antro.db, cria as tabelas e, se estiverem vazias, insere os dados de exemplo
+    bool abrir();   // abre antro.db, cria as tabelas e, se estiverem vazias, insere as feiras iniciais
     DadosCatalogo carregar();
+    bool inserirFeira(const QString &nome);
 
     // Produtos cadastrados por feirantes
     bool inserirProduto(const QString &telefone, const QString &nomeFeirante, const QString &banca,
@@ -35,12 +37,14 @@ public:
     // Reservas: grava a reserva e baixa o estoque na mesma transação. Devolve o código (0 = falhou).
     int salvarReserva(const QString &telefoneComprador, const QString &nomeComprador,
                       const std::vector<ItemSacolaComprador> &itens, double total);
+    bool editarProduto(const QString &telefone, int id, double preco, double estoque, double estoqueAnterior, const QVector<int> &feiras);
 
     QString ultimoErro() const { return m_ultimoErro; }
 
 private:
     bool criarTabelas();
-    bool inserirDadosDeExemplo();
+    bool inserirFeirasIniciais();
+    bool migrar();
     QString m_ultimoErro;
 };
 

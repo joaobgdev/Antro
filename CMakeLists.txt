@@ -25,11 +25,9 @@ set(SOURCES
     src/services/RepositorioUsuario.cpp
     src/services/CatalogoComprador.cpp
     src/services/RepositorioCatalogo.cpp
-    src/services/RepositorioVendedor.cpp
 
     src/ui/CompradorController.cpp
     src/ui/AuthController.cpp
-    src/ui/VendedorController.cpp
 
     main.cpp
 
@@ -44,11 +42,9 @@ set(SOURCES
     include/services/RepositorioUsuario.hpp
     include/services/CatalogoComprador.hpp
     include/services/RepositorioCatalogo.hpp
-    include/services/RepositorioVendedor.hpp
 
     include/ui/CompradorController.hpp
     include/ui/AuthController.hpp
-    include/ui/VendedorController.hpp
 )
 
 qt_add_executable(appAntro ${SOURCES})

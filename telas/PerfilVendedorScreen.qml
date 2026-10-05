@@ -13,65 +13,29 @@ Page {
     }
 
     
-    // DADOS TEMPORÁRIOS
-    // Depois virão do C++ / banco de dados
-    
+    property var meusProdutos: []
+    property var minhasFeiras: []
 
-    ListModel {
-        id: feirasUsuario
-
-        ListElement {
-            nomeFeira: "Feira de Casa Forte"
-        }
-
-        ListElement {
-            nomeFeira: "Feira da Várzea"
-        }
-
-        ListElement {
-            nomeFeira: "Feira Agro UFPE"
-        }
-
-        ListElement {
-            nomeFeira: "Feira de Boa Viagem"
-        }
+    function atualizarPerfil() {
+        meusProdutos = CompradorController.produtosDoFeirante(AuthController.telefoneUsuario)
+        var ids = []
+        meusProdutos.forEach(function(produto) {
+            produto.feiraIds.forEach(function(id) {
+                if (ids.indexOf(id) < 0) ids.push(id)
+            })
+        })
+        minhasFeiras = CompradorController.feiras().filter(function(feira) {
+            return ids.indexOf(feira.id) >= 0
+        })
     }
 
-    ListModel {
-        id: produtosUsuario
-
-        ListElement {
-            nomeProduto: "Alface"
-            icone: "🥬"
-        }
-
-        ListElement {
-            nomeProduto: "Tomate"
-            icone: "🍅"
-        }
-
-        ListElement {
-            nomeProduto: "Cenoura"
-            icone: "🥕"
-        }
-
-        ListElement {
-            nomeProduto: "Rúcula"
-            icone: "🌿"
-        }
-
-        ListElement {
-            nomeProduto: "Couve"
-            icone: "🥬"
-        }
-
-        ListElement {
-            nomeProduto: "Ovos caipiras"
-            icone: "🥚"
-        }
+    Component.onCompleted: atualizarPerfil()
+    StackView.onActivated: atualizarPerfil()
+    Connections {
+        target: CompradorController
+        function onProdutosChanged() { perfilPage.atualizarPerfil() }
     }
 
-    
     // HEADER
     
 
@@ -122,7 +86,7 @@ Page {
                 Layout.preferredWidth: 140
 
                 onClicked: {
-                    perfilPage.StackView.view.pop()
+                    perfilPage.StackView.view.pop(null)
                 }
             }
 
@@ -225,7 +189,7 @@ Page {
 
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 540
+                Layout.preferredHeight: Math.max(540, 300 + Math.max(Math.ceil(perfilPage.meusProdutos.length / 2) * 74, Math.ceil(perfilPage.minhasFeiras.length / 2) * 64))
 
                 Layout.leftMargin: 40
                 Layout.rightMargin: 40
@@ -355,6 +319,14 @@ Page {
                                 color: "#17201B"
                             }
 
+                            Label {
+                                visible: perfilPage.minhasFeiras.length === 0
+                                text: "Nenhuma feira vinculada aos produtos."
+                                color: "#66706A"
+                                Layout.fillWidth: true
+                                wrapMode: Text.WordWrap
+                            }
+
                             // Feiras
                             GridLayout {
                                 Layout.fillWidth: true
@@ -365,11 +337,10 @@ Page {
                                 columnSpacing: 12
 
                                 Repeater {
-                                    model: feirasUsuario
+                                    model: perfilPage.minhasFeiras
 
                                     delegate: Rectangle {
-                                        required property
-                                            string nomeFeira
+                                        required property var modelData
 
                                         Layout.fillWidth: true
                                         Layout.preferredHeight:
@@ -393,7 +364,8 @@ Page {
                                                 Layout.fillWidth:
                                                     true
 
-                                                text: nomeFeira
+                                                text: modelData.nome
+                                                wrapMode: Text.WordWrap
 
                                                 font.pixelSize:
                                                     14
@@ -434,6 +406,12 @@ Page {
                                 color: "#17201B"
                             }
 
+                            Label {
+                                visible: perfilPage.meusProdutos.length === 0
+                                text: "Nenhum produto cadastrado."
+                                color: "#66706A"
+                            }
+
                             GridLayout {
                                 Layout.fillWidth: true
 
@@ -443,14 +421,10 @@ Page {
                                 columnSpacing: 12
 
                                 Repeater {
-                                    model: produtosUsuario
+                                    model: perfilPage.meusProdutos
 
                                     delegate: Rectangle {
-                                        required property
-                                            string nomeProduto
-
-                                        required property
-                                            string icone
+                                        required property var modelData
 
                                         Layout.fillWidth: true
                                         Layout.preferredHeight:
@@ -473,7 +447,7 @@ Page {
                                             spacing: 12
 
                                             Label {
-                                                text: icone
+                                                text: "🌿"
 
                                                 font.pixelSize:
                                                     25
@@ -484,7 +458,8 @@ Page {
                                                     true
 
                                                 text:
-                                                    nomeProduto
+                                                    modelData.nome
+                                                elide: Text.ElideRight
 
                                                 font.pixelSize:
                                                     15

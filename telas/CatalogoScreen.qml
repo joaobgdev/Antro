@@ -11,6 +11,7 @@ PaginaComprador {
     readonly property var dadosFeira: CompradorController.feira(feiraId)
     property string mensagem: ""
     titulo: dadosVendedor.banca || "Produtos do vendedor"
+    StackView.onActivated: CompradorController.atualizar()
     Connections {
         target: CompradorController
         function onSacolaChanged() {

@@ -144,10 +144,11 @@ QVariantList CompradorController::produtosDoFeirante(const QString& telefone) co
     const QVector<RegistroProdutoFeirante> registros = repo.produtosDoFeirante(telefone);
     for (const RegistroProdutoFeirante& r : registros) {
         QStringList nomesFeiras;
-        for (int id : r.feiraIds) nomesFeiras.append(feira(id).value("bairro").toString());
+        QVariantList feiraIds;
+        for (int id : r.feiraIds) { nomesFeiras.append(feira(id).value("nome").toString()); feiraIds.append(id); }
         lista.append(QVariantMap{{"id", r.id}, {"nome", r.nome}, {"preco", r.preco}, {"porPeso", r.porPeso},
                      {"unidade", r.porPeso ? "kg" : "unidade"}, {"estoque", r.estoque},
-                     {"feiras", nomesFeiras.join(", ")}});
+                     {"feiras", nomesFeiras.join(", ")}, {"feiraIds", feiraIds}});
     }
     return lista;
 }
@@ -188,3 +189,30 @@ void CompradorController::remover(int indice) { catalogo.remover(indice); emit s
 void CompradorController::limpar() { catalogo.limpar(); emit sacolaChanged(); }
 int CompradorController::tiposNaSacola() const { return static_cast<int>(catalogo.getSacola().size()); }
 double CompradorController::totalEstimado() const { return catalogo.totalEstimado(); }
+
+QString CompradorController::editarProdutoFeirante(const QString& telefone, int id, double preco, double estoque, double estoqueAnterior, const QVariantList& feiras)
+{
+    if (!m_bancoPronto) return "O banco de dados não está disponível.";
+    bool encontrado = false, peso = false;
+    for (const auto &produto : repo.produtosDoFeirante(telefone))
+        if (produto.id == id) { encontrado = true; peso = produto.porPeso; }
+    if (!encontrado) return "Produto não encontrado para este vendedor.";
+    if (!std::isfinite(preco) || preco <= 0 || !std::isfinite(estoque) || estoque < 0)
+        return "Informe preço positivo e estoque igual ou maior que zero.";
+    if (peso ? std::floor(estoque * 2) != estoque * 2 : std::floor(estoque) != estoque)
+        return "Informe estoque inteiro por unidade ou múltiplo de 0,5 kg.";
+    QVector<int> ids;
+    for (const auto &f : feiras) if (catalogo.buscarFeira(f.toInt()) && !ids.contains(f.toInt())) ids.append(f.toInt());
+    if (ids.isEmpty()) return "Escolha pelo menos uma feira.";
+    if (!repo.editarProduto(telefone, id, preco, estoque, estoqueAnterior, ids)) return repo.ultimoErro();
+    recarregar(); return {};
+}
+
+
+QString CompradorController::adicionarFeira(const QString &nome)
+{
+    if (!m_bancoPronto) return "O banco de dados não está disponível.";
+    if (!repo.inserirFeira(nome)) return repo.ultimoErro();
+    recarregar();
+    return {};
+}

@@ -6,6 +6,59 @@ import Antro
 Page {
     id: editarPerfilPage
 
+    property var produtos: []
+    property var feiras: []
+    property var feirasEscolhidas: []
+    property var produtoSelecionado: produtos[seletorProduto.currentIndex] || ({})
+    property string aviso: ""
+
+    function atualizar() {
+        var id = produtoSelecionado.id
+        produtos = CompradorController.produtosDoFeirante(AuthController.telefoneUsuario)
+        feiras = CompradorController.feiras()
+        for (var i = 0; i < produtos.length; i++) {
+            if (produtos[i].id === id) seletorProduto.currentIndex = i
+        }
+        selecionarProduto()
+    }
+
+    function selecionarProduto() {
+        var produto = produtos[seletorProduto.currentIndex] || ({})
+        feirasEscolhidas = produto.feiraIds ? produto.feiraIds.slice() : []
+    }
+
+    function salvarFeiras() {
+        if (!produtoSelecionado.id) { aviso = "Selecione um produto."; return }
+        aviso = CompradorController.editarProdutoFeirante(
+                    AuthController.telefoneUsuario, produtoSelecionado.id,
+                    produtoSelecionado.preco, produtoSelecionado.estoque,
+                    produtoSelecionado.estoque, feirasEscolhidas)
+        if (aviso.length === 0) aviso = "Feiras do produto atualizadas."
+    }
+
+    function adicionarFeira() {
+        aviso = CompradorController.adicionarFeira(campoNovaFeira.text)
+        if (aviso.length === 0) campoNovaFeira.clear()
+    }
+
+    function adicionarProduto() {
+        editarPerfilPage.StackView.view.push(Qt.resolvedUrl("ProdutoFeiranteScreen.qml"), {
+            produto: {nome: campoProduto.text.trimmed()}
+        })
+    }
+
+    function removerProduto(id) {
+        aviso = CompradorController.removerProdutoFeirante(AuthController.telefoneUsuario, id)
+                ? "" : CompradorController.ultimoErro()
+    }
+
+    Component.onCompleted: atualizar()
+    StackView.onActivated: atualizar()
+    Connections {
+        target: CompradorController
+        function onProdutosChanged() { editarPerfilPage.atualizar() }
+    }
+
     font.family: "Segoe UI"
 
     background: Rectangle {
@@ -166,12 +219,22 @@ Page {
             }
 
             
+            Label {
+                text: editarPerfilPage.aviso
+                visible: text.length > 0
+                Layout.fillWidth: true
+                Layout.leftMargin: 40
+                Layout.rightMargin: 40
+                wrapMode: Text.WordWrap
+                color: "#22543D"
+            }
+
             // CARD DAS FEIRAS
             
 
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 390
+                Layout.preferredHeight: conteudoFeiras.implicitHeight + 60
 
                 Layout.leftMargin: 40
                 Layout.rightMargin: 40
@@ -212,12 +275,13 @@ Page {
                     }
 
                     ColumnLayout {
+                        id: conteudoFeiras
                         Layout.fillWidth: true
 
                         spacing: 14
 
                         Label {
-                            text: "Quais feiras você participa?"
+                            text: "Em quais feiras você vende?"
 
                             font.pixelSize: 28
                             font.bold: true
@@ -227,7 +291,7 @@ Page {
 
                         Label {
                             text:
-                                "Selecione as feiras onde você vende seus produtos."
+                                "Escolha o produto e selecione as feiras onde ele é vendido."
 
                             font.pixelSize: 15
 
@@ -238,87 +302,51 @@ Page {
                         // OPÇÕES DE FEIRA
                         
 
+                        ComboBox {
+                            id: seletorProduto
+                            Layout.fillWidth: true
+                            model: editarPerfilPage.produtos
+                            textRole: "nome"
+                            enabled: count > 0
+                            onCurrentIndexChanged: editarPerfilPage.selecionarProduto()
+                        }
+
                         GridLayout {
                             Layout.fillWidth: true
-
-                            columns: 4
-
+                            columns: 2
                             rowSpacing: 12
                             columnSpacing: 12
 
-                            // CASA FORTE
-                            CheckBox {
-                                id: feiraCasaForte
-
-                                text: "Feira de Casa Forte"
-
-                                checked:
-                                    VendedorController.feiraSelecionada(
-                                        "Feira de Casa Forte"
-                                    )
-
-                                Layout.fillWidth: true
-
-                                onClicked: {
-                                    VendedorController.alternarFeira(
-                                        "Feira de Casa Forte"
-                                    )
+                            Repeater {
+                                model: editarPerfilPage.feiras
+                                delegate: CheckBox {
+                                    required property var modelData
+                                    Layout.fillWidth: true
+                                    text: modelData.nome
+                                    enabled: !!editarPerfilPage.produtoSelecionado.id
+                                    checked: editarPerfilPage.feirasEscolhidas.indexOf(modelData.id) >= 0
+                                    onToggled: {
+                                        var ids = editarPerfilPage.feirasEscolhidas.filter(function(id) {
+                                            return id !== modelData.id
+                                        })
+                                        if (checked) ids.push(modelData.id)
+                                        editarPerfilPage.feirasEscolhidas = ids
+                                    }
+                                    contentItem: Text {
+                                        text: parent.text
+                                        leftPadding: parent.indicator.width + parent.spacing
+                                        verticalAlignment: Text.AlignVCenter
+                                        wrapMode: Text.WordWrap
+                                        color: "#22543D"
+                                    }
                                 }
                             }
+                        }
 
-                            // VÁRZEA
-                            CheckBox {
-                                text: "Feira da Várzea"
-
-                                checked:
-                                    VendedorController.feiraSelecionada(
-                                        "Feira da Várzea"
-                                    )
-
-                                Layout.fillWidth: true
-
-                                onClicked: {
-                                    VendedorController.alternarFeira(
-                                        "Feira da Várzea"
-                                    )
-                                }
-                            }
-
-                            // UFPE
-                            CheckBox {
-                                text: "Feira Agro UFPE"
-
-                                checked:
-                                    VendedorController.feiraSelecionada(
-                                        "Feira Agro UFPE"
-                                    )
-
-                                Layout.fillWidth: true
-
-                                onClicked: {
-                                    VendedorController.alternarFeira(
-                                        "Feira Agro UFPE"
-                                    )
-                                }
-                            }
-
-                            // BOA VIAGEM
-                            CheckBox {
-                                text: "Feira de Boa Viagem"
-
-                                checked:
-                                    VendedorController.feiraSelecionada(
-                                        "Feira de Boa Viagem"
-                                    )
-
-                                Layout.fillWidth: true
-
-                                onClicked: {
-                                    VendedorController.alternarFeira(
-                                        "Feira de Boa Viagem"
-                                    )
-                                }
-                            }
+                        BotaoAntro {
+                            text: "Salvar feiras do produto"
+                            enabled: !!editarPerfilPage.produtoSelecionado.id
+                            onClicked: editarPerfilPage.salvarFeiras()
                         }
 
                         Rectangle {
@@ -379,13 +407,7 @@ Page {
                                 }
 
                                 onAccepted: {
-                                    if (
-                                        VendedorController.adicionarFeira(
-                                            campoNovaFeira.text
-                                        )
-                                    ) {
-                                        campoNovaFeira.clear()
-                                    }
+                                    editarPerfilPage.adicionarFeira()
                                 }
                             }
 
@@ -395,13 +417,7 @@ Page {
                                 Layout.preferredWidth: 150
 
                                 onClicked: {
-                                    if (
-                                        VendedorController.adicionarFeira(
-                                            campoNovaFeira.text
-                                        )
-                                    ) {
-                                        campoNovaFeira.clear()
-                                    }
+                                    editarPerfilPage.adicionarFeira()
                                 }
                             }
                         }
@@ -420,7 +436,7 @@ Page {
                 Layout.rightMargin: 40
                 Layout.bottomMargin: 40
 
-                Layout.preferredHeight: 330
+                Layout.preferredHeight: conteudoProdutos.implicitHeight + 60
 
                 color: "white"
 
@@ -458,12 +474,13 @@ Page {
                     }
 
                     ColumnLayout {
+                        id: conteudoProdutos
                         Layout.fillWidth: true
 
                         spacing: 14
 
                         Label {
-                            text: "Frutas com que você trabalha"
+                            text: "Produtos com que você trabalha"
 
                             font.pixelSize: 28
                             font.bold: true
@@ -474,7 +491,7 @@ Page {
                         Label {
                             text:
                                 "Adicione os produtos que você vende. "
-                                + "Digite um item por vez e clique em “+”."
+                                + "Clique em “+” para cadastrar ou no nome de um produto para editar."
 
                             font.pixelSize: 15
 
@@ -517,13 +534,7 @@ Page {
                                 }
 
                                 onAccepted: {
-                                    if (
-                                        VendedorController.adicionarProduto(
-                                            campoProduto.text
-                                        )
-                                    ) {
-                                        campoProduto.clear()
-                                    }
+                                    editarPerfilPage.adicionarProduto()
                                 }
                             }
 
@@ -557,13 +568,7 @@ Page {
                                 }
 
                                 onClicked: {
-                                    if (
-                                        VendedorController.adicionarProduto(
-                                            campoProduto.text
-                                        )
-                                    ) {
-                                        campoProduto.clear()
-                                    }
+                                    editarPerfilPage.adicionarProduto()
                                 }
                             }
                         }
@@ -578,10 +583,9 @@ Page {
                             spacing: 10
 
                             Repeater {
-                                model: VendedorController.produtos
+                                model: editarPerfilPage.produtos
 
                                 delegate: Rectangle {
-                                    required property int index
                                     required property var modelData
 
                                     width:
@@ -602,6 +606,12 @@ Page {
                                             id: textoProduto
 
                                             text: modelData.nome
+                                            MouseArea {
+                                                anchors.fill: parent
+                                                cursorShape: Qt.PointingHandCursor
+                                                onClicked: editarPerfilPage.StackView.view.push(
+                                                               Qt.resolvedUrl("ProdutoFeiranteScreen.qml"), {produto: modelData})
+                                            }
 
                                             font.pixelSize: 14
 
@@ -637,9 +647,7 @@ Page {
                                             }
 
                                             onClicked: {
-                                                VendedorController.removerProduto(
-                                                    index
-                                                )
+                                                editarPerfilPage.removerProduto(modelData.id)
                                             }
                                         }
                                     }
@@ -647,9 +655,6 @@ Page {
                             }
                         }
 
-                        Item {
-                            Layout.fillHeight: true
-                        }
 
                         Rectangle {
                             Layout.fillWidth: true
@@ -672,7 +677,7 @@ Page {
 
                                 onClicked: {
                                     editarPerfilPage.StackView.view.push(
-                                        Qt.resolvedUrl("DefinirPrecosVendedorScreen.qml")
+                                        Qt.resolvedUrl("DefinirPrecosVendedorScreen.qml"), {viaEdicao: true}
                                     )
                                 }
                             }

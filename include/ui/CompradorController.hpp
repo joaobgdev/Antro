@@ -23,6 +23,7 @@ public:
 
     // Catálogo
     Q_INVOKABLE QVariantList feiras() const;
+    Q_INVOKABLE QString adicionarFeira(const QString &nome);
     Q_INVOKABLE QVariantMap feira(int id) const;
     Q_INVOKABLE QVariantMap vendedor(int id) const;
     Q_INVOKABLE QVariantList vendedores(int feiraId) const;
@@ -37,6 +38,9 @@ public:
     // Reserva: grava no SQLite, baixa o estoque e devolve o resumo para a tela de feedback.
     // Campos: ok, erro, codigo, total, itens, feiras
     Q_INVOKABLE QVariantMap finalizarReserva(const QString& telefone, const QString& nome);
+    Q_INVOKABLE QString editarProdutoFeirante(const QString& telefone, int id, double preco, double estoque, double estoqueAnterior, const QVariantList& feiras);
+    Q_INVOKABLE void atualizar() { if (m_bancoPronto) recarregar(); }
+    Q_INVOKABLE QString ultimoErro() const { return repo.ultimoErro(); }
 
     // Área do feirante: produtos guardados no SQLite. Devolve "" se deu certo, ou a mensagem de erro.
     Q_INVOKABLE QVariantList produtosDoFeirante(const QString& telefone) const;

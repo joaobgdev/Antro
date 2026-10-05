@@ -35,6 +35,12 @@ Page {
                 visible: pagina.mostrarVoltar
                 onClicked: pagina.StackView.view.pop()
             }
+            BotaoAntro {
+                visible: AuthController.perfilUsuario === "feirante"
+                text: "♙  Perfil"
+                secundario: true
+                onClicked: pagina.StackView.view.push(Qt.resolvedUrl("PerfilVendedorScreen.qml"))
+            }
             Item { Layout.fillWidth: true }
             Label { text: AuthController.nomeUsuario; color: "#59635E"; font.pixelSize: 15 }
             BotaoAntro {

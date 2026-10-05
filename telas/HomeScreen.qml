@@ -14,7 +14,9 @@ PaginaComprador {
     function atualizarProdutos() {
         meusProdutos = isFarmer ? CompradorController.produtosDoFeirante(AuthController.telefoneUsuario) : []
     }
-    Component.onCompleted: atualizarProdutos()
+    Component.onCompleted: { CompradorController.atualizar(); atualizarProdutos() }
+    StackView.onActivated: CompradorController.atualizar()
+    property string erro: ""
     Connections {
         target: CompradorController
         function onProdutosChanged() { homePage.atualizarProdutos() }
@@ -30,6 +32,7 @@ PaginaComprador {
             font.bold: true
             color: "#17201B"
         }
+        Label { text: homePage.erro; visible: text.length > 0; color: "#B3261E"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
         ColumnLayout {
             visible: homePage.isFarmer
             Layout.fillWidth: true
@@ -70,7 +73,10 @@ PaginaComprador {
                             Label { text: "R$ " + Number(produtoCard.modelData.preco).toLocaleString(Qt.locale("pt_BR"), 'f', 2) + " / " + produtoCard.modelData.unidade + " · estoque: " + produtoCard.modelData.estoque + " " + produtoCard.modelData.unidade }
                             Label { text: "Feiras: " + produtoCard.modelData.feiras; color: "#66706A"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
                         }
-                        BotaoAntro { secundario: true; text: "Remover"; onClicked: CompradorController.removerProdutoFeirante(AuthController.telefoneUsuario, produtoCard.modelData.id) }
+                        BotaoAntro { text: "Editar"; secundario: true; onClicked: homePage.StackView.view.push(Qt.resolvedUrl("ProdutoFeiranteScreen.qml"), {produto: produtoCard.modelData}) }
+                        BotaoAntro { secundario: true; text: "Remover"; onClicked: {
+                            homePage.erro = CompradorController.removerProdutoFeirante(AuthController.telefoneUsuario, produtoCard.modelData.id) ? "" : CompradorController.ultimoErro()
+                        } }
                     }
                 }
             }
@@ -82,14 +88,6 @@ PaginaComprador {
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
-        Label {
-            visible: !homePage.isFarmer
-            text: "Demonstração: vendedores e produtos de exemplo. Confirme os horários com a organização."
-            color: "#66706A"
-            font.pixelSize: 12
-            wrapMode: Text.WordWrap
-            Layout.fillWidth: true
-        }
         ListView {
             id: listaFeiras
             visible: !homePage.isFarmer
@@ -98,6 +96,7 @@ PaginaComprador {
             clip: true
             spacing: 18
             model: CompradorController.feiras()
+            Connections { target: CompradorController; function onProdutosChanged() { listaFeiras.model = CompradorController.feiras() } }
             ScrollBar.vertical: ScrollBar {}
             delegate: Rectangle {
                 required property var modelData
