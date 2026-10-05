@@ -136,8 +136,17 @@ QVariantMap CompradorController::finalizarReserva(const QString& telefone, const
         emit sacolaChanged();
         return falha("Não foi possível salvar a reserva: " + erro);
     }
+    double totalSalvo = total;
+    for (const auto &registro : repo.reservas(telefone, false)) {
+        const QVariantMap reserva = registro.toMap();
+        if (reserva.value("id").toInt() != codigo) continue;
+        totalSalvo = reserva.value("total").toDouble();
+        itensResumo = reserva.value("itens").toList();
+        break;
+    }
+    emit reservasChanged();
     recarregar();   // estoque novo vem do banco
-    return {{"ok", true}, {"erro", QString()}, {"codigo", codigo}, {"total", total},
+    return {{"ok", true}, {"erro", QString()}, {"codigo", codigo}, {"total", totalSalvo},
             {"itens", itensResumo}, {"feiras", feirasResumo}, {"status", "SOLICITADA"}, {"data", data}, {"hora", hora}};
 }
 
@@ -192,6 +201,19 @@ void CompradorController::remover(int indice) { catalogo.remover(indice); emit s
 void CompradorController::limpar() { catalogo.limpar(); emit sacolaChanged(); }
 int CompradorController::tiposNaSacola() const { return static_cast<int>(catalogo.getSacola().size()); }
 double CompradorController::totalEstimado() const { return catalogo.totalEstimado(); }
+
+QVariantList CompradorController::reservas(const QString& telefone, bool vendedor)
+{
+    if (!m_bancoPronto) return {};
+    return repo.reservas(telefone, vendedor);
+}
+
+QString CompradorController::alterarReserva(const QString& telefone, bool vendedor, int id, const QString& status)
+{
+    if (!m_bancoPronto) return "O banco de dados não está disponível.";
+    if (!repo.alterarReserva(telefone, vendedor, id, status)) return repo.ultimoErro();
+    recarregar(); emit reservasChanged(); return {};
+}
 
 QString CompradorController::editarProdutoFeirante(const QString& telefone, int id, double preco, double estoque, double estoqueAnterior, const QVariantList& feiras)
 {

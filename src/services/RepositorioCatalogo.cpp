@@ -222,14 +222,25 @@ QVector<RegistroProdutoFeirante> RepositorioCatalogo::produtosDoFeirante(const Q
 
 bool RepositorioCatalogo::removerProduto(const QString &telefone, int produtoId)
 {
+    QSqlDatabase db = banco();
+    if (!db.transaction()) { m_ultimoErro = db.lastError().text(); return false; }
+    auto falhar = [&](const QString &erro) { m_ultimoErro = erro; db.rollback(); return false; };
+    QSqlQuery pendente(db);
+    pendente.prepare("SELECT 1 FROM reserva_itens WHERE produto_id = ? AND status IN ('SOLICITADA', 'ACEITA')");
+    pendente.addBindValue(produtoId);
+    if (!pendente.exec()) return falhar(pendente.lastError().text());
+    if (pendente.next()) return falhar("Este produto tem reservas em andamento. Finalize ou cancele as reservas antes de removê-lo.");
+    pendente.finish();
     // Só remove produtos do próprio feirante.
     QSqlQuery q(banco());
     q.prepare("DELETE FROM produtos WHERE id = ? AND vendedor_id IN "
               "(SELECT id FROM vendedores WHERE user_phone = ?)");
     q.addBindValue(produtoId);
     q.addBindValue(telefone);
-    if (!q.exec()) { m_ultimoErro = q.lastError().text(); return false; }
-    return q.numRowsAffected() > 0;
+    if (!q.exec()) return falhar(q.lastError().text());
+    if (q.numRowsAffected() != 1) return falhar("Produto não encontrado para este vendedor.");
+    if (!db.commit()) return falhar(db.lastError().text());
+    return true;
 }
 
 int RepositorioCatalogo::salvarReserva(const QString &telefoneComprador, const QString &nomeComprador,
@@ -319,6 +330,12 @@ bool RepositorioCatalogo::migrar()
         if (!coluna("reservas", nome) && !q.exec("ALTER TABLE reservas ADD COLUMN " + nome + " TEXT"))
             return falhar(q.lastError().text());
     }
+    if (!coluna("reserva_itens", "status")) {
+        if (!q.exec("ALTER TABLE reserva_itens ADD COLUMN status TEXT NOT NULL DEFAULT 'SOLICITADA'"))
+            return falhar(q.lastError().text());
+        if (!q.exec("UPDATE reserva_itens SET status = (SELECT status FROM reservas WHERE id = reserva_id)"))
+            return falhar(q.lastError().text());
+    }
     const QStringList tabelas = db.tables();
     if (tabelas.contains("seller_products") || tabelas.contains("seller_markets")) {
         QString sql = "SELECT DISTINCT seller_phone FROM ";
@@ -403,6 +420,79 @@ bool RepositorioCatalogo::editarProduto(const QString &telefone, int id, double 
         q.prepare("INSERT INTO ofertas (feira_id, produto_id) VALUES (?, ?)"); q.addBindValue(feira); q.addBindValue(id);
         if (!q.exec()) return falhar(q.lastError().text());
     }
+    if (!db.commit()) return falhar(db.lastError().text());
+    return true;
+}
+
+QVariantList RepositorioCatalogo::reservas(const QString &telefone, bool vendedor)
+{
+    m_ultimoErro.clear();
+    QVariantList lista;
+    QSqlQuery q(banco());
+    q.prepare("SELECT DISTINCT r.id, r.comprador_nome, r.criada_em, r.retirada_data, r.retirada_hora, r.status "
+              "FROM reservas r JOIN reserva_itens i ON i.reserva_id = r.id JOIN vendedores v ON v.id = i.vendedor_id WHERE "
+              + QString(vendedor ? "v.user_phone = ?" : "r.comprador_phone = ?") + " ORDER BY r.id DESC");
+    q.addBindValue(telefone);
+    if (!q.exec()) { m_ultimoErro = q.lastError().text(); return lista; }
+    while (q.next()) {
+        QVariantList itens; double total = 0;
+        QSqlQuery i(banco());
+        i.prepare("SELECT i.produto_nome, i.quantidade, i.unidade, i.preco, i.status, v.nome, f.nome "
+                  "FROM reserva_itens i JOIN vendedores v ON v.id = i.vendedor_id JOIN feiras f ON f.id = i.feira_id "
+                  "WHERE i.reserva_id = ?" + QString(vendedor ? " AND v.user_phone = ?" : "") + " ORDER BY i.id");
+        i.addBindValue(q.value(0)); if (vendedor) i.addBindValue(telefone);
+        if (!i.exec()) { m_ultimoErro = i.lastError().text(); return {}; }
+        QString status;
+        while (i.next()) {
+            const QString atual = i.value(4).toString();
+            if (status.isEmpty()) status = atual; else if (status != atual) status = "PARCIAL";
+            const double subtotal = i.value(1).toDouble() * i.value(3).toDouble(); total += subtotal;
+            itens.append(QVariantMap{{"nome", i.value(0)}, {"quantidade", i.value(1)}, {"unidade", i.value(2)},
+                         {"subtotal", subtotal}, {"status", atual}, {"vendedor", i.value(5)}, {"feira", i.value(6)}});
+        }
+        lista.append(QVariantMap{{"id", q.value(0)}, {"comprador", q.value(1)}, {"criadaEm", q.value(2)},
+                     {"data", q.value(3)}, {"hora", q.value(4)}, {"status", status}, {"itens", itens}, {"total", total}});
+    }
+    return lista;
+}
+
+bool RepositorioCatalogo::alterarReserva(const QString &telefone, bool vendedor, int id, const QString &status)
+{
+    if ((vendedor && status != "ACEITA" && status != "RECUSADA" && status != "RETIRADA")
+        || (!vendedor && status != "CANCELADA")) { m_ultimoErro = "Ação inválida."; return false; }
+    QSqlDatabase db = banco();
+    if (!db.transaction()) { m_ultimoErro = db.lastError().text(); return false; }
+    auto falhar = [&](const QString &erro) { m_ultimoErro = erro; db.rollback(); return false; };
+    QSqlQuery q(db);
+    q.prepare("SELECT i.id, i.produto_id, i.quantidade, i.status FROM reserva_itens i "
+              "JOIN reservas r ON r.id = i.reserva_id JOIN vendedores v ON v.id = i.vendedor_id "
+              "WHERE r.id = ? AND " + QString(vendedor ? "v.user_phone = ?" : "r.comprador_phone = ?"));
+    q.addBindValue(id); q.addBindValue(telefone);
+    if (!q.exec()) return falhar(q.lastError().text());
+    struct Item { int id; int produto; double quantidade; QString status; };
+    QVector<Item> itens;
+    while (q.next()) itens.append({q.value(0).toInt(), q.value(1).toInt(), q.value(2).toDouble(), q.value(3).toString()});
+    q.finish();
+    int alterados = 0;
+    for (const Item &item : itens) {
+        const bool pode = status == "RETIRADA" ? item.status == "ACEITA"
+                        : status == "CANCELADA" ? (item.status == "SOLICITADA" || item.status == "ACEITA")
+                        : item.status == "SOLICITADA";
+        if (!pode) continue;
+        q.prepare("UPDATE reserva_itens SET status = ? WHERE id = ? AND status = ?");
+        q.addBindValue(status); q.addBindValue(item.id); q.addBindValue(item.status);
+        if (!q.exec() || q.numRowsAffected() != 1) return falhar("A reserva foi alterada. Atualize a lista.");
+        if (status == "RECUSADA" || status == "CANCELADA") {
+            q.prepare("UPDATE produtos SET estoque = estoque + ? WHERE id = ?");
+            q.addBindValue(item.quantidade); q.addBindValue(item.produto);
+            if (!q.exec() || q.numRowsAffected() != 1) return falhar("Não foi possível devolver o estoque.");
+        }
+        ++alterados;
+    }
+    if (!alterados) return falhar("A reserva não permite esta ação para este usuário.");
+    q.prepare("UPDATE reservas SET status = (SELECT CASE WHEN COUNT(DISTINCT status) = 1 THEN MIN(status) ELSE 'PARCIAL' END "
+              "FROM reserva_itens WHERE reserva_id = ?) WHERE id = ?"); q.addBindValue(id); q.addBindValue(id);
+    if (!q.exec()) return falhar(q.lastError().text());
     if (!db.commit()) return falhar(db.lastError().text());
     return true;
 }

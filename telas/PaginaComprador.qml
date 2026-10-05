@@ -36,6 +36,11 @@ Page {
                 onClicked: pagina.StackView.view.pop()
             }
             BotaoAntro {
+                text: AuthController.perfilUsuario === "feirante" ? "Pedidos" : "Minhas reservas"
+                secundario: true
+                onClicked: pagina.StackView.view.push(Qt.resolvedUrl("PedidosVendedorScreen.qml"))
+            }
+            BotaoAntro {
                 visible: AuthController.perfilUsuario === "feirante"
                 text: "♙  Perfil"
                 secundario: true

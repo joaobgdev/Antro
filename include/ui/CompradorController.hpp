@@ -38,6 +38,8 @@ public:
     // Reserva: grava no SQLite, baixa o estoque e devolve o resumo para a tela de feedback.
     // Campos: ok, erro, codigo, total, itens, feiras
     Q_INVOKABLE QVariantMap finalizarReserva(const QString& telefone, const QString& nome, const QString& data, const QString& hora);
+    Q_INVOKABLE QVariantList reservas(const QString& telefone, bool vendedor);
+    Q_INVOKABLE QString alterarReserva(const QString& telefone, bool vendedor, int id, const QString& status);
     Q_INVOKABLE QString editarProdutoFeirante(const QString& telefone, int id, double preco, double estoque, double estoqueAnterior, const QVariantList& feiras);
     Q_INVOKABLE void atualizar() { if (m_bancoPronto) recarregar(); }
     Q_INVOKABLE QString ultimoErro() const { return repo.ultimoErro(); }
@@ -56,6 +58,7 @@ public:
 
 signals:
     void sacolaChanged();
+    void reservasChanged();
     void produtosChanged();   // catálogo recarregado do banco (novo produto, remoção, reserva)
 
 private:

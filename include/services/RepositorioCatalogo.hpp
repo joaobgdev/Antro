@@ -39,6 +39,8 @@ public:
                       const std::vector<ItemSacolaComprador> &itens, double total,
                       const QString &data, const QString &hora);
     bool editarProduto(const QString &telefone, int id, double preco, double estoque, double estoqueAnterior, const QVector<int> &feiras);
+    QVariantList reservas(const QString &telefone, bool vendedor);
+    bool alterarReserva(const QString &telefone, bool vendedor, int id, const QString &status);
 
     QString ultimoErro() const { return m_ultimoErro; }
 
