@@ -231,8 +231,17 @@ Page {
                         ok = AuthController.entrar(txtPhone.text, txtPassword.text)
                     }
 
-                    if (ok)
-                        loginPage.StackView.view.replace(Qt.resolvedUrl("HomeScreen.qml"))
+                    if (ok) {
+                        if (AuthController.perfilUsuario === "feirante") {
+                            loginPage.StackView.view.replace(
+                                Qt.resolvedUrl("PedidosVendedorScreen.qml")
+                            )
+                        } else {
+                            loginPage.StackView.view.replace(
+                                Qt.resolvedUrl("HomeScreen.qml")
+                            )
+                        }
+                    }
                 }
             }
         }
