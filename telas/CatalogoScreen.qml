@@ -25,7 +25,7 @@ PaginaComprador {
         spacing: 18
         Label { text: catalogoPage.titulo; font.pixelSize: 36; font.bold: true; color: "#17201B" }
         Label { text: (catalogoPage.dadosVendedor.nome || "") + " · " + (catalogoPage.dadosFeira.nome || ""); wrapMode: Text.WordWrap; Layout.fillWidth: true }
-        Label { text: "Selecione os produtos para a sacola. A seleção ainda não confirma uma reserva."; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
+        Label { text: "Adicione os produtos ao carrinho. A reserva só é feita quando você finalizar no carrinho."; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
         Label { text: catalogoPage.mensagem; visible: text.length > 0; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#22543D" }
         Label { visible: listaProdutos.count === 0; text: "Este vendedor não tem produtos disponíveis nesta feira." }
         ListView {
@@ -62,10 +62,22 @@ PaginaComprador {
                         Label { text: "R$ " + Number(produtoCard.modelData.preco).toLocaleString(Qt.locale("pt_BR"), 'f', 2) + " / " + produtoCard.modelData.unidade }
                         Label { text: "Disponível: " + produtoCard.modelData.disponivel + " " + produtoCard.modelData.unidade; color: "#66706A" }
                     }
+                    // Largura fixa: o seletor e o botão ficam alinhados em todos os cartões,
+                    // mesmo quando o texto do produto (kg ou unidade) tem tamanho diferente.
                     ColumnLayout {
-                        Label { text: produtoCard.modelData.porPeso ? "Quantidade (passos de 0,5 kg)" : "Quantidade (unidades)"; font.pixelSize: 12 }
+                        Layout.preferredWidth: 220
+                        Layout.maximumWidth: 220
+                        Layout.alignment: Qt.AlignVCenter
+                        spacing: 4
+                        Label {
+                            text: produtoCard.modelData.porPeso ? "Quantidade (passos de 0,5 kg)" : "Quantidade (unidades)"
+                            font.pixelSize: 12
+                            elide: Text.ElideRight
+                            Layout.fillWidth: true
+                        }
                         SpinBox {
                             id: quantidade
+                            Layout.fillWidth: true
                             from: 1
                             to: Math.max(1, Math.floor(produtoCard.modelData.disponivel * (produtoCard.modelData.porPeso ? 2 : 1)))
                             value: 1
@@ -76,13 +88,15 @@ PaginaComprador {
                         }
                     }
                     BotaoAntro {
-                        text: "Adicionar à sacola"
+                        text: "Adicionar ao carrinho"
+                        Layout.preferredWidth: 220
+                        Layout.alignment: Qt.AlignVCenter
                         enabled: quantidade.enabled
                         onClicked: {
                             var qtd = quantidade.value / (produtoCard.modelData.porPeso ? 2 : 1)
                             var nome = produtoCard.modelData.nome
                             var ok = CompradorController.adicionar(catalogoPage.feiraId, catalogoPage.vendedorId, produtoCard.modelData.id, qtd)
-                            catalogoPage.mensagem = ok ? nome + " adicionado à sacola." : "Não foi possível adicionar. Confira a quantidade disponível."
+                            catalogoPage.mensagem = ok ? nome + " adicionado ao carrinho." : "Não foi possível adicionar. Confira a quantidade disponível."
                         }
                     }
                 }

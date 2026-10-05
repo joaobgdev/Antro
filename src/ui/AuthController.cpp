@@ -45,6 +45,11 @@ QString AuthController::nomeUsuario() const
     return m_usuario ? QString::fromStdString(m_usuario->getNome()) : QString();
 }
 
+QString AuthController::telefoneUsuario() const
+{
+    return m_usuario ? QString::fromStdString(m_usuario->getTelefone()) : QString();
+}
+
 QString AuthController::perfilUsuario() const
 {
     return m_usuario ? QString::fromStdString(m_usuario->getPerfil()) : QString();

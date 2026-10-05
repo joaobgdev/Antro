@@ -9,6 +9,16 @@ PaginaComprador {
     inicio: true
     mostrarVoltar: false
     mostrarSacola: !isFarmer
+    property var meusProdutos: []
+
+    function atualizarProdutos() {
+        meusProdutos = isFarmer ? CompradorController.produtosDoFeirante(AuthController.telefoneUsuario) : []
+    }
+    Component.onCompleted: atualizarProdutos()
+    Connections {
+        target: CompradorController
+        function onProdutosChanged() { homePage.atualizarProdutos() }
+    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -22,9 +32,48 @@ PaginaComprador {
         }
         ColumnLayout {
             visible: homePage.isFarmer
-            Label { text: "Você ainda não cadastrou nenhum produto."; color: "#66706A" }
-            BotaoAntro { text: "Adicionar produto"  }
-            Item { Layout.fillHeight: true }
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            spacing: 18
+            RowLayout {
+                Layout.fillWidth: true
+                Label {
+                    Layout.fillWidth: true
+                    text: homePage.meusProdutos.length === 0 ? "Você ainda não cadastrou nenhum produto." : "Produtos cadastrados: " + homePage.meusProdutos.length
+                    color: "#66706A"
+                }
+                BotaoAntro { text: "Adicionar produto"; onClicked: homePage.StackView.view.push(Qt.resolvedUrl("ProdutoFeiranteScreen.qml")) }
+            }
+            ListView {
+                id: listaMeusProdutos
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                clip: true
+                spacing: 18
+                model: homePage.meusProdutos
+                ScrollBar.vertical: ScrollBar {}
+                delegate: Rectangle {
+                    id: produtoCard
+                    required property var modelData
+                    width: listaMeusProdutos.width
+                    height: produtoLinha.implicitHeight + 56
+                    color: "white"
+                    radius: 14
+                    border.color: "#E4E8E5"
+                    RowLayout {
+                        id: produtoLinha
+                        anchors.fill: parent
+                        anchors.margins: 28
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            Label { text: produtoCard.modelData.nome; font.bold: true; font.pixelSize: 24; color: "#22543D" }
+                            Label { text: "R$ " + Number(produtoCard.modelData.preco).toLocaleString(Qt.locale("pt_BR"), 'f', 2) + " / " + produtoCard.modelData.unidade + " · estoque: " + produtoCard.modelData.estoque + " " + produtoCard.modelData.unidade }
+                            Label { text: "Feiras: " + produtoCard.modelData.feiras; color: "#66706A"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        }
+                        BotaoAntro { secundario: true; text: "Remover"; onClicked: CompradorController.removerProdutoFeirante(AuthController.telefoneUsuario, produtoCard.modelData.id) }
+                    }
+                }
+            }
         }
         Label {
             visible: !homePage.isFarmer

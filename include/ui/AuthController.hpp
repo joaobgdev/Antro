@@ -18,6 +18,7 @@ class AuthController : public QObject
     QML_SINGLETON
     Q_PROPERTY(bool logado READ logado NOTIFY usuarioChanged)
     Q_PROPERTY(QString nomeUsuario READ nomeUsuario NOTIFY usuarioChanged)
+    Q_PROPERTY(QString telefoneUsuario READ telefoneUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString perfilUsuario READ perfilUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString subtituloUsuario READ subtituloUsuario NOTIFY usuarioChanged)
     Q_PROPERTY(QString telefoneUsuario READ telefoneUsuario NOTIFY usuarioChanged
@@ -28,6 +29,7 @@ public:
 
     bool logado() const { return m_usuario != nullptr; }
     QString nomeUsuario() const;
+    QString telefoneUsuario() const;
     QString perfilUsuario() const;
     QString subtituloUsuario() const;
     QString telefoneUsuario() const;

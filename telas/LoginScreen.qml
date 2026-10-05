@@ -7,8 +7,9 @@ Page {
     id: loginPage
 
     // Fundo
+    font.family: "Segoe UI"
     background: Rectangle {
-        color: "#F4F8EC"
+        color: "#FAFBFA"
     }
 
     // Variáveis Iniciais
@@ -29,9 +30,9 @@ Page {
         width: 440
         height: mainLayout.implicitHeight + 48
         color: "white"
-        radius: 12
-        border.color: "#EAE6D6"
-        border.width: 2
+        radius: 14
+        border.color: "#E4E8E5"
+        border.width: 1
 
         ColumnLayout {
             id: mainLayout
@@ -39,20 +40,17 @@ Page {
             anchors.margins: 24
             spacing: 12
 
-            // Logo/Título
-            Text {
-                text: "antro"
-                font.pixelSize: 38
-                font.bold: true
-                color: "#84C6A8"
+            // Logo (mesma das telas internas)
+            LogoAntro {
+                escala: 1.2
                 Layout.alignment: Qt.AlignHCenter
             }
 
             // Subtítulo
             Text {
                 text: "Direto do produtor para a sua mesa"
-                font.pixelSize: 13
-                color: "#859B74"
+                font.pixelSize: 14
+                color: "#66706A"
                 font.weight: Font.Medium
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -64,43 +62,21 @@ Page {
                 Layout.fillWidth: true
                 spacing: 10
 
-                Button {
+                BotaoAntro {
                     text: "Entrar"
                     Layout.fillWidth: true
                     Layout.preferredWidth: 1   // larguras iguais
-                    implicitHeight: 38
-                    background: Rectangle {
-                        color: !loginPage.isRegister ? "#3B5A3D" : "#F4F8EC"
-                        radius: 6
-                        border.color: "#EAE6D6"
-                    }
-                    contentItem: Text {
-                        text: parent.text
-                        color: !loginPage.isRegister ? "white" : "#3B5A3D"
-                        font.bold: true
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
+                    implicitHeight: 42
+                    secundario: loginPage.isRegister
                     onClicked: { loginPage.mode = "entrar"; loginPage.errorMessage = "" }
                 }
 
-                Button {
+                BotaoAntro {
                     text: "Cadastrar"
                     Layout.fillWidth: true
                     Layout.preferredWidth: 1   // larguras iguais
-                    implicitHeight: 38
-                    background: Rectangle {
-                        color: loginPage.isRegister ? "#3B5A3D" : "#F4F8EC"
-                        radius: 6
-                        border.color: "#EAE6D6"
-                    }
-                    contentItem: Text {
-                        text: parent.text
-                        color: loginPage.isRegister ? "white" : "#3B5A3D"
-                        font.bold: true
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
+                    implicitHeight: 42
+                    secundario: !loginPage.isRegister
                     onClicked: { loginPage.mode = "cadastrar"; loginPage.errorMessage = "" }
                 }
             }
@@ -111,7 +87,7 @@ Page {
                 text: "Selecione o seu perfil:"
                 font.pixelSize: 14
                 font.bold: true
-                color: "#3B5A3D"
+                color: "#22543D"
             }
 
             RowLayout {
@@ -119,47 +95,21 @@ Page {
                 Layout.fillWidth: true
                 spacing: 10
 
-                // Botão Comprador
-                Button {
+                BotaoAntro {
                     text: "Sou Comprador"
                     Layout.fillWidth: true
                     Layout.preferredWidth: 1   // larguras iguais
-                    implicitHeight: 38
-
-                    background: Rectangle {
-                        color: loginPage.currentRole === "comprador" ? "#859B74" : "#F4F8EC"
-                        radius: 6
-                        border.color: "#EAE6D6"
-                    }
-                    contentItem: Text {
-                        text: parent.text
-                        color: loginPage.currentRole === "comprador" ? "white" : "#3B5A3D"
-                        font.bold: true
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
+                    implicitHeight: 42
+                    secundario: loginPage.currentRole !== "comprador"
                     onClicked: loginPage.currentRole = "comprador"
                 }
 
-                // Botão Feirante
-                Button {
+                BotaoAntro {
                     text: "Sou Feirante"
                     Layout.fillWidth: true
                     Layout.preferredWidth: 1   // larguras iguais
-                    implicitHeight: 38
-
-                    background: Rectangle {
-                        color: loginPage.currentRole === "feirante" ? "#859B74" : "#F4F8EC"
-                        radius: 6
-                        border.color: "#EAE6D6"
-                    }
-                    contentItem: Text {
-                        text: parent.text
-                        color: loginPage.currentRole === "feirante" ? "white" : "#3B5A3D"
-                        font.bold: true
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
+                    implicitHeight: 42
+                    secundario: loginPage.currentRole !== "feirante"
                     onClicked: loginPage.currentRole = "feirante"
                 }
             }
@@ -173,12 +123,12 @@ Page {
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: 12
-                color: "#2B3A2C"
-                placeholderTextColor: "#859B74"
+                color: "#17201B"
+                placeholderTextColor: "#8B9590"
                 background: Rectangle {
-                    color: "#F4F8EC"
-                    radius: 6
-                    border.color: "#EAE6D6"
+                    color: "white"
+                    radius: 10
+                    border.color: parent.activeFocus ? "#22543D" : "#E2E7E3"
                 }
             }
 
@@ -189,12 +139,12 @@ Page {
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: 12
-                color: "#2B3A2C"
-                placeholderTextColor: "#859B74"
+                color: "#17201B"
+                placeholderTextColor: "#8B9590"
                 background: Rectangle {
-                    color: "#F4F8EC"
-                    radius: 6
-                    border.color: "#EAE6D6"
+                    color: "white"
+                    radius: 10
+                    border.color: parent.activeFocus ? "#22543D" : "#E2E7E3"
                 }
             }
 
@@ -206,12 +156,12 @@ Page {
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: 12
-                color: "#2B3A2C"
-                placeholderTextColor: "#859B74"
+                color: "#17201B"
+                placeholderTextColor: "#8B9590"
                 background: Rectangle {
-                    color: "#F4F8EC"
-                    radius: 6
-                    border.color: "#EAE6D6"
+                    color: "white"
+                    radius: 10
+                    border.color: parent.activeFocus ? "#22543D" : "#E2E7E3"
                 }
             }
 
@@ -223,12 +173,12 @@ Page {
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: 12
-                color: "#2B3A2C"
-                placeholderTextColor: "#859B74"
+                color: "#17201B"
+                placeholderTextColor: "#8B9590"
                 background: Rectangle {
-                    color: "#F4F8EC"
-                    radius: 6
-                    border.color: "#EAE6D6"
+                    color: "white"
+                    radius: 10
+                    border.color: parent.activeFocus ? "#22543D" : "#E2E7E3"
                 }
             }
 
@@ -240,12 +190,12 @@ Page {
                 implicitHeight: caixas_size1
                 verticalAlignment: Text.AlignVCenter
                 leftPadding: 12
-                color: "#2B3A2C"
-                placeholderTextColor: "#859B74"
+                color: "#17201B"
+                placeholderTextColor: "#8B9590"
                 background: Rectangle {
-                    color: "#F4F8EC"
-                    radius: 6
-                    border.color: "#EAE6D6"
+                    color: "white"
+                    radius: 10
+                    border.color: parent.activeFocus ? "#22543D" : "#E2E7E3"
                 }
             }
 
@@ -253,7 +203,7 @@ Page {
             Text {
                 text: loginPage.errorMessage
                 visible: text !== ""
-                color: "#B23A3A"
+                color: "#B3261E"
                 font.pixelSize: 13
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
@@ -262,24 +212,9 @@ Page {
             Item { Layout.preferredHeight: 6 }
 
             // Botão principal
-            Button {
+            BotaoAntro {
                 text: loginPage.isRegister ? "Cadastrar e Entrar" : "Entrar"
                 Layout.fillWidth: true
-                implicitHeight: 44
-
-                background: Rectangle {
-                    color: parent.down ? "#2B3A2C" : "#3B5A3D"
-                    radius: 6
-                }
-
-                contentItem: Text {
-                    text: parent.text
-                    color: "white"
-                    font.bold: true
-                    font.pixelSize: 15
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
 
                 onClicked: {
                     loginPage.errorMessage = ""

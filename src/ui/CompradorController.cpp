@@ -1,7 +1,24 @@
 #include "ui/CompradorController.hpp"
+#include <QDebug>
 #include <QString>
+#include <QStringList>
+#include <cmath>
 
-CompradorController::CompradorController(QObject* parent) : QObject(parent) {}
+CompradorController::CompradorController(QObject* parent) : QObject(parent)
+{
+    m_bancoPronto = repo.abrir();
+    if (!m_bancoPronto)
+        qWarning() << "Não foi possível abrir o banco do catálogo:" << repo.ultimoErro();
+    else
+        catalogo.definirDados(repo.carregar());
+}
+
+void CompradorController::recarregar()
+{
+    catalogo.definirDados(repo.carregar());   // também revalida o carrinho
+    emit produtosChanged();
+    emit sacolaChanged();
+}
 
 QVariantMap CompradorController::feira(int id) const
 {
@@ -49,13 +66,22 @@ QVariantList CompradorController::produtos(int feiraId, int vendedorId) const
 QVariantList CompradorController::sacola() const
 {
     QVariantList lista;
-    for (const ItemSacolaComprador& item : catalogo.getSacola()) {
+    const std::vector<ItemSacolaComprador>& itens = catalogo.getSacola();
+    for (size_t i = 0; i < itens.size(); ++i) {
+        const ItemSacolaComprador& item = itens[i];
         const Produto* p = catalogo.buscarProduto(item.produtoId);
         if (!p) continue;
-        lista.append(QVariantMap{{"nome", QString::fromStdString(p->getNome())},
+        const double passo = p->getEhPorPeso() ? 0.5 : 1.0;
+        // quanto ainda cabe neste item: estoque menos o que está nas outras linhas do mesmo produto
+        const double maximo = p->getEstoque() - catalogo.quantidadeNaSacola(item.produtoId) + item.quantidade;
+        lista.append(QVariantMap{{"indice", static_cast<int>(i)},
+                     {"nome", QString::fromStdString(p->getNome())},
                      {"feira", feira(item.feiraId).value("nome")},
                      {"vendedor", vendedor(item.vendedorId).value("nome")},
                      {"unidade", p->getEhPorPeso() ? "kg" : "unidade"},
+                     {"preco", p->getPreco()},
+                     {"passo", passo},
+                     {"podeAumentar", item.quantidade + passo <= maximo},
                      {"quantidade", item.quantidade}, {"subtotal", p->getPreco() * item.quantidade}});
     }
     return lista;
@@ -65,6 +91,96 @@ bool CompradorController::adicionar(int feiraId, int vendedorId, int produtoId, 
 {
     if (!catalogo.adicionar(feiraId, vendedorId, produtoId, quantidade)) return false;
     emit sacolaChanged();
+    return true;
+}
+
+bool CompradorController::alterarQuantidade(int indice, double novaQuantidade)
+{
+    if (!catalogo.alterarQuantidade(indice, novaQuantidade)) return false;
+    emit sacolaChanged();
+    return true;
+}
+
+QVariantMap CompradorController::finalizarReserva(const QString& telefone, const QString& nome)
+{
+    auto falha = [](const QString& erro) { return QVariantMap{{"ok", false}, {"erro", erro}}; };
+    if (!m_bancoPronto) return falha("O banco de dados não está disponível.");
+    if (catalogo.getSacola().empty()) return falha("Seu carrinho está vazio.");
+
+    // Guarda o resumo antes de esvaziar o carrinho.
+    const double total = catalogo.totalEstimado();
+    QVariantList itensResumo;
+    QStringList feirasResumo;
+    const std::vector<ItemSacolaComprador> copia = catalogo.getSacola();
+    for (const QVariant& v : sacola()) itensResumo.append(v);
+    for (const ItemSacolaComprador& item : copia) {
+        const QString f = feira(item.feiraId).value("nome").toString();
+        if (!feirasResumo.contains(f)) feirasResumo.append(f);
+    }
+
+    const std::vector<ItemSacolaComprador> reservados = catalogo.finalizarReserva();
+    if (reservados.empty()) {
+        recarregar();
+        return falha("Alguns itens não estão mais disponíveis. Revise o carrinho.");
+    }
+    const int codigo = repo.salvarReserva(telefone, nome, reservados, total);
+    if (codigo == 0) {
+        // Não gravou: volta ao estado do banco e restaura o carrinho.
+        const QString erro = repo.ultimoErro();
+        recarregar();
+        for (const ItemSacolaComprador& item : reservados)
+            catalogo.adicionar(item.feiraId, item.vendedorId, item.produtoId, item.quantidade);
+        emit sacolaChanged();
+        return falha("Não foi possível salvar a reserva: " + erro);
+    }
+    recarregar();   // estoque novo vem do banco
+    return {{"ok", true}, {"erro", QString()}, {"codigo", codigo}, {"total", total},
+            {"itens", itensResumo}, {"feiras", feirasResumo}};
+}
+
+QVariantList CompradorController::produtosDoFeirante(const QString& telefone) const
+{
+    QVariantList lista;
+    const QVector<RegistroProdutoFeirante> registros = repo.produtosDoFeirante(telefone);
+    for (const RegistroProdutoFeirante& r : registros) {
+        QStringList nomesFeiras;
+        for (int id : r.feiraIds) nomesFeiras.append(feira(id).value("bairro").toString());
+        lista.append(QVariantMap{{"id", r.id}, {"nome", r.nome}, {"preco", r.preco}, {"porPeso", r.porPeso},
+                     {"unidade", r.porPeso ? "kg" : "unidade"}, {"estoque", r.estoque},
+                     {"feiras", nomesFeiras.join(", ")}});
+    }
+    return lista;
+}
+
+QString CompradorController::adicionarProdutoFeirante(const QString& telefone, const QString& nomeFeirante,
+                                                      const QString& banca, const QString& nome, double preco,
+                                                      bool porPeso, double estoque, const QVariantList& feiraIds)
+{
+    if (!m_bancoPronto) return "O banco de dados não está disponível.";
+    const QString nomeLimpo = nome.trimmed();
+    if (nomeLimpo.isEmpty()) return "Informe o nome do produto.";
+    if (!std::isfinite(preco) || preco <= 0) return "Informe um preço maior que zero.";
+    if (!std::isfinite(estoque) || estoque <= 0) return "Informe uma quantidade em estoque maior que zero.";
+    if (porPeso ? std::floor(estoque * 2) != estoque * 2 : std::floor(estoque) != estoque)
+        return porPeso ? "O estoque por kg deve ser múltiplo de 0,5." : "O estoque por unidade deve ser um número inteiro.";
+
+    QVector<int> ids;
+    for (const QVariant& v : feiraIds) {
+        const int id = v.toInt();
+        if (catalogo.buscarFeira(id) && !ids.contains(id)) ids.append(id);
+    }
+    if (ids.isEmpty()) return "Escolha pelo menos uma feira.";
+
+    if (!repo.inserirProduto(telefone, nomeFeirante, banca, nomeLimpo, preco, porPeso, estoque, ids))
+        return "Não foi possível salvar o produto: " + repo.ultimoErro();
+    recarregar();
+    return QString();
+}
+
+bool CompradorController::removerProdutoFeirante(const QString& telefone, int produtoId)
+{
+    if (!repo.removerProduto(telefone, produtoId)) return false;
+    recarregar();
     return true;
 }
 
