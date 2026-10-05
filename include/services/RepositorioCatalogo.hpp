@@ -36,7 +36,8 @@ public:
 
     // Reservas: grava a reserva e baixa o estoque na mesma transação. Devolve o código (0 = falhou).
     int salvarReserva(const QString &telefoneComprador, const QString &nomeComprador,
-                      const std::vector<ItemSacolaComprador> &itens, double total);
+                      const std::vector<ItemSacolaComprador> &itens, double total,
+                      const QString &data, const QString &hora);
     bool editarProduto(const QString &telefone, int id, double preco, double estoque, double estoqueAnterior, const QVector<int> &feiras);
 
     QString ultimoErro() const { return m_ultimoErro; }

@@ -37,7 +37,7 @@ public:
 
     // Reserva: grava no SQLite, baixa o estoque e devolve o resumo para a tela de feedback.
     // Campos: ok, erro, codigo, total, itens, feiras
-    Q_INVOKABLE QVariantMap finalizarReserva(const QString& telefone, const QString& nome);
+    Q_INVOKABLE QVariantMap finalizarReserva(const QString& telefone, const QString& nome, const QString& data, const QString& hora);
     Q_INVOKABLE QString editarProdutoFeirante(const QString& telefone, int id, double preco, double estoque, double estoqueAnterior, const QVariantList& feiras);
     Q_INVOKABLE void atualizar() { if (m_bancoPronto) recarregar(); }
     Q_INVOKABLE QString ultimoErro() const { return repo.ultimoErro(); }

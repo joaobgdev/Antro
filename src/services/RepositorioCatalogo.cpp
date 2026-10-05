@@ -1,7 +1,9 @@
 #include "services/RepositorioCatalogo.hpp"
 
 #include <QDateTime>
+#include <QTime>
 #include <QStringList>
+#include <cmath>
 #include <QDebug>
 #include <QDir>
 #include <QSqlDatabase>
@@ -231,8 +233,14 @@ bool RepositorioCatalogo::removerProduto(const QString &telefone, int produtoId)
 }
 
 int RepositorioCatalogo::salvarReserva(const QString &telefoneComprador, const QString &nomeComprador,
-                                       const std::vector<ItemSacolaComprador> &itens, double total)
+                                       const std::vector<ItemSacolaComprador> &itens, double total, const QString &data, const QString &hora)
 {
+    const QDate dia = QDate::fromString(data, "yyyy-MM-dd");
+    const QTime horario = QTime::fromString(hora, "HH:mm");
+    if (telefoneComprador.trimmed().isEmpty() || itens.empty() || !dia.isValid() || !horario.isValid()
+        || QDateTime(dia, horario) <= QDateTime::currentDateTime()) {
+        m_ultimoErro = "Informe data e horário futuros para a retirada (AAAA-MM-DD e HH:MM)."; return 0;
+    }
     QSqlDatabase db = banco();
     if (!db.transaction()) { m_ultimoErro = db.lastError().text(); return 0; }
 
@@ -243,20 +251,30 @@ int RepositorioCatalogo::salvarReserva(const QString &telefoneComprador, const Q
     };
 
     QSqlQuery q(db);
-    q.prepare("INSERT INTO reservas (comprador_phone, comprador_nome, criada_em, total) VALUES (?, ?, ?, ?)");
+    q.prepare("INSERT INTO reservas (comprador_phone, comprador_nome, criada_em, total, retirada_data, retirada_hora) VALUES (?, ?, ?, ?, ?, ?)");
     q.addBindValue(telefoneComprador);
     q.addBindValue(nomeComprador);
     q.addBindValue(QDateTime::currentDateTime().toString(Qt::ISODate));
     q.addBindValue(total);
+    q.addBindValue(data);
+    q.addBindValue(hora);
     if (!q.exec()) return falhar(q.lastError().text());
     const int reservaId = q.lastInsertId().toInt();
 
+    double totalAtual = 0;
     for (const ItemSacolaComprador &item : itens) {
+        if (!std::isfinite(item.quantidade) || item.quantidade <= 0) return falhar("Quantidade inválida.");
         QSqlQuery p(db);
-        p.prepare("SELECT nome, preco, por_peso FROM produtos WHERE id = ?");
+        p.prepare("SELECT p.nome, p.preco, p.por_peso FROM produtos p JOIN ofertas o ON o.produto_id = p.id "
+                  "JOIN vendedores v ON v.id = p.vendedor_id WHERE p.id = ? AND p.vendedor_id = ? AND o.feira_id = ? AND v.user_phone IS NOT NULL");
         p.addBindValue(item.produtoId);
+        p.addBindValue(item.vendedorId);
+        p.addBindValue(item.feiraId);
         if (!p.exec() || !p.next()) return falhar("Produto não encontrado: " + QString::number(item.produtoId));
 
+        const double passos = p.value(2).toBool() ? item.quantidade * 2 : item.quantidade;
+        if (std::floor(passos) != passos) return falhar("Quantidade inválida para a unidade do produto.");
+        totalAtual += p.value(1).toDouble() * item.quantidade;
         // O WHERE estoque >= ? impede estoque negativo se outro processo mexeu no banco.
         QSqlQuery baixa(db);
         baixa.prepare("UPDATE produtos SET estoque = estoque - ? WHERE id = ? AND estoque >= ?");
@@ -279,6 +297,9 @@ int RepositorioCatalogo::salvarReserva(const QString &telefoneComprador, const Q
         ins.addBindValue(p.value(1));
         if (!ins.exec()) return falhar(ins.lastError().text());
     }
+    q.prepare("UPDATE reservas SET total = ? WHERE id = ?");
+    q.addBindValue(totalAtual); q.addBindValue(reservaId);
+    if (!q.exec()) return falhar(q.lastError().text());
     if (!db.commit()) return falhar(db.lastError().text());
     return reservaId;
 }
@@ -289,6 +310,15 @@ bool RepositorioCatalogo::migrar()
     if (!db.transaction()) { m_ultimoErro = db.lastError().text(); return false; }
     auto falhar = [&](const QString &erro) { m_ultimoErro = erro; db.rollback(); return false; };
     QSqlQuery q(db);
+    auto coluna = [&](const QString &tabela, const QString &nome) {
+        QSqlQuery c(db); c.exec("PRAGMA table_info(" + tabela + ")");
+        while (c.next()) if (c.value(1).toString() == nome) return true;
+        return false;
+    };
+    for (const QString &nome : {QString("retirada_data"), QString("retirada_hora")}) {
+        if (!coluna("reservas", nome) && !q.exec("ALTER TABLE reservas ADD COLUMN " + nome + " TEXT"))
+            return falhar(q.lastError().text());
+    }
     const QStringList tabelas = db.tables();
     if (tabelas.contains("seller_products") || tabelas.contains("seller_markets")) {
         QString sql = "SELECT DISTINCT seller_phone FROM ";

@@ -26,7 +26,7 @@ PaginaComprador {
         spacing: 18
         Label { text: catalogoPage.titulo; font.pixelSize: 36; font.bold: true; color: "#17201B" }
         Label { text: (catalogoPage.dadosVendedor.nome || "") + " · " + (catalogoPage.dadosFeira.nome || ""); wrapMode: Text.WordWrap; Layout.fillWidth: true }
-        Label { text: "Adicione os produtos ao carrinho. A reserva só é feita quando você finalizar no carrinho."; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
+        Label { text: "Adicione os produtos ao carrinho. Envie a solicitação no carrinho e aguarde o aceite do vendedor."; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
         Label { text: catalogoPage.mensagem; visible: text.length > 0; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#22543D" }
         Label { visible: listaProdutos.count === 0; text: "Este vendedor não tem produtos disponíveis nesta feira." }
         ListView {

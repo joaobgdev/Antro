@@ -101,12 +101,15 @@ bool CompradorController::alterarQuantidade(int indice, double novaQuantidade)
     return true;
 }
 
-QVariantMap CompradorController::finalizarReserva(const QString& telefone, const QString& nome)
+QVariantMap CompradorController::finalizarReserva(const QString& telefone, const QString& nome, const QString& data, const QString& hora)
 {
     auto falha = [](const QString& erro) { return QVariantMap{{"ok", false}, {"erro", erro}}; };
     if (!m_bancoPronto) return falha("O banco de dados não está disponível.");
     if (catalogo.getSacola().empty()) return falha("Seu carrinho está vazio.");
 
+    const auto antes = catalogo.getSacola();
+    recarregar();
+    if (catalogo.getSacola().size() != antes.size()) return falha("Alguns itens não estão mais disponíveis. Revise o carrinho.");
     // Guarda o resumo antes de esvaziar o carrinho.
     const double total = catalogo.totalEstimado();
     QVariantList itensResumo;
@@ -123,7 +126,7 @@ QVariantMap CompradorController::finalizarReserva(const QString& telefone, const
         recarregar();
         return falha("Alguns itens não estão mais disponíveis. Revise o carrinho.");
     }
-    const int codigo = repo.salvarReserva(telefone, nome, reservados, total);
+    const int codigo = repo.salvarReserva(telefone, nome, reservados, total, data, hora);
     if (codigo == 0) {
         // Não gravou: volta ao estado do banco e restaura o carrinho.
         const QString erro = repo.ultimoErro();
@@ -135,7 +138,7 @@ QVariantMap CompradorController::finalizarReserva(const QString& telefone, const
     }
     recarregar();   // estoque novo vem do banco
     return {{"ok", true}, {"erro", QString()}, {"codigo", codigo}, {"total", total},
-            {"itens", itensResumo}, {"feiras", feirasResumo}};
+            {"itens", itensResumo}, {"feiras", feirasResumo}, {"status", "SOLICITADA"}, {"data", data}, {"hora", hora}};
 }
 
 QVariantList CompradorController::produtosDoFeirante(const QString& telefone) const

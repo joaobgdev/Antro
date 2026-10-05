@@ -8,12 +8,12 @@ PaginaComprador {
     id: confirmacao
     property var resultado: ({})
     readonly property var itens: resultado.itens || []
-    titulo: "Reserva realizada"
+    titulo: "Solicitação enviada"
     mostrarVoltar: false
     mostrarSacola: false
 
     function dinheiro(valor) { return "R$ " + Number(valor).toLocaleString(Qt.locale("pt_BR"), 'f', 2) }
-    function quantidadeTexto(item) { return Number(item.quantidade).toLocaleString(Qt.locale("pt_BR"), 'f', item.passo < 1 ? 1 : 0) }
+    function quantidadeTexto(item) { return Number(item.quantidade).toLocaleString(Qt.locale("pt_BR"), 'f', item.unidade === "kg" ? 1 : 0) }
 
     ColumnLayout {
         anchors.fill: parent
@@ -30,13 +30,13 @@ PaginaComprador {
                 Label { anchors.centerIn: parent; text: "✓"; color: "white"; font.pixelSize: 40; font.bold: true }
             }
             ColumnLayout {
-                Label { text: "Seus produtos foram reservados!"; font.pixelSize: 36; font.bold: true; color: "#17201B" }
+                Label { text: "Sua solicitação foi enviada!"; font.pixelSize: 36; font.bold: true; color: "#17201B" }
                 Label { text: "Reserva nº " + (confirmacao.resultado.codigo || ""); font.pixelSize: 16; color: "#66706A" }
             }
         }
         Label {
-            text: "Retire seus produtos " + ((confirmacao.resultado.feiras || []).length > 1 ? "nas feiras " : "na feira ")
-                  + (confirmacao.resultado.feiras || []).join(", ") + ". O pagamento é feito direto com o vendedor, na retirada. Produtos vendidos por peso podem ter o valor ajustado na pesagem."
+            text: "Aguardando o aceite dos vendedores. Acompanhe o status em Minhas reservas. Retirada solicitada para "
+                  + confirmacao.resultado.data + " às " + confirmacao.resultado.hora + ". O pagamento será feito na retirada."
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
             color: "#59635E"

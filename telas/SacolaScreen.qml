@@ -13,7 +13,7 @@ PaginaComprador {
     function quantidadeTexto(item) { return Number(item.quantidade).toLocaleString(Qt.locale("pt_BR"), 'f', item.passo < 1 ? 1 : 0) }
 
     function finalizar() {
-        var resultado = CompradorController.finalizarReserva(AuthController.telefoneUsuario, AuthController.nomeUsuario)
+        var resultado = CompradorController.finalizarReserva(AuthController.telefoneUsuario, AuthController.nomeUsuario, dataRetirada.text, horaRetirada.text)
         if (!resultado.ok) {
             carrinhoPage.aviso = resultado.erro
             return
@@ -99,6 +99,12 @@ PaginaComprador {
         }
         RowLayout {
             Layout.fillWidth: true
+            Label { text: "Retirada:" }
+            TextField { id: dataRetirada; placeholderText: "Data (AAAA-MM-DD)"; Layout.fillWidth: true }
+            TextField { id: horaRetirada; placeholderText: "Horário (HH:MM)"; Layout.fillWidth: true }
+        }
+        RowLayout {
+            Layout.fillWidth: true
             spacing: 12
             ColumnLayout {
                 Layout.fillWidth: true
@@ -107,7 +113,7 @@ PaginaComprador {
             }
             BotaoAntro { text: "Continuar escolhendo"; secundario: true; onClicked: carrinhoPage.StackView.view.pop() }
             BotaoAntro {
-                text: "Finalizar reserva"
+                text: "Enviar solicitação"
                 enabled: CompradorController.tiposNaSacola > 0
                 onClicked: carrinhoPage.finalizar()
             }
