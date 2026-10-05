@@ -1,13 +1,7 @@
-#include "include/ui/AuthController.hpp"
+#include "ui/AuthController.hpp"
 
 #include <QCryptographicHash>
 #include <QRandomGenerator>
-
-// Banco de Dados
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
 
 #include "models/agricultor.hpp"
 #include "models/consumidor.hpp"
@@ -49,6 +43,11 @@ AuthController::AuthController(QObject *parent) : QObject(parent)
 QString AuthController::nomeUsuario() const
 {
     return m_usuario ? QString::fromStdString(m_usuario->getNome()) : QString();
+}
+
+QString AuthController::telefoneUsuario() const
+{
+    return m_usuario ? QString::fromStdString(m_usuario->getTelefone()) : QString();
 }
 
 QString AuthController::perfilUsuario() const

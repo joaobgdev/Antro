@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1208 383" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Prancheta1" transform="matrix(1,0,0,1,-608.184642,-1442.499064)">
+        <rect x="658.185" y="1492.499" width="847.118" height="299.032" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="658.185" y="1492.499" width="847.118" height="299.032"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(8.543807,0,0,8.543807,228.795211,-16186.239697)">
+                <g>
+                    <g transform="matrix(1,0,0,1,49.529,2099.603)">
+                        <text x="0px" y="0px" style="font-family:'Evantic-Regular', 'Evantic';font-size:50px;fill:rgb(234,230,214);">An</text>
+                    </g>
+                    <g transform="matrix(1,0,0,1,98.079,2099.603)">
+                        <text x="0px" y="0px" style="font-family:'Evantic-Regular', 'Evantic';font-size:50px;fill:rgb(234,230,214);">t<tspan x="13.75px 30.6px " y="0px 0px ">ro</tspan></text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <g id="Prancheta2" transform="matrix(1,0,0,1,36.319839,51.901128)">
+        <rect x="-36.32" y="-51.901" width="1207.546" height="382.568" style="fill:none;"/>
+        <g id="IMG_0829.PNG" transform="matrix(1,0,0,1,848.680161,18.098872)">
+            <path d="M38.037,150.48C38.101,144.001 36.217,130.758 44.038,140.859C57.951,158.828 61.614,173.48 62.085,174.695C67.161,187.782 63.297,171.836 63.208,171.587C47.095,126.544 66.698,71.054 101.7,34.696C124.32,11.2 150.178,2.029 151.536,2.069C158.959,2.287 139.836,7.426 147.014,40.57C153.073,68.545 168.37,65.211 177.222,99.571C200.337,189.294 99.167,239.636 37.463,245.052C9.824,247.477 9.918,248.267 7.508,248.355C-0.885,248.662 17.92,243.443 19.625,242.83C93.868,216.151 117.293,172.712 117.254,166.511C117.251,166.041 115.565,163.039 112.05,169.263C109.579,173.639 97.433,195.147 68.581,214.617C34.91,237.34 18.731,239.283 6.453,244.336C-1.503,247.611 7.417,240.527 9.099,238.194C12.339,233.703 32.849,206.822 38.037,150.48Z" style="fill:rgb(234,230,214);fill-opacity:1;"/>
+        </g>
+    </g>
+</svg>

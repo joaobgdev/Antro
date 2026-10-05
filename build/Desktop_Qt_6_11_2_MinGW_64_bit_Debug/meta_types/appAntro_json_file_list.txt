@@ -1,1 +1,0 @@
-D:/Antro/Antro 2/Antro/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appAntro_autogen/include/../JCP2AIONHY/moc_AuthController.cpp.json

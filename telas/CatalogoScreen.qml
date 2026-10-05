@@ -1,135 +1,104 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Antro
 
-Item {
-    id: catalogoScreen
-
-    // Propriedades temporárias para a sacola
-    property int totalItensSacola: 0
-    property real valorTotalSacola: 0.00
-
+PaginaComprador {
+    id: catalogoPage
+    property int feiraId: -1
+    property int vendedorId: -1
+    readonly property var dadosVendedor: CompradorController.vendedor(vendedorId)
+    readonly property var dadosFeira: CompradorController.feira(feiraId)
+    property string mensagem: ""
+    titulo: dadosVendedor.banca || "Produtos do vendedor"
+    Connections {
+        target: CompradorController
+        function onSacolaChanged() {
+            Qt.callLater(function() {
+                listaProdutos.model = CompradorController.produtos(catalogoPage.feiraId, catalogoPage.vendedorId)
+            })
+        }
+    }
     ColumnLayout {
         anchors.fill: parent
-        spacing: 0
-
-        // Cabeçalho / header
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.preferredHeight: 70
-            color: "#2E7D32"
-
-            RowLayout {
-                anchors.fill: parent
-                anchors.margins: 16
-
-                Text {
-                    text: "🌾 Feira Agroecológica - Antro"
-                    color: "white"
-                    font.pixelSize: 20
-                    font.bold: true
-                }
-
-                Item { Layout.fillWidth: true }
-
-                Text {
-                    text: "📍 Recife"
-                    color: "#C8E6C9"
-                    font.pixelSize: 14
-                }
-            }
-        }
-
-        // Catálogo de produtos
+        anchors.margins: 36
+        spacing: 18
+        Label { text: catalogoPage.titulo; font.pixelSize: 36; font.bold: true; color: "#17201B" }
+        Label { text: (catalogoPage.dadosVendedor.nome || "") + " · " + (catalogoPage.dadosFeira.nome || ""); wrapMode: Text.WordWrap; Layout.fillWidth: true }
+        Label { text: "Adicione os produtos ao carrinho. A reserva só é feita quando você finalizar no carrinho."; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
+        Label { text: catalogoPage.mensagem; visible: text.length > 0; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#22543D" }
+        Label { visible: listaProdutos.count === 0; text: "Este vendedor não tem produtos disponíveis nesta feira." }
         ListView {
-            id: listViewProdutos
+            id: listaProdutos
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 12
-
-            model: ListModel {
-                ListElement { prodId: 101; nome: "Alface Crespa Orgânica"; preco: 3.50; unidadepeso: "unidade"; imagem: "🥬" }
-                ListElement { prodId: 102; nome: "Tomate Cereja"; preco: 12.00; unidadepeso: "kg"; imagem: "🍅" }
-                ListElement { prodId: 103; nome: "Abóbora Cabotiá"; preco: 6.00; unidadepeso: "kg"; imagem: "🎃" }
-                ListElement { prodId: 104; nome: "Banana Prata"; preco: 8.50; unidadepeso: "kg"; imagem: "🍌" }
-            }
-
+            spacing: 18
+            model: CompradorController.produtos(catalogoPage.feiraId, catalogoPage.vendedorId)
+            ScrollBar.vertical: ScrollBar {}
             delegate: Rectangle {
-                width: listViewProdutos.width - 32
-                height: 80
-                radius: 10
-                color: "#FFFFFF"
-                border.color: "#E0E0E0"
-                anchors.horizontalCenter: parent.horizontalCenter
-
+                id: produtoCard
+                required property var modelData
+                width: listaProdutos.width
+                height: conteudo.implicitHeight + 56
+                color: "white"
+                radius: 14
+                border.color: "#E4E8E5"
                 RowLayout {
+                    id: conteudo
                     anchors.fill: parent
-                    anchors.margins: 12
-
-                    Text {
-                        text: model.imagem
-                        font.pixelSize: 32
+                    anchors.margins: 28
+                    spacing: 16
+                    Rectangle {
+                        Layout.preferredWidth: 72
+                        Layout.preferredHeight: 72
+                        radius: 36
+                        color: "#E5EEE8"
+                        Image { anchors.fill: parent; anchors.margins: 18; source: Qt.resolvedUrl("../assets/FolhaIcone.svg"); fillMode: Image.PreserveAspectFit }
                     }
-
                     ColumnLayout {
                         Layout.fillWidth: true
-                        spacing: 2
-
-                        Text {
-                            text: model.nome
-                            font.pixelSize: 16
-                            font.bold: true
+                        Label { text: produtoCard.modelData.nome; font.pixelSize: 24; font.bold: true; color: "#22543D" }
+                        Label { text: "R$ " + Number(produtoCard.modelData.preco).toLocaleString(Qt.locale("pt_BR"), 'f', 2) + " / " + produtoCard.modelData.unidade }
+                        Label { text: "Disponível: " + produtoCard.modelData.disponivel + " " + produtoCard.modelData.unidade; color: "#66706A" }
+                    }
+                    // Largura fixa: o seletor e o botão ficam alinhados em todos os cartões,
+                    // mesmo quando o texto do produto (kg ou unidade) tem tamanho diferente.
+                    ColumnLayout {
+                        Layout.preferredWidth: 220
+                        Layout.maximumWidth: 220
+                        Layout.alignment: Qt.AlignVCenter
+                        spacing: 4
+                        Label {
+                            text: produtoCard.modelData.porPeso ? "Quantidade (passos de 0,5 kg)" : "Quantidade (unidades)"
+                            font.pixelSize: 12
+                            elide: Text.ElideRight
+                            Layout.fillWidth: true
                         }
-
-                        Text {
-                            text: "R$ " + model.preco.toFixed(2) + " / " + model.unidadepeso
-                            color: "#2E7D32"
-                            font.bold: true
+                        SpinBox {
+                            id: quantidade
+                            Layout.fillWidth: true
+                            from: 1
+                            to: Math.max(1, Math.floor(produtoCard.modelData.disponivel * (produtoCard.modelData.porPeso ? 2 : 1)))
+                            value: 1
+                            enabled: produtoCard.modelData.disponivel >= (produtoCard.modelData.porPeso ? 0.5 : 1)
+                            textFromValue: function(valor, locale) {
+                                return produtoCard.modelData.porPeso ? (valor / 2).toLocaleString(locale, 'f', 1) : valor.toString()
+                            }
                         }
                     }
-
-                    Button {
-                        text: "+ Adicionar"
+                    BotaoAntro {
+                        text: "Adicionar ao carrinho"
+                        Layout.preferredWidth: 220
+                        Layout.alignment: Qt.AlignVCenter
+                        enabled: quantidade.enabled
                         onClicked: {
-                            totalItensSacola += 1
-                            valorTotalSacola += model.preco
+                            var qtd = quantidade.value / (produtoCard.modelData.porPeso ? 2 : 1)
+                            var nome = produtoCard.modelData.nome
+                            var ok = CompradorController.adicionar(catalogoPage.feiraId, catalogoPage.vendedorId, produtoCard.modelData.id, qtd)
+                            catalogoPage.mensagem = ok ? nome + " adicionado ao carrinho." : "Não foi possível adicionar. Confira a quantidade disponível."
                         }
                     }
-                }
-            }
-        }
-
-        // Barra inferior/ Sacola
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.preferredHeight: 70
-            color: "#F5F5F5"
-            border.color: "#E0E0E0"
-
-            RowLayout {
-                anchors.fill: parent
-                anchors.margins: 16
-
-                ColumnLayout {
-                    Text {
-                        text: "Total: R$ " + valorTotalSacola.toFixed(2)
-                        font.pixelSize: 18
-                        font.bold: true
-                        color: "#2E7D32"
-                    }
-                    Text {
-                        text: totalItensSacola + " itens selecionados"
-                        font.pixelSize: 12
-                        color: "#666666"
-                    }
-                }
-
-                Item { Layout.fillWidth: true }
-
-                Button {
-                    text: "Ver Sacola 🛒"
-                    enabled: totalItensSacola > 0
                 }
             }
         }
