@@ -12,7 +12,7 @@
 #include "ui/VendedorController.hpp"
 
 using namespace std;
-
+// Perfis testers enquanto o banco de dados não estava pronto e que serviram para demonstração durante a apresentação.
 static void aguardar()
 {
     QEventLoop eventos;

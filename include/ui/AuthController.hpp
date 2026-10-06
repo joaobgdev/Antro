@@ -67,7 +67,7 @@ private:
         const QString &nome,
         const QString &telefone,
         const QString &nomeBanca,
-        const QString &codigoOCS
+        const QString &codigoOCS //Código exigido para bancas de feiras.
     );
 
     unique_ptr<Usuario> m_usuario;

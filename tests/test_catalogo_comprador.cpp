@@ -3,7 +3,7 @@
 #include <cmath>
 #include <limits>
 #include <iostream>
-
+// Perfis testers enquanto o banco de dados não estava pronto e que serviram para demonstração durante a apresentação.
 using namespace std;
 
 static DadosCatalogo dadosDeExemplo()

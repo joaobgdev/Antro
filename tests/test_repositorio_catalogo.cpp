@@ -12,6 +12,7 @@
 #include <limits>
 
 using namespace std;
+// Perfis testers enquanto o banco de dados não estava pronto e que serviram para demonstração durante a apresentação.
 
 static void executar(QSqlDatabase db, const QString &sql)
 {
