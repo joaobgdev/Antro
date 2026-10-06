@@ -164,6 +164,37 @@ static void testarReservas(const QString &arquivo)
     assert(catalogo.buscarProduto(alface)->getEstoque() == 1);
 }
 
+static void testarProdutosPausados(const QString &arquivo)
+{
+    {
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE","prepararPausados");
+        db.setDatabaseName(arquivo); assert(db.open()); usuarios(db); db.close();
+    }
+    QSqlDatabase::removeDatabase("prepararPausados");
+    RepositorioCatalogo repo(arquivo); assert(repo.abrir());
+    auto couve = produto("Couve","unidade",0,0); couve.ativo = false;
+    assert(salvar(repo,"81999990001",{1},{produto("Banana","kg",5,50),couve}));
+    auto produtos = repo.produtosDoFeirante("81999990001");
+    assert(produtos.size() == 2); assert(produtos[1].preco == 0); assert(!produtos[1].ativo);
+    CatalogoComprador catalogo; catalogo.definirDados(repo.carregar());
+    auto vendedores = catalogo.vendedoresDaFeira(1); assert(vendedores.size() == 1);
+    int vendedor = vendedores[0].id;
+    assert(catalogo.produtosDoVendedor(1,vendedor).size() == 1);
+    produtos[0].estoque = 100; produtos[1].ativo = true;
+    assert(!salvar(repo,"81999990001",{1},produtos));
+    assert(repo.produtosDoFeirante("81999990001")[0].estoque == 50);
+    produtos[1].ativo = false; produtos[1].preco = -1;
+    assert(!salvar(repo,"81999990001",{1},produtos));
+    produtos[1].preco = std::numeric_limits<double>::infinity();
+    assert(!salvar(repo,"81999990001",{1},produtos));
+    produtos[1].preco = std::numeric_limits<double>::quiet_NaN();
+    assert(!salvar(repo,"81999990001",{1},produtos));
+    produtos[0].estoque = 50; produtos[1].preco = 2; produtos[1].estoque = 10; produtos[1].ativo = true;
+    assert(salvar(repo,"81999990001",{1},produtos));
+    catalogo.definirDados(repo.carregar());
+    assert(catalogo.produtosDoVendedor(1,vendedor).size() == 2);
+}
+
 static void testarMigracao(const QString &arquivo)
 {
     {
@@ -220,5 +251,6 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc,argv);
     QTemporaryDir pasta; assert(pasta.isValid());
     testarAgenda(); testarReservas(pasta.path()+"/novo.db"); testarMigracao(pasta.path()+"/antigo.db");
+    testarProdutosPausados(pasta.path()+"/pausados.db");
     std::cout << "Agenda, migração, estoque, permissões e reservas passaram.\n";
 }

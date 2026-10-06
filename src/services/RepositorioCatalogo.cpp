@@ -333,10 +333,11 @@ bool RepositorioCatalogo::salvarPerfil(const QString &telefone, const QVector<in
     }
     QVector<int> mantidos;
     for (const RegistroProdutoFeirante &p : produtos) {
-        if (p.nome.trimmed().isEmpty() || !std::isfinite(p.preco) || p.preco <= 0 || !std::isfinite(p.estoque) || p.estoque < 0
+        if (p.nome.trimmed().isEmpty() || !std::isfinite(p.preco) || p.preco < 0 || (p.ativo && p.preco <= 0)
+            || !std::isfinite(p.estoque) || p.estoque < 0
             || (p.tipoVenda != "unidade" && p.tipoVenda != "kg" && p.tipoVenda != "100g")
             || (p.estoque > 0 && !quantidadeValida(p.estoque, p.tipoVenda))) {
-            db.rollback(); return falhar("Confira o nome, preço, unidade e estoque de todos os produtos.");
+            db.rollback(); return falhar("Confira o nome, preço, unidade e estoque de " + p.nome + ".");
         }
         if (ids.isEmpty() && p.ativo) { db.rollback(); return falhar("Selecione uma feira ou pause os produtos antes de salvar."); }
         double preco = p.preco * (p.tipoVenda == "100g" ? 10 : 1);

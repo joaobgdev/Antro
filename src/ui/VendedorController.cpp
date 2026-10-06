@@ -127,9 +127,11 @@ bool VendedorController::definirPreco(int indice, const QString &texto)
     QString numero = texto.trimmed();
     if (numero.contains(',')) numero.remove('.');
     double valor = numero.replace(',', '.').toDouble(&ok);
-    if (!ok || !std::isfinite(valor) || valor <= 0) return falhar("Informe um preço maior que zero.");
+    if (!ok || !std::isfinite(valor) || valor < 0)
+        return falhar("Informe um preço válido para " + m_produtos[indice].nome + ".");
     valor = std::round(valor * 100) / 100;
-    if (valor <= 0) return falhar("O preço mínimo é R$ 0,01.");
+    if (m_produtos[indice].ativo && valor <= 0)
+        return falhar("Informe um preço de pelo menos R$ 0,01 para " + m_produtos[indice].nome + ".");
     m_produtos[indice].preco = valor;
     limparErro();
     return true;
