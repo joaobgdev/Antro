@@ -2,6 +2,8 @@
 #include "ui/AuthController.hpp"
 #include <cmath>
 
+using namespace std;
+
 VendedorController::VendedorController(QObject *parent) : QObject(parent)
 {
     m_bancoPronto = m_repo.abrir();
@@ -127,8 +129,8 @@ bool VendedorController::definirPreco(int indice, const QString &texto)
     QString numero = texto.trimmed();
     if (numero.contains(',')) numero.remove('.');
     double valor = numero.replace(',', '.').toDouble(&ok);
-    if (!ok || !std::isfinite(valor) || valor <= 0) return falhar("Informe um preço maior que zero.");
-    valor = std::round(valor * 100) / 100;
+    if (!ok || !isfinite(valor) || valor <= 0) return falhar("Informe um preço maior que zero.");
+    valor = round(valor * 100) / 100;
     if (valor <= 0) return falhar("O preço mínimo é R$ 0,01.");
     m_produtos[indice].preco = valor;
     limparErro();
@@ -143,7 +145,7 @@ bool VendedorController::definirEstoque(int indice, const QString &texto)
     if (numero.contains(',')) numero.remove('.');
     double valor = numero.replace(',', '.').toDouble(&ok);
     double passo = m_produtos[indice].tipoVenda == "100g" ? 0.1 : m_produtos[indice].tipoVenda == "kg" ? 0.5 : 1.0;
-    if (!ok || !std::isfinite(valor) || valor < 0 || std::abs(valor / passo - std::round(valor / passo)) > 0.00001)
+    if (!ok || !isfinite(valor) || valor < 0 || abs(valor / passo - round(valor / passo)) > 0.00001)
         return falhar("O estoque deve ser zero ou um múltiplo de " + QString::number(passo) + ".");
     m_produtos[indice].estoque = valor;
     limparErro();

@@ -8,6 +8,8 @@
 #include <QStandardPaths>
 #include <cmath>
 
+using namespace std;
+
 namespace {
 int numeroConexao = 0;
 
@@ -21,10 +23,10 @@ bool colunaExiste(QSqlDatabase db, const QString &tabela, const QString &coluna)
 
 bool quantidadeValida(double quantidade, const QString &tipo)
 {
-    if (!std::isfinite(quantidade) || quantidade <= 0) return false;
+    if (!isfinite(quantidade) || quantidade <= 0) return false;
     double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0;
     double partes = quantidade / passo;
-    return std::abs(partes - std::round(partes)) < 0.00001;
+    return abs(partes - round(partes)) < 0.00001;
 }
 }
 
@@ -333,7 +335,7 @@ bool RepositorioCatalogo::salvarPerfil(const QString &telefone, const QVector<in
     }
     QVector<int> mantidos;
     for (const RegistroProdutoFeirante &p : produtos) {
-        if (p.nome.trimmed().isEmpty() || !std::isfinite(p.preco) || p.preco <= 0 || !std::isfinite(p.estoque) || p.estoque < 0
+        if (p.nome.trimmed().isEmpty() || !isfinite(p.preco) || p.preco <= 0 || !isfinite(p.estoque) || p.estoque < 0
             || (p.tipoVenda != "unidade" && p.tipoVenda != "kg" && p.tipoVenda != "100g")
             || (p.estoque > 0 && !quantidadeValida(p.estoque, p.tipoVenda))) {
             db.rollback(); return falhar("Confira o nome, preço, unidade e estoque de todos os produtos.");
@@ -393,7 +395,7 @@ bool RepositorioCatalogo::removerProduto(const QString &telefone, int produtoId)
 }
 
 QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
-    const std::vector<ItemSacolaComprador> &itens, const QVector<AgendamentoReserva> &agendamentos,
+    const vector<ItemSacolaComprador> &itens, const QVector<AgendamentoReserva> &agendamentos,
     const DadosCatalogo &dadosEsperados)
 {
     m_ultimoErro.clear();
@@ -425,11 +427,11 @@ QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
         QString tipo = q.value(2).toString();
         double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0;
         if ((tipo != "unidade" && tipo != "kg" && tipo != "100g")
-            || !quantidadeValida(item.quantidade, tipo) || !std::isfinite(item.quantidade * preco))
+            || !quantidadeValida(item.quantidade, tipo) || !isfinite(item.quantidade * preco))
             return erro("A quantidade de " + nome + " é inválida.");
-        if (!esperado || !std::isfinite(preco) || preco <= 0
-            || std::abs(esperado->getPreco() - preco) > 0.000001
-            || std::abs(esperado->getPasso() - passo) > 0.000001)
+        if (!esperado || !isfinite(preco) || preco <= 0
+            || abs(esperado->getPreco() - preco) > 0.000001
+            || abs(esperado->getPasso() - passo) > 0.000001)
             return erro("O preço ou a unidade de " + nome + " mudou. Confira o carrinho antes de tentar novamente.");
         q.prepare("SELECT nome, bairro, local, horario, dia_semana, hora_inicio, hora_fim FROM feiras WHERE id = ?");
         q.addBindValue(item.feiraId);
@@ -552,7 +554,7 @@ QVariantMap RegistroReserva::comoMapa() const
     QVariantList produtos;
     for (const ItemReserva &item : itens)
         produtos.append(QVariantMap{{"nome", item.nome}, {"unidade", item.unidade},
-            {"quantidade", item.quantidade}, {"preco", item.preco}, {"subtotal", std::round(item.quantidade * item.preco * 100) / 100}});
+            {"quantidade", item.quantidade}, {"preco", item.preco}, {"subtotal", round(item.quantidade * item.preco * 100) / 100}});
     QString situacao = status;
     if (status == "SOLICITADA") situacao = "Aguardando vendedor";
     if (status == "ACEITA") situacao = "Confirmada pelo vendedor";

@@ -7,6 +7,8 @@
 #include <QVariantMap>
 #include "services/CatalogoComprador.hpp"
 
+using namespace std;
+
 struct RegistroProdutoFeirante {
     int id = 0;
     QString nome;
@@ -64,7 +66,7 @@ public:
                       const QVector<RegistroProdutoFeirante> &produtos,
                       const QVector<RegistroProdutoFeirante> &anteriores);
     bool removerProduto(const QString &telefone, int produtoId);
-    QVector<int> salvarReservas(const QString &telefone, const std::vector<ItemSacolaComprador> &itens,
+    QVector<int> salvarReservas(const QString &telefone, const vector<ItemSacolaComprador> &itens,
                                const QVector<AgendamentoReserva> &agendamentos,
                                const DadosCatalogo &dadosEsperados);
     QVector<RegistroReserva> reservasDoUsuario(const QString &telefone, bool vendedor);

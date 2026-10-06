@@ -11,6 +11,8 @@
 #include "ui/CompradorController.hpp"
 #include "ui/VendedorController.hpp"
 
+using namespace std;
+
 static void aguardar()
 {
     QEventLoop eventos;
@@ -30,7 +32,7 @@ static QQuickItem *encontrar(QQuickItem *item, const QString &nome)
 static QQuickItem *controle(QQuickWindow *janela, const QString &nome)
 {
     QQuickItem *item = encontrar(janela->contentItem(),nome);
-    if (!item) std::cerr << "Controle não encontrado: " << nome.toStdString() << '\n';
+    if (!item) cerr << "Controle não encontrado: " << nome.toStdString() << '\n';
     assert(item);
     return item;
 }
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     int erros = 0;
     QObject::connect(&engine,&QQmlEngine::warnings,[&](const QList<QQmlError> &avisos) {
-        for (const QQmlError &aviso : avisos) { std::cerr << aviso.toString().toStdString() << '\n'; ++erros; }
+        for (const QQmlError &aviso : avisos) { cerr << aviso.toString().toStdString() << '\n'; ++erros; }
     });
     auto auth = engine.singletonInstance<AuthController *>("Antro","AuthController");
     auto comprador = engine.singletonInstance<CompradorController *>("Antro","CompradorController");
@@ -118,5 +120,5 @@ int main(int argc, char *argv[])
     assert(vendedor->produtos().first().toMap().value("estoque").toDouble() == 10);
     assert(!comprador->adicionar(1,1,1,1));
     assert(erros == 0);
-    std::cout << "Cadastro, navegação, edição, agendamento, pedidos e troca de sessão passaram.\n";
+    cout << "Cadastro, navegação, edição, agendamento, pedidos e troca de sessão passaram.\n";
 }

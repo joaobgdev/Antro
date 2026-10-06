@@ -4,16 +4,18 @@
 #include <sstream>
 #include <utility>
 
-Usuario::Usuario(std::string nome, std::string telefone)
-    : nome(std::move(nome)), telefone(std::move(telefone)) {}
+using namespace std;
 
-std::string Usuario::getNome() const { return nome; }
-std::string Usuario::getTelefone() const { return telefone; }
+Usuario::Usuario(string nome, string telefone)
+    : nome(move(nome)), telefone(move(telefone)) {}
 
-std::string Usuario::validar() const {
+string Usuario::getNome() const { return nome; }
+string Usuario::getTelefone() const { return telefone; }
 
-    std::istringstream palavras(nome);
-    std::string palavra;
+string Usuario::validar() const {
+
+    istringstream palavras(nome);
+    string palavra;
     int quantidade = 0;
     while (palavras >> palavra) ++quantidade;
     if (quantidade < 2)
@@ -21,7 +23,7 @@ std::string Usuario::validar() const {
 
     int digitos = 0;
     for (unsigned char c : telefone)
-        if (std::isdigit(c)) ++digitos;
+        if (isdigit(c)) ++digitos;
     if (digitos < 10 || digitos > 11)
         return "Telefone inválido. Use DDD + número.";
 

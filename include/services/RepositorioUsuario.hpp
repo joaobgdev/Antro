@@ -4,6 +4,8 @@
 #include <QString>
 #include <optional>
 
+using namespace std;
+
 struct RegistroUsuario {
     QString perfil;
     QString nome;
@@ -22,7 +24,7 @@ public:
     bool abrir();
     bool existe(const QString &telefone);
     bool inserir(const RegistroUsuario &registro);
-    std::optional<RegistroUsuario> buscarPorTelefone(const QString &telefone);
+    optional<RegistroUsuario> buscarPorTelefone(const QString &telefone);
 
     QString ultimoErro() const { return m_ultimoErro; }
 

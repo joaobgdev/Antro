@@ -3,12 +3,14 @@
 
 #include "models/usuario.hpp"
 
+using namespace std;
+
 class Consumidor : public Usuario {
 public:
     using Usuario::Usuario;
 
-    std::string getPerfil() const override;
-    std::string getSubtitulo() const override;
+    string getPerfil() const override;
+    string getSubtitulo() const override;
 };
 
 #endif
