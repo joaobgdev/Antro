@@ -3,9 +3,10 @@
 
 QDateTime AgendaFeira::agora()
 {
-    return QDateTime::currentDateTimeUtc().toTimeZone(QTimeZone("America/Recife"));
+    return QDateTime::currentDateTimeUtc().toTimeZone(QTimeZone("America/Recife")); // Fuso de Recife
 }
 
+// Checagem da feira aberta
 bool AgendaFeira::aberta(const FeiraComprador &feira, const QDateTime &momento)
 {
     QTime inicio = QTime::fromString(QString::fromStdString(feira.inicio), "HH:mm");
@@ -14,6 +15,7 @@ bool AgendaFeira::aberta(const FeiraComprador &feira, const QDateTime &momento)
         && momento.time() >= inicio && momento.time() < fim;
 }
 
+// Checagem de dias abertos
 QStringList AgendaFeira::datas(const FeiraComprador &feira, const QDateTime &momento)
 {
     QStringList lista;
@@ -27,6 +29,7 @@ QStringList AgendaFeira::datas(const FeiraComprador &feira, const QDateTime &mom
     return lista;
 }
 
+// Janelas de horários
 QVector<AgendamentoReserva> AgendaFeira::janelas(const FeiraComprador &feira, const QString &dataTexto,
                                                const QDateTime &momento)
 {
@@ -47,6 +50,7 @@ QVector<AgendamentoReserva> AgendaFeira::janelas(const FeiraComprador &feira, co
     return lista;
 }
 
+// Validar janelas de agendamento
 bool AgendaFeira::validar(const FeiraComprador &feira, const AgendamentoReserva &agendamento,
                          const QDateTime &momento)
 {
