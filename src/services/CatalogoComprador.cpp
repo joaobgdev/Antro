@@ -1,6 +1,8 @@
 #include "services/CatalogoComprador.hpp"
 #include <cmath>
 
+using namespace std;
+
 //Carrinho = Sacola
 
 // Carrega a base de dados do catálogo recebida do servidor
@@ -19,7 +21,7 @@ void CatalogoComprador::definirDados(const DadosCatalogo& dados)
 // Remove do carrinho itens que não existem mais no catálogo ou que excedem o estoque
 void CatalogoComprador::podarSacola()
 {
-    std::vector<ItemSacolaComprador> mantidos;
+    vector<ItemSacolaComprador> mantidos;
     
     for (const ItemSacolaComprador& item : sacola) {
         const Produto* produto = buscarProduto(item.produtoId);
@@ -48,10 +50,10 @@ const DadosCatalogo CatalogoComprador::dados() const
 }
 
 // Lista completa de feiras cadastradas
-const std::vector<FeiraComprador>& CatalogoComprador::getFeiras() const { return feiras; }
+const vector<FeiraComprador>& CatalogoComprador::getFeiras() const { return feiras; }
 
 // Itens no carrinho de compras
-const std::vector<ItemSacolaComprador>& CatalogoComprador::getSacola() const { return sacola; }
+const vector<ItemSacolaComprador>& CatalogoComprador::getSacola() const { return sacola; }
 
 // Busca uma feira específica pelo seu ID (retorna nullptr se não encontrar)
 const FeiraComprador* CatalogoComprador::buscarFeira(int id) const
@@ -87,9 +89,9 @@ bool CatalogoComprador::temOferta(int feiraId, int vendedorId, int produtoId) co
 }
 
 // Retorna todos os vendedores que atuam em uma feira específica
-std::vector<VendedorComprador> CatalogoComprador::vendedoresDaFeira(int feiraId) const
+vector<VendedorComprador> CatalogoComprador::vendedoresDaFeira(int feiraId) const
 {
-    std::vector<VendedorComprador> resultado;
+    vector<VendedorComprador> resultado;
     for (const VendedorComprador& vendedor : vendedores) {
         bool participa = false;
         
@@ -105,9 +107,9 @@ std::vector<VendedorComprador> CatalogoComprador::vendedoresDaFeira(int feiraId)
 }
 
 // Retorna a lista de produtos ofertados por um vendedor específico em uma feira
-std::vector<Produto> CatalogoComprador::produtosDoVendedor(int feiraId, int vendedorId) const
+vector<Produto> CatalogoComprador::produtosDoVendedor(int feiraId, int vendedorId) const
 {
-    std::vector<Produto> resultado;
+    vector<Produto> resultado;
     for (const Produto& produto : produtos)
         if (temOferta(feiraId, vendedorId, produto.getId())) resultado.push_back(produto);
     return resultado;
@@ -150,9 +152,9 @@ bool CatalogoComprador::adicionar(int feiraId, int vendedorId, int produtoId, do
 // Valida se a quantidade informada respeita os passos fracionados (0.5kg, 1kg, etc)
 bool CatalogoComprador::quantidadeValida(const Produto& produto, double quantidade) const
 {
-    if (!std::isfinite(quantidade) || quantidade <= 0) return false;
+    if (!isfinite(quantidade) || quantidade <= 0) return false;
     double passos = quantidade / produto.getPasso();
-    return std::abs(passos - std::round(passos)) < 0.00001;
+    return abs(passos - round(passos)) < 0.00001;
 }
 
 // Altera a quantidade de um item no carrinho
@@ -188,7 +190,7 @@ double CatalogoComprador::totalEstimado() const
     double total = 0;
     for (const ItemSacolaComprador& item : sacola) {
         const Produto* produto = buscarProduto(item.produtoId);
-        if (produto) total += std::round(produto->getPreco() * item.quantidade * 100) / 100;
+        if (produto) total += round(produto->getPreco() * item.quantidade * 100) / 100;
     }
     return total;
 }

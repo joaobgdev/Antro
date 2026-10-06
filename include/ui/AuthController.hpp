@@ -9,6 +9,8 @@
 #include "models/usuario.hpp"
 #include "services/RepositorioUsuario.hpp"
 
+using namespace std;
+
 class AuthController : public QObject
 {
     Q_OBJECT
@@ -55,10 +57,10 @@ private:
     bool falhar(const QString &mensagem);
 
     void definirUsuario(
-        std::unique_ptr<Usuario> usuario
+        unique_ptr<Usuario> usuario
     );
 
-    static std::unique_ptr<Usuario> criarUsuario(
+    static unique_ptr<Usuario> criarUsuario(
         const QString &perfil,
         const QString &nome,
         const QString &telefone,
@@ -66,7 +68,7 @@ private:
         const QString &codigoOCS
     );
 
-    std::unique_ptr<Usuario> m_usuario;
+    unique_ptr<Usuario> m_usuario;
     RepositorioUsuario m_repo;
     bool m_bancoPronto = false;
 };

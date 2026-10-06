@@ -6,6 +6,8 @@
 #include "models/agricultor.hpp"
 #include "models/consumidor.hpp"
 
+using namespace std;
+
 namespace {
 
 QString somenteDigitos(const QString &texto)
@@ -60,15 +62,15 @@ QString AuthController::subtituloUsuario() const
     return m_usuario ? QString::fromStdString(m_usuario->getSubtitulo()) : QString();
 }
 
-std::unique_ptr<Usuario> AuthController::criarUsuario(const QString &perfil, const QString &nome,
+unique_ptr<Usuario> AuthController::criarUsuario(const QString &perfil, const QString &nome,
                                                       const QString &telefone,
                                                       const QString &nomeBanca,
                                                       const QString &codigoOCS)
 {
     if (perfil == QLatin1String("feirante"))
-        return std::make_unique<Agricultor>(nome.toStdString(), telefone.toStdString(),
+        return make_unique<Agricultor>(nome.toStdString(), telefone.toStdString(),
                                             nomeBanca.toStdString(), codigoOCS.toStdString());
-    return std::make_unique<Consumidor>(nome.toStdString(), telefone.toStdString());
+    return make_unique<Consumidor>(nome.toStdString(), telefone.toStdString());
 }
 
 bool AuthController::falhar(const QString &mensagem)
@@ -77,9 +79,9 @@ bool AuthController::falhar(const QString &mensagem)
     return false;
 }
 
-void AuthController::definirUsuario(std::unique_ptr<Usuario> usuario)
+void AuthController::definirUsuario(unique_ptr<Usuario> usuario)
 {
-    m_usuario = std::move(usuario);
+    m_usuario = move(usuario);
     emit usuarioChanged();
 }
 
@@ -97,7 +99,7 @@ bool AuthController::cadastrar(const QString &perfil, const QString &nome, const
     auto usuario = criarUsuario(perfil, nome.trimmed(), digitos,
                                 nomeBanca.trimmed(), codigoOCS.trimmed());
 
-    const std::string erro = usuario->validar();
+    const string erro = usuario->validar();
     if (!erro.empty())
         return falhar(QString::fromStdString(erro));
     if (senha.size() < 6)
@@ -117,7 +119,7 @@ bool AuthController::cadastrar(const QString &perfil, const QString &nome, const
     if (!m_repo.inserir(registro))
         return falhar("Erro ao salvar o cadastro: " + m_repo.ultimoErro());
 
-    definirUsuario(std::move(usuario));
+    definirUsuario(move(usuario));
     return true;
 }
 

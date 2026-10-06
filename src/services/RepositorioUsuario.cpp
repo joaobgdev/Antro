@@ -7,6 +7,8 @@
 #include <QSqlQuery>
 #include <QStandardPaths>
 
+using namespace std;
+
 namespace {
 const char *kConexao = "antro_connection";
 
@@ -85,7 +87,7 @@ bool RepositorioUsuario::inserir(const RegistroUsuario &r)
     return true;
 }
 
-std::optional<RegistroUsuario> RepositorioUsuario::buscarPorTelefone(const QString &telefone)
+optional<RegistroUsuario> RepositorioUsuario::buscarPorTelefone(const QString &telefone)
 {
     QSqlQuery q(banco());
     q.prepare("SELECT role, name, phone, market_name, ocs_number, password_hash, salt "
@@ -93,10 +95,10 @@ std::optional<RegistroUsuario> RepositorioUsuario::buscarPorTelefone(const QStri
     q.addBindValue(telefone);
     if (!q.exec()) {
         m_ultimoErro = q.lastError().text();
-        return std::nullopt;
+        return nullopt;
     }
     if (!q.next())
-        return std::nullopt;
+        return nullopt;
 
     RegistroUsuario r;
     r.perfil    = q.value(0).toString();

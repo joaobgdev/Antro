@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <cmath>
 
+using namespace std;
+
 CompradorController::CompradorController(QObject *parent) : QObject(parent)
 {
     m_bancoPronto = m_repo.abrir();
@@ -46,7 +48,7 @@ void CompradorController::recarregar()
     double totalAntes = m_catalogo.totalEstimado();
     m_catalogo.definirDados(dados);
     if (antes != m_catalogo.getSacola().size()) falhar("Alguns itens saíram do carrinho porque a oferta ou o estoque mudou.");
-    else if (std::abs(totalAntes - m_catalogo.totalEstimado()) > 0.000001) falhar("Os preços mudaram. Confira o carrinho antes de solicitar a reserva.");
+    else if (abs(totalAntes - m_catalogo.totalEstimado()) > 0.000001) falhar("Os preços mudaram. Confira o carrinho antes de solicitar a reserva.");
     podarAgendamentos();
     emit produtosChanged(); emit sacolaChanged(); emit reservasChanged();
 }
@@ -66,8 +68,8 @@ QVariantMap CompradorController::feira(int id) const
 
 QVariantList CompradorController::feiras() const
 {
-    std::vector<FeiraComprador> feiras = m_catalogo.getFeiras();
-    std::stable_sort(feiras.begin(), feiras.end(), [](const FeiraComprador &a, const FeiraComprador &b) {
+    vector<FeiraComprador> feiras = m_catalogo.getFeiras();
+    stable_sort(feiras.begin(), feiras.end(), [](const FeiraComprador &a, const FeiraComprador &b) {
         bool abertaA = AgendaFeira::aberta(a), abertaB = AgendaFeira::aberta(b);
         if (abertaA != abertaB) return abertaA;
         QStringList datasA = AgendaFeira::datas(a), datasB = AgendaFeira::datas(b);
@@ -104,7 +106,7 @@ QVariantList CompradorController::produtos(int feiraId, int vendedorId) const
         lista.append(QVariantMap{{"id", p.getId()}, {"nome", QString::fromStdString(p.getNome())},
             {"preco", p.getPreco() / (por100g ? 10 : 1)}, {"unidadePreco", por100g ? "100g" : p.getEhPorPeso() ? "kg" : "unidade"},
             {"unidade", p.getEhPorPeso() ? "kg" : "unidade"}, {"passo", p.getPasso()},
-            {"disponivel", std::max(0.0, p.getEstoque() - m_catalogo.quantidadeNaSacola(p.getId()))}});
+            {"disponivel", max(0.0, p.getEstoque() - m_catalogo.quantidadeNaSacola(p.getId()))}});
     }
     return lista;
 }
@@ -112,7 +114,7 @@ QVariantList CompradorController::produtos(int feiraId, int vendedorId) const
 QVariantList CompradorController::sacola() const
 {
     QVariantList lista;
-    const std::vector<ItemSacolaComprador> &itens = m_catalogo.getSacola();
+    const vector<ItemSacolaComprador> &itens = m_catalogo.getSacola();
     for (size_t i = 0; i < itens.size(); ++i) {
         const ItemSacolaComprador &item = itens[i];
         const Produto *p = m_catalogo.buscarProduto(item.produtoId);
@@ -122,7 +124,7 @@ QVariantList CompradorController::sacola() const
             {"feira", feira(item.feiraId).value("nome")}, {"vendedor", vendedor(item.vendedorId).value("banca")},
             {"unidade", p->getEhPorPeso() ? "kg" : "unidade"}, {"preco", p->getPreco()},
             {"passo", p->getPasso()}, {"podeAumentar", item.quantidade + p->getPasso() <= maximo + 0.000001},
-            {"quantidade", item.quantidade}, {"subtotal", std::round(p->getPreco() * item.quantidade * 100) / 100}});
+            {"quantidade", item.quantidade}, {"subtotal", round(p->getPreco() * item.quantidade * 100) / 100}});
     }
     return lista;
 }

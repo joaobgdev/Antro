@@ -4,6 +4,8 @@
 #include <limits>
 #include <iostream>
 
+using namespace std;
+
 static DadosCatalogo dadosDeExemplo()
 {
     DadosCatalogo d;
@@ -36,8 +38,8 @@ int main()
     assert(!catalogo.adicionar(1, 1, 101, -1));
     assert(!catalogo.adicionar(1, 1, 101, 0.5));
     assert(!catalogo.adicionar(1, 1, 102, 0.25));
-    assert(!catalogo.adicionar(1, 1, 102, std::numeric_limits<double>::quiet_NaN()));
-    assert(!catalogo.adicionar(1, 1, 102, std::numeric_limits<double>::infinity()));
+    assert(!catalogo.adicionar(1, 1, 102, numeric_limits<double>::quiet_NaN()));
+    assert(!catalogo.adicionar(1, 1, 102, numeric_limits<double>::infinity()));
     assert(catalogo.adicionar(1, 1, 101, 2));
     assert(catalogo.adicionar(1, 1, 101, 3));
     assert(catalogo.getSacola().size() == 1);
@@ -47,7 +49,7 @@ int main()
     assert(!catalogo.adicionar(1, 1, 101, 1));
     catalogo.remover(1);
     assert(catalogo.adicionar(1, 1, 102, 0.5));
-    assert(std::abs(catalogo.totalEstimado() - 23.5) < 0.001);
+    assert(abs(catalogo.totalEstimado() - 23.5) < 0.001);
     catalogo.remover(-1);
     catalogo.remover(100);
     assert(catalogo.getSacola().size() == 2);
@@ -78,7 +80,7 @@ int main()
     produto.reporEstoque(-1);
     assert(produto.getEstoque() == 0);
     produto.reporEstoque(0.3);
-    assert(std::abs(produto.getEstoque() - 0.3) < 0.000001);
+    assert(abs(produto.getEstoque() - 0.3) < 0.000001);
     DadosCatalogo porGrama = dadosDeExemplo();
     porGrama.produtos.push_back(produto);
     porGrama.ofertas.push_back({1,1,200});
@@ -95,5 +97,5 @@ int main()
     catalogo.definirDados(novos);
     assert(catalogo.getSacola().size() == 1);
     assert(catalogo.getSacola()[0].feiraId == 1);
-    std::cout << "Testes do catalogo, do carrinho e da reserva passaram.\n";
+    cout << "Testes do catalogo, do carrinho e da reserva passaram.\n";
 }

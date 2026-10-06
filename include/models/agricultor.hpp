@@ -3,21 +3,23 @@
 
 #include "models/usuario.hpp"
 
+using namespace std;
+
 class Agricultor : public Usuario {
 private:
-    std::string nomeBanca;
-    std::string codigoOCS;
+    string nomeBanca;
+    string codigoOCS;
 
 public:
-    Agricultor(std::string nome, std::string telefone,
-               std::string nomeBanca, std::string codigoOCS);
+    Agricultor(string nome, string telefone,
+               string nomeBanca, string codigoOCS);
 
-    std::string getNomeBanca() const;
-    std::string getCodigoOCS() const;
+    string getNomeBanca() const;
+    string getCodigoOCS() const;
 
-    std::string getPerfil() const override;
-    std::string getSubtitulo() const override;
-    std::string validar() const override;
+    string getPerfil() const override;
+    string getSubtitulo() const override;
+    string validar() const override;
 };
 
 #endif
