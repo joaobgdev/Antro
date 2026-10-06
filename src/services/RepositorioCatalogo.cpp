@@ -6,32 +6,38 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QStandardPaths>
-#include <cmath>
+#include <cmath> 
 
 using namespace std;
 
 namespace {
-int numeroConexao = 0;
+int numeroConexao = 0; // Padrão de nomeação dinâmica (Linha 40: antro_catalago_0, antro_catalogo_1, antro_catalogo_2...)
+// Evita que as conexões sejam sobrepostas por possuirem o mesmo nome
 
+// Descobrir se uma coluna da tabela SQL Lite já existe ou não
 bool colunaExiste(QSqlDatabase db, const QString &tabela, const QString &coluna)
 {
     QSqlQuery q(db);
     q.exec("PRAGMA table_info(" + tabela + ")");
-    while (q.next()) if (q.value(1).toString() == coluna) return true;
+    while (q.next()) { //Passa pra próxima posição
+        if (q.value(1).toString() == coluna) // Retorna true se achar uma coluna naquela posição
+            return true;
+    }
     return false;
 }
 
+// Valida se a quantidade definida é valida (Múltipla de 100 gramas / passo)
 bool quantidadeValida(double quantidade, const QString &tipo)
 {
-    if (!isfinite(quantidade) || quantidade <= 0) return false;
-    double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0;
-    double partes = quantidade / passo;
-    return abs(partes - round(partes)) < 0.00001;
+    if (!isfinite(quantidade) || quantidade <= 0) return false; // Se for inválido (Não numeral) ou 0, retorna falso
+    double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0; // Tipo define incremento (100g incremente 0.1, Kg incrementa em 0.5 e unidade 1.0)
+    double partes = quantidade / passo; // Quantidade de porções definidas
+    return abs(partes - round(partes)) < 0.00001; // Proteção contra bug de divisão
 }
 }
 
 RepositorioCatalogo::RepositorioCatalogo(const QString &caminho)
-    : m_caminho(caminho), m_conexao("antro_catalogo_" + QString::number(++numeroConexao)) {}
+    : m_caminho(caminho), m_conexao("antro_catalogo_" + QString::number(++numeroConexao)) {} // Define as conexões usando numeroConexao
 
 RepositorioCatalogo::~RepositorioCatalogo()
 {
