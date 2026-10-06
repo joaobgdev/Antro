@@ -47,8 +47,8 @@ signals:
     void erroChanged();
 
 private:
-    bool autorizado();
-    bool falhar(const QString &texto);
+    bool autorizado(); // Verifica se existe uma sessão válida para executar operações do comprador.
+    bool falhar(const QString &texto); // Centraliza o tratamento de falhas: armazena a mensagem de erro, notifica o QML e retorna false.
     void limparErro();
     QVector<int> m_feiras;
     QVector<RegistroProdutoFeirante> m_produtos;
@@ -56,7 +56,7 @@ private:
     QStringList m_pendentes;
     QString m_erro;
     RepositorioCatalogo m_repo;
-    QPointer<AuthController> m_auth;
+    QPointer<AuthController> m_auth; //Obs.: Acerca do QPointer, ele é um ponteiro do próprio Qt que herdam o QObject 
     bool m_bancoPronto = false;
 };
 

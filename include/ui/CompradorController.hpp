@@ -55,9 +55,9 @@ signals:
     void erroChanged();
 
 private:
-    bool autorizado();
+    bool autorizado(); // Verifica se existe uma sessão válida para executar operações do comprador.
     bool falhar(const QString &texto);
-    void podarAgendamentos();
+    void podarAgendamentos(); // Remove da lista interna agendamentos inativos.
     RepositorioCatalogo m_repo;
     CatalogoComprador m_catalogo;
     QVector<AgendamentoReserva> m_agendamentos;
