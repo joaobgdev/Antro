@@ -7,8 +7,11 @@ using namespace std;
 
 class Consumidor : public Usuario {
 public:
+
+ // Cria um usuario com seus dados pessoais
     using Usuario::Usuario;
 
+//comportamentos sobreescritos da classe usuario
     string getPerfil() const override;
     string getSubtitulo() const override;
 };
