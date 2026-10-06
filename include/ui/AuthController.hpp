@@ -9,8 +9,6 @@
 #include "models/usuario.hpp"
 #include "services/RepositorioUsuario.hpp"
 
-// Singleton acessível no QML como "AuthController".
-// Só esta classe conhece Qt; as classes de domínio (Usuario...) continuam C++ puro.
 class AuthController : public QObject
 {
     Q_OBJECT
@@ -73,4 +71,4 @@ private:
     bool m_bancoPronto = false;
 };
 
-#endif // AUTHCONTROLLER_HPP
+#endif

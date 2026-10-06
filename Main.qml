@@ -1,23 +1,17 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 import Antro
 
 Window {
-    id: window
     width: 1280
     height: 720
-    minimumWidth: 900
-    minimumHeight: 600
-
+    minimumWidth: 640
+    minimumHeight: 560
     visible: true
-    title: qsTr("Antro")
-    Connections {
-        target: AuthController
-        function onUsuarioChanged() { CompradorController.limpar() }
-    }
+    title: "Antro"
     StackView {
         id: stackView
+        objectName: "navegacao"
         anchors.fill: parent
         initialItem: "telas/LoginScreen.qml"
     }

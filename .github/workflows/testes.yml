@@ -1,0 +1,27 @@
+name: Compilar e testar
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  testes:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1-mesa-dev libegl1-mesa-dev libxkbcommon-dev ninja-build
+          python -m pip install aqtinstall==3.3.0
+          python -m aqt install-qt linux desktop 6.8.3 linux_gcc_64 -O "${{ runner.temp }}/Qt"
+      - name: Configurar
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH="${{ runner.temp }}/Qt/6.8.3/gcc_64" -DBUILD_TESTING=ON
+      - name: Compilar
+        run: cmake --build build --parallel 2
+      - name: Testar
+        run: ctest --test-dir build --output-on-failure

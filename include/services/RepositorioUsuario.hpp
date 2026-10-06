@@ -4,24 +4,22 @@
 #include <QString>
 #include <optional>
 
-// Uma linha da tabela "users"
 struct RegistroUsuario {
-    QString perfil;       // "comprador" ou "feirante"
+    QString perfil;
     QString nome;
-    QString telefone;     // somente dígitos
-    QString nomeBanca;    // vazio para compradores
-    QString codigoOCS;    // vazio para compradores
+    QString telefone;
+    QString nomeBanca;
+    QString codigoOCS;
     QString hashSenha;
     QString sal;
 };
 
-// Única classe que conhece SQL: o resto do programa não sabe como os dados são guardados.
 class RepositorioUsuario {
 public:
     RepositorioUsuario() = default;
     ~RepositorioUsuario();
 
-    bool abrir();   // abre o arquivo antro.db e cria a tabela se não existir
+    bool abrir();
     bool existe(const QString &telefone);
     bool inserir(const RegistroUsuario &registro);
     std::optional<RegistroUsuario> buscarPorTelefone(const QString &telefone);
@@ -32,4 +30,4 @@ private:
     QString m_ultimoErro;
 };
 
-#endif // REPOSITORIOUSUARIO_HPP
+#endif

@@ -7,7 +7,7 @@ using namespace std;
 
 class ItemPedido {
 private:
-    const Produto* produto; // agregação
+    const Produto* produto;
     float qtdSolicitada;
     float qtdRealPesa;
 
@@ -22,4 +22,4 @@ public:
     float calcularSubtotal() const;
 };
 
-#endif // ITEMPEDIDO_HPP
+#endif

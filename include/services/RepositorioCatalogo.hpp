@@ -2,46 +2,85 @@
 #define REPOSITORIOCATALOGO_HPP
 
 #include <QString>
+#include <QStringList>
 #include <QVector>
+#include <QVariantMap>
 #include "services/CatalogoComprador.hpp"
 
-// Uma linha de produto do feirante (tela "Seus produtos")
 struct RegistroProdutoFeirante {
-    int id;
+    int id = 0;
     QString nome;
-    double preco;
-    bool porPeso;
-    double estoque;
+    QString tipoVenda;
+    double preco = 0;
+    double estoque = 0;
+    double reservado = 0;
+    bool ativo = true;
+    int versao = 0;
     QVector<int> feiraIds;
 };
 
-// Conhece o SQL do catálogo (feiras, vendedores, produtos, ofertas) e das reservas.
-// Usa o mesmo arquivo antro.db do RepositorioUsuario, em uma conexão própria.
+struct AgendamentoReserva {
+    int feiraId = 0;
+    QString data;
+    QString inicio;
+    QString fim;
+};
+
+struct ItemReserva {
+    QString nome;
+    QString unidade;
+    double quantidade = 0;
+    double preco = 0;
+};
+
+struct RegistroReserva {
+    int id = 0;
+    int feiraId = 0;
+    int vendedorId = 0;
+    QString comprador;
+    QString banca;
+    QString feira;
+    QString local;
+    QString data;
+    QString inicio;
+    QString fim;
+    QString status;
+    QString criadaEm;
+    double total = 0;
+    QVector<ItemReserva> itens;
+    QVariantMap comoMapa() const;
+};
+
 class RepositorioCatalogo {
 public:
-    RepositorioCatalogo() = default;
+    explicit RepositorioCatalogo(const QString &caminho = QString());
     ~RepositorioCatalogo();
-
-    bool abrir();   // abre antro.db, cria as tabelas e, se estiverem vazias, insere os dados de exemplo
+    bool abrir();
     DadosCatalogo carregar();
-
-    // Produtos cadastrados por feirantes
-    bool inserirProduto(const QString &telefone, const QString &nomeFeirante, const QString &banca,
-                        const QString &nome, double preco, bool porPeso, double estoque,
-                        const QVector<int> &feiraIds);
+    QStringList feirasPendentes(const QString &telefone);
+    QVector<int> feirasDoFeirante(const QString &telefone);
     QVector<RegistroProdutoFeirante> produtosDoFeirante(const QString &telefone);
+    bool salvarPerfil(const QString &telefone, const QVector<int> &feiras,
+                      const QVector<RegistroProdutoFeirante> &produtos,
+                      const QVector<RegistroProdutoFeirante> &anteriores);
     bool removerProduto(const QString &telefone, int produtoId);
-
-    // Reservas: grava a reserva e baixa o estoque na mesma transação. Devolve o código (0 = falhou).
-    int salvarReserva(const QString &telefoneComprador, const QString &nomeComprador,
-                      const std::vector<ItemSacolaComprador> &itens, double total);
-
-    QString ultimoErro() const { return m_ultimoErro; }
+    QVector<int> salvarReservas(const QString &telefone, const std::vector<ItemSacolaComprador> &itens,
+                               const QVector<AgendamentoReserva> &agendamentos,
+                               const DadosCatalogo &dadosEsperados);
+    QVector<RegistroReserva> reservasDoUsuario(const QString &telefone, bool vendedor);
+    bool alterarReserva(const QString &telefone, bool vendedor, int id, const QString &status);
+    QString ultimoErro() const;
 
 private:
     bool criarTabelas();
-    bool inserirDadosDeExemplo();
+    bool migrar();
+    bool inserirFeiras();
+    bool falhar(const QString &erro);
+    int vendedorDoUsuario(const QString &telefone, bool criar = false);
+    bool usuarioValido(const QString &telefone, const QString &perfil);
+    QString m_caminho;
+    QString m_conexao;
     QString m_ultimoErro;
 };
 
-#endif // REPOSITORIOCATALOGO_HPP
+#endif

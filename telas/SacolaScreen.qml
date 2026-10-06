@@ -4,113 +4,140 @@ import QtQuick.Layouts
 import Antro
 
 PaginaComprador {
-    id: carrinhoPage
-    titulo: "Carrinho"
+    id: carrinho
     mostrarSacola: false
     property string aviso: ""
 
     function dinheiro(valor) { return "R$ " + Number(valor).toLocaleString(Qt.locale("pt_BR"), 'f', 2) }
-    function quantidadeTexto(item) { return Number(item.quantidade).toLocaleString(Qt.locale("pt_BR"), 'f', item.passo < 1 ? 1 : 0) }
-
     function finalizar() {
-        var resultado = CompradorController.finalizarReserva(AuthController.telefoneUsuario, AuthController.nomeUsuario)
-        if (!resultado.ok) {
-            carrinhoPage.aviso = resultado.erro
-            return
-        }
-        var pilha = carrinhoPage.StackView.view
-        pilha.pop(null)   // volta à home e abre o feedback por cima, sem deixar o carrinho na pilha
+        var resultado = CompradorController.finalizarReserva()
+        if (!resultado.ok) { aviso = resultado.erro; return }
+        var pilha = carrinho.StackView.view
+        pilha.pop(null)
         pilha.push(Qt.resolvedUrl("ReservaConfirmadaScreen.qml"), {resultado: resultado})
     }
 
-    ColumnLayout {
+    ScrollView {
         anchors.fill: parent
-        anchors.margins: 36
-        spacing: 18
-        Label { text: "Meu carrinho"; font.pixelSize: 36; font.bold: true; color: "#17201B" }
-        Label {
-            text: "Confira os itens e finalize a reserva. O valor é uma estimativa: produtos por peso podem variar na pesagem. Não há pagamento pelo aplicativo."
-            wrapMode: Text.WordWrap
-            Layout.fillWidth: true
-            color: "#66706A"
-        }
-        Label { text: carrinhoPage.aviso; visible: text.length > 0; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#B3261E" }
-        Label { visible: CompradorController.tiposNaSacola === 0; text: "Seu carrinho está vazio. Volte para escolher produtos." }
-        ListView {
-            id: listaSacola
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            clip: true
-            spacing: 18
-            model: CompradorController.sacola
-            ScrollBar.vertical: ScrollBar {}
-            delegate: Rectangle {
-                id: linha
-                required property var modelData
-                width: listaSacola.width
-                height: conteudo.implicitHeight + 56
-                color: "white"
-                radius: 14
-                border.color: "#E4E8E5"
-                RowLayout {
-                    id: conteudo
-                    anchors.fill: parent
-                    anchors.margins: 28
-                    spacing: 12
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        Label { text: linha.modelData.nome; font.bold: true; font.pixelSize: 24; color: "#22543D" }
-                        Label { text: linha.modelData.feira + " · " + linha.modelData.vendedor; wrapMode: Text.WordWrap; Layout.fillWidth: true }
-                        Label { text: carrinhoPage.dinheiro(linha.modelData.preco) + " / " + linha.modelData.unidade; color: "#66706A" }
+        anchors.margins: carrinho.width < 800 ? 20 : 36
+        contentWidth: availableWidth
+        clip: true
+        ColumnLayout {
+            width: parent.width
+            spacing: 16
+            Label { text: "Meu carrinho"; font.pixelSize: 36; font.bold: true; color: "#17201B" }
+            Label {
+                text: "Escolha a retirada em cada feira. O valor é estimado e pode variar na pesagem. O pagamento é combinado diretamente com o produtor."
+                color: "#66706A"
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            Label { text: carrinho.aviso || CompradorController.erro; visible: text.length > 0; color: "#B3261E"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+            Label { visible: CompradorController.tiposNaSacola === 0; text: "Seu carrinho está vazio. Volte para escolher produtos." }
+            Repeater {
+                model: CompradorController.sacola
+                delegate: Rectangle {
+                    id: item
+                    required property var modelData
+                    Layout.fillWidth: true
+                    implicitHeight: conteudo.implicitHeight + 44
+                    color: "white"
+                    radius: 14
+                    border.color: "#E2E7E3"
+                    GridLayout {
+                        id: conteudo
+                        anchors.fill: parent
+                        anchors.margins: 22
+                        columns: carrinho.width < 1000 ? 1 : 2
+                        rowSpacing: 12
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            Label { text: item.modelData.nome; font.pixelSize: 24; font.bold: true; color: "#22543D" }
+                            Label { text: item.modelData.vendedor + " · " + item.modelData.feira; wrapMode: Text.WordWrap; Layout.fillWidth: true; color: "#66706A" }
+                            Label { text: carrinho.dinheiro(item.modelData.preco) + " / " + item.modelData.unidade + " · subtotal " + carrinho.dinheiro(item.modelData.subtotal) }
+                        }
+                        RowLayout {
+                            BotaoAntro { text: "−"; secundario: true; enabled: item.modelData.quantidade > item.modelData.passo + 0.000001; onClicked: CompradorController.alterarQuantidade(item.modelData.indice, item.modelData.quantidade - item.modelData.passo) }
+                            Label { text: Number(item.modelData.quantidade).toLocaleString(Qt.locale("pt_BR"), 'f', item.modelData.passo < 1 ? 1 : 0) + " " + item.modelData.unidade; Layout.minimumWidth: 72; horizontalAlignment: Text.AlignHCenter }
+                            BotaoAntro { text: "+"; secundario: true; enabled: item.modelData.podeAumentar; onClicked: CompradorController.alterarQuantidade(item.modelData.indice, item.modelData.quantidade + item.modelData.passo) }
+                            BotaoAntro { text: "Remover"; secundario: true; onClicked: CompradorController.remover(item.modelData.indice) }
+                        }
                     }
-                    BotaoAntro {
-                        text: "−"
-                        secundario: true
-                        leftPadding: 0; rightPadding: 0
-                        Layout.preferredWidth: 48
-                        enabled: linha.modelData.quantidade - linha.modelData.passo > 0
-                        onClicked: CompradorController.alterarQuantidade(linha.modelData.indice, linha.modelData.quantidade - linha.modelData.passo)
-                    }
-                    Label {
-                        text: carrinhoPage.quantidadeTexto(linha.modelData) + " " + linha.modelData.unidade
-                        font.bold: true
-                        horizontalAlignment: Text.AlignHCenter
-                        Layout.preferredWidth: 90
-                    }
-                    BotaoAntro {
-                        text: "+"
-                        secundario: true
-                        leftPadding: 0; rightPadding: 0
-                        Layout.preferredWidth: 48
-                        enabled: linha.modelData.podeAumentar
-                        onClicked: CompradorController.alterarQuantidade(linha.modelData.indice, linha.modelData.quantidade + linha.modelData.passo)
-                    }
-                    Label {
-                        text: carrinhoPage.dinheiro(linha.modelData.subtotal)
-                        font.bold: true
-                        font.pixelSize: 20
-                        color: "#22543D"
-                        horizontalAlignment: Text.AlignRight
-                        Layout.preferredWidth: 110
-                    }
-                    BotaoAntro { secundario: true; text: "Remover"; onClicked: CompradorController.remover(linha.modelData.indice) }
                 }
             }
-        }
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: 12
-            ColumnLayout {
+            Repeater {
+                model: CompradorController.retiradas
+                delegate: Rectangle {
+                    id: retirada
+                    required property var modelData
+                    property string diaSelecionado: modelData.data
+                    property var datas: CompradorController.datasRetirada(modelData.feiraId)
+                    property var janelas: CompradorController.janelasRetirada(modelData.feiraId, diaSelecionado)
+                    Layout.fillWidth: true
+                    implicitHeight: horarios.implicitHeight + 44
+                    color: "#E5EEE8"
+                    radius: 14
+                    ColumnLayout {
+                        id: horarios
+                        anchors.fill: parent
+                        anchors.margins: 22
+                        spacing: 12
+                        Label { text: "Retirada · " + retirada.modelData.feira; font.pixelSize: 20; font.bold: true; color: "#22543D"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        GridLayout {
+                            Layout.fillWidth: true
+                            columns: carrinho.width < 800 ? 1 : 2
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                Label { text: "Data" }
+                                SelecaoAntro {
+                                    id: dataEscolhida
+                                    objectName: "dataRetirada"
+                                    Layout.fillWidth: true
+                                    model: retirada.datas
+                                    textRole: "texto"
+                                    currentIndex: {
+                                        for (var i = 0; i < retirada.datas.length; i++)
+                                            if (retirada.datas[i].valor === retirada.modelData.data) return i
+                                        return -1
+                                    }
+                                    displayText: currentIndex < 0 ? "Escolha uma data" : currentText
+                                    onActivated: retirada.diaSelecionado = retirada.datas[currentIndex].valor
+                                }
+                            }
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                Label { text: "Horário" }
+                                SelecaoAntro {
+                                    id: horarioEscolhido
+                                    objectName: "horarioRetirada"
+                                    Layout.fillWidth: true
+                                    enabled: retirada.diaSelecionado.length > 0
+                                    model: retirada.janelas
+                                    textRole: "texto"
+                                    currentIndex: {
+                                        if (retirada.diaSelecionado !== retirada.modelData.data) return -1
+                                        for (var i = 0; i < retirada.janelas.length; i++)
+                                            if (retirada.janelas[i].inicio === retirada.modelData.inicio) return i
+                                        return -1
+                                    }
+                                    displayText: currentIndex < 0 ? "Escolha um horário" : currentText
+                                    onActivated: {
+                                        var janela = retirada.janelas[currentIndex]
+                                        CompradorController.agendar(retirada.modelData.feiraId, retirada.diaSelecionado, janela.inicio, janela.fim)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            RowLayout {
                 Layout.fillWidth: true
-                Label { text: "Total estimado"; color: "#66706A" }
-                Label { text: carrinhoPage.dinheiro(CompradorController.totalEstimado); font.bold: true; font.pixelSize: 28; color: "#22543D" }
+                visible: CompradorController.tiposNaSacola > 0
+                Label { text: "Total estimado: " + carrinho.dinheiro(CompradorController.totalEstimado); font.pixelSize: 22; font.bold: true; color: "#22543D"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                BotaoAntro { objectName: "solicitarReserva"; text: "Solicitar reserva"; onClicked: carrinho.finalizar() }
             }
-            BotaoAntro { text: "Continuar escolhendo"; secundario: true; onClicked: carrinhoPage.StackView.view.pop() }
-            BotaoAntro {
-                text: "Finalizar reserva"
-                enabled: CompradorController.tiposNaSacola > 0
-                onClicked: carrinhoPage.finalizar()
-            }
+            Item { Layout.preferredHeight: 16 }
         }
     }
 }

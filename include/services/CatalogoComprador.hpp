@@ -5,13 +5,15 @@
 #include <vector>
 #include "models/produto.hpp"
 
-
 struct FeiraComprador {
     int id;
     std::string nome;
     std::string bairro;
     std::string local;
     std::string horario;
+    int diaSemana = 0;
+    std::string inicio;
+    std::string fim;
 };
 
 struct VendedorComprador {
@@ -19,6 +21,7 @@ struct VendedorComprador {
     std::string nome;
     std::string banca;
     std::string descricao;
+    bool exemplo = false;
 };
 
 struct OfertaComprador {
@@ -34,19 +37,24 @@ struct ItemSacolaComprador {
     double quantidade;
 };
 
-// Tudo o que o catálogo precisa para funcionar; vem do banco (RepositorioCatalogo).
+struct ParticipacaoComprador {
+    int feiraId;
+    int vendedorId;
+};
+
 struct DadosCatalogo {
     std::vector<FeiraComprador> feiras;
     std::vector<VendedorComprador> vendedores;
     std::vector<Produto> produtos;
     std::vector<OfertaComprador> ofertas;
+    std::vector<ParticipacaoComprador> participacoes;
 };
-
 
 class CatalogoComprador {
 public:
     CatalogoComprador() = default;
-    void definirDados(const DadosCatalogo& dados);   // substitui o catálogo (a sacola é revalidada)
+    void definirDados(const DadosCatalogo& dados);
+    const DadosCatalogo dados() const;
     const std::vector<FeiraComprador>& getFeiras() const;
     const std::vector<ItemSacolaComprador>& getSacola() const;
     const FeiraComprador* buscarFeira(int id) const;
@@ -60,19 +68,16 @@ public:
     void limpar();
     double totalEstimado() const;
     double quantidadeNaSacola(int produtoId) const;
-    // Confirma a reserva: revalida estoque, baixa o estoque, esvazia a sacola e devolve os itens.
-    // Devolve lista vazia (sem alterar nada) se a sacola estiver vazia ou inválida.
-    std::vector<ItemSacolaComprador> finalizarReserva();
 
 private:
     bool quantidadeValida(const Produto& produto, double quantidade) const;
     void podarSacola();
-    Produto* produtoMutavel(int id);
     bool temOferta(int feiraId, int vendedorId, int produtoId) const;
     std::vector<FeiraComprador> feiras;
     std::vector<VendedorComprador> vendedores;
     std::vector<Produto> produtos;
     std::vector<OfertaComprador> ofertas;
+    std::vector<ParticipacaoComprador> participacoes;
     std::vector<ItemSacolaComprador> sacola;
 };
 

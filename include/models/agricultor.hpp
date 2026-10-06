@@ -16,8 +16,8 @@ public:
     std::string getCodigoOCS() const;
 
     std::string getPerfil() const override;
-    std::string getSubtitulo() const override;   // nome da feira/banca
-    std::string validar() const override;        // acrescenta banca e OCS
+    std::string getSubtitulo() const override;
+    std::string validar() const override;
 };
 
-#endif // AGRICULTOR_HPP
+#endif

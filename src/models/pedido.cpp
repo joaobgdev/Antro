@@ -1,7 +1,7 @@
 #include "models/pedido.hpp"
 
 using namespace std;
-// obs.: ainda vai ajeitar o consumidor
+
 Pedido::Pedido(int id, const Consumidor* cliente)
     : id(id), consumidor(cliente), status(StatusPedido::SOLICITADO) {}
 
@@ -40,11 +40,10 @@ void Pedido::imprimirResumo() const {
     cout << "Status: ";
     switch (status) {
         case StatusPedido::SOLICITADO: cout << "SOLICITADO"; break;
-        case StatusPedido::EM_SEPARACAO: cout << "EM SEPARACAO"; break;
-        case StatusPedido::AGUARDANDO_PAGAMENTO: cout << "AGUARDANDO PAGAMENTO"; break;
-        case StatusPedido::PRONTO_PARA_RETIRADA: cout << "PRONTO PARA RETIRADA"; break;
+        case StatusPedido::CONFIRMADO: cout << "CONFIRMADO"; break;
+        case StatusPedido::RECUSADO: cout << "RECUSADO"; break;
         case StatusPedido::RETIRADO: cout << "RETIRADO"; break;
-        case StatusPedido::ABANDONADO: cout << "ABANDONADO"; break;
+        case StatusPedido::CANCELADO: cout << "CANCELADO"; break;
     }
     for (const auto& item : itens) {
         cout << "- " << item.getProduto()->getNome()

@@ -1,3 +1,12 @@
-/build/
+build/
+build-*/
 .qtcreator/
+CMakeFiles/
+CMakeCache.txt
+CMakeUserPresets.json
 *.user
+*.user.*
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
