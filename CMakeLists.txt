@@ -1,3 +1,4 @@
+# Configs Básicas
 cmake_minimum_required(VERSION 3.16)
 
 project(Antro VERSION 0.1 LANGUAGES CXX)
@@ -5,6 +6,7 @@ project(Antro VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Bibliotecas
 find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
 qt_standard_project_setup(REQUIRES 6.5)
@@ -13,7 +15,12 @@ if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/importedcontent/CMakeLists.txt")
     add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/importedcontent)
 endif()
 
+<<<<<<< HEAD
+=======
+# Arquivos
+>>>>>>> 59b3808 (Adição de Comentários Main.cpp, Main.qml, CMakeLists)
 set(SOURCES
+    #SRC Models
     src/models/produto.cpp
     src/models/itempedido.cpp
     src/models/pedido.cpp
@@ -21,16 +28,25 @@ set(SOURCES
     src/models/consumidor.cpp
     src/models/agricultor.cpp
 
+<<<<<<< HEAD
+=======
+    #SRC Services
+>>>>>>> 59b3808 (Adição de Comentários Main.cpp, Main.qml, CMakeLists)
     src/services/GerenciadorFeira.cpp
     src/services/RepositorioUsuario.cpp
     src/services/CatalogoComprador.cpp
     src/services/RepositorioCatalogo.cpp
     src/services/AgendaFeira.cpp
 
+<<<<<<< HEAD
+=======
+    #SRC UI
+>>>>>>> 59b3808 (Adição de Comentários Main.cpp, Main.qml, CMakeLists)
     src/ui/CompradorController.cpp
     src/ui/AuthController.cpp
     src/ui/VendedorController.cpp
 
+    #Include Models
     include/models/produto.hpp
     include/models/itempedido.hpp
     include/models/pedido.hpp
@@ -38,12 +54,20 @@ set(SOURCES
     include/models/consumidor.hpp
     include/models/agricultor.hpp
 
+<<<<<<< HEAD
+=======
+    #Include Services
+>>>>>>> 59b3808 (Adição de Comentários Main.cpp, Main.qml, CMakeLists)
     include/services/GerenciadorFeira.hpp
     include/services/RepositorioUsuario.hpp
     include/services/CatalogoComprador.hpp
     include/services/RepositorioCatalogo.hpp
     include/services/AgendaFeira.hpp
 
+<<<<<<< HEAD
+=======
+    #Include UI
+>>>>>>> 59b3808 (Adição de Comentários Main.cpp, Main.qml, CMakeLists)
     include/ui/CompradorController.hpp
     include/ui/AuthController.hpp
     include/ui/VendedorController.hpp
