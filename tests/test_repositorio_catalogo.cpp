@@ -11,10 +11,12 @@
 #include <iostream>
 #include <limits>
 
+using namespace std;
+
 static void executar(QSqlDatabase db, const QString &sql)
 {
     QSqlQuery q(db);
-    if (!q.exec(sql)) { std::cerr << q.lastError().text().toStdString() << '\n'; std::abort(); }
+    if (!q.exec(sql)) { cerr << q.lastError().text().toStdString() << '\n'; abort(); }
 }
 
 static void usuarios(QSqlDatabase db)
@@ -88,15 +90,15 @@ static void testarReservas(const QString &arquivo)
     CatalogoComprador catalogo;
     catalogo.definirDados(dados);
     assert(catalogo.produtosDoVendedor(1,vm).size() == 2);
-    assert(std::abs(catalogo.buscarProduto(gengibre)->getPreco() - 20) < 0.000001);
-    assert(std::abs(catalogo.buscarProduto(gengibre)->getPasso() - 0.1) < 0.000001);
-    std::vector<ItemSacolaComprador> itens{{1,vm,alface,2},{2,vm,alface,1},{1,vj,tomate,0.5},{1,vm,gengibre,0.3}};
+    assert(abs(catalogo.buscarProduto(gengibre)->getPreco() - 20) < 0.000001);
+    assert(abs(catalogo.buscarProduto(gengibre)->getPasso() - 0.1) < 0.000001);
+    vector<ItemSacolaComprador> itens{{1,vm,alface,2},{2,vm,alface,1},{1,vj,tomate,0.5},{1,vm,gengibre,0.3}};
     auto agenda = horarios(dados,{1,2});
     assert(repo.salvarReservas("81999990001",itens,agenda,dados).isEmpty());
     assert(repo.salvarReservas("81999990003",itens,{},dados).isEmpty());
     auto invalidos = itens; invalidos.back().quantidade = -0.3;
     assert(repo.salvarReservas("81999990003",invalidos,agenda,dados).isEmpty());
-    invalidos.back().quantidade = std::numeric_limits<double>::infinity();
+    invalidos.back().quantidade = numeric_limits<double>::infinity();
     assert(repo.salvarReservas("81999990003",invalidos,agenda,dados).isEmpty());
     invalidos.back().quantidade = 0.05;
     assert(repo.salvarReservas("81999990003",invalidos,agenda,dados).isEmpty());
@@ -105,7 +107,7 @@ static void testarReservas(const QString &arquivo)
     assert(repo.produtosDoFeirante("81999990001")[0].estoque == 10);
     assert(repo.reservasDoUsuario("81999990003",false).isEmpty());
     auto ids = repo.salvarReservas("81999990003",itens,agenda,dados);
-    if (ids.isEmpty()) std::cerr << repo.ultimoErro().toStdString() << '\n';
+    if (ids.isEmpty()) cerr << repo.ultimoErro().toStdString() << '\n';
     assert(ids.size() == 3);
     assert(repo.produtosDoFeirante("81999990001")[0].estoque == 7);
     assert(repo.produtosDoFeirante("81999990001")[1].estoque == 0);
@@ -116,7 +118,7 @@ static void testarReservas(const QString &arquivo)
     auto compras = repo.reservasDoUsuario("81999990003",false);
     assert(compras.size() == 3);
     double total = 0; for (const RegistroReserva &r : compras) { total += r.total; assert(r.status == "SOLICITADA"); assert(!r.data.isEmpty()); }
-    assert(std::abs(total - 22.5) < 0.000001);
+    assert(abs(total - 22.5) < 0.000001);
     assert(repo.reservasDoUsuario("81999990001",true).size() == 2);
     assert(repo.reservasDoUsuario("81999990002",true).size() == 1);
     assert(repo.reservasDoUsuario("81999990004",false).isEmpty());
@@ -129,7 +131,7 @@ static void testarReservas(const QString &arquivo)
     assert(repo.alterarReserva("81999990003",false,ids[0],"CANCELADA"));
     assert(!outro.alterarReserva("81999990003",false,ids[0],"CANCELADA"));
     assert(repo.produtosDoFeirante("81999990001")[0].estoque == 9);
-    assert(std::abs(repo.produtosDoFeirante("81999990001")[1].estoque - 0.3) < 0.000001);
+    assert(abs(repo.produtosDoFeirante("81999990001")[1].estoque - 0.3) < 0.000001);
     assert(repo.alterarReserva("81999990001",true,ids[1],"RECUSADA"));
     assert(!repo.alterarReserva("81999990001",true,ids[1],"RECUSADA"));
     assert(repo.produtosDoFeirante("81999990001")[0].estoque == 10);
@@ -220,5 +222,5 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc,argv);
     QTemporaryDir pasta; assert(pasta.isValid());
     testarAgenda(); testarReservas(pasta.path()+"/novo.db"); testarMigracao(pasta.path()+"/antigo.db");
-    std::cout << "Agenda, migração, estoque, permissões e reservas passaram.\n";
+    cout << "Agenda, migração, estoque, permissões e reservas passaram.\n";
 }

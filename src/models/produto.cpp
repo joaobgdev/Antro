@@ -15,16 +15,16 @@ double Produto::getEstoque() const { return estoqueDisponivel; }
 double Produto::getPasso() const { return passoVenda; }
 
 bool Produto::deduzirEstoque(double qtd) {
-    if (!std::isfinite(qtd) || qtd <= 0 || qtd > estoqueDisponivel + 0.000001) return false;
+    if (!isfinite(qtd) || qtd <= 0 || qtd > estoqueDisponivel + 0.000001) return false;
     double passos = qtd / passoVenda;
-    if (std::abs(passos - std::round(passos)) > 0.00001) return false;
-    estoqueDisponivel = std::round((estoqueDisponivel - qtd) * 1000000) / 1000000;
+    if (abs(passos - round(passos)) > 0.00001) return false;
+    estoqueDisponivel = round((estoqueDisponivel - qtd) * 1000000) / 1000000;
     return true;
 }
 
 void Produto::reporEstoque(double qtd) {
-    if (!std::isfinite(qtd) || qtd <= 0) return;
+    if (!isfinite(qtd) || qtd <= 0) return;
     double passos = qtd / passoVenda;
-    if (std::abs(passos - std::round(passos)) > 0.00001) return;
-    estoqueDisponivel = std::round((estoqueDisponivel + qtd) * 1000000) / 1000000;
+    if (abs(passos - round(passos)) > 0.00001) return;
+    estoqueDisponivel = round((estoqueDisponivel + qtd) * 1000000) / 1000000;
 }

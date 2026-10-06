@@ -3,22 +3,24 @@
 
 #include <string>
 
+using namespace std;
+
 class Usuario {
 protected:
-    std::string nome;
-    std::string telefone;
+    string nome;
+    string telefone;
 
 public:
-    Usuario(std::string nome, std::string telefone);
+    Usuario(string nome, string telefone);
     virtual ~Usuario() = default;
 
-    std::string getNome() const;
-    std::string getTelefone() const;
+    string getNome() const;
+    string getTelefone() const;
 
-    virtual std::string getPerfil() const = 0;
-    virtual std::string getSubtitulo() const = 0;
+    virtual string getPerfil() const = 0;
+    virtual string getSubtitulo() const = 0;
 
-    virtual std::string validar() const;
+    virtual string validar() const;
 };
 
 #endif
