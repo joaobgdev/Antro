@@ -7,12 +7,13 @@ void CatalogoComprador::definirDados(const DadosCatalogo& dados)
     vendedores = dados.vendedores;
     produtos = dados.produtos;
     ofertas = dados.ofertas;
+    participacoes = dados.participacoes;
     podarSacola();
 }
 
 void CatalogoComprador::podarSacola()
 {
-    // Remove da sacola o que deixou de existir ou não cabe mais no estoque.
+
     std::vector<ItemSacolaComprador> mantidos;
     for (const ItemSacolaComprador& item : sacola) {
         const Produto* produto = buscarProduto(item.produtoId);
@@ -20,17 +21,15 @@ void CatalogoComprador::podarSacola()
         double jaMantido = 0;
         for (const ItemSacolaComprador& m : mantidos)
             if (m.produtoId == item.produtoId) jaMantido += m.quantidade;
-        if (jaMantido + item.quantidade > produto->getEstoque()) continue;
+        if (!quantidadeValida(*produto, item.quantidade) || jaMantido + item.quantidade > produto->getEstoque() + 0.000001) continue;
         mantidos.push_back(item);
     }
     sacola = mantidos;
 }
 
-Produto* CatalogoComprador::produtoMutavel(int id)
+const DadosCatalogo CatalogoComprador::dados() const
 {
-    for (Produto& produto : produtos)
-        if (produto.getId() == id) return &produto;
-    return nullptr;
+    return {feiras, vendedores, produtos, ofertas, participacoes};
 }
 
 const std::vector<FeiraComprador>& CatalogoComprador::getFeiras() const { return feiras; }
@@ -69,12 +68,12 @@ std::vector<VendedorComprador> CatalogoComprador::vendedoresDaFeira(int feiraId)
 {
     std::vector<VendedorComprador> resultado;
     for (const VendedorComprador& vendedor : vendedores) {
-        for (const OfertaComprador& oferta : ofertas) {
-            if (oferta.feiraId == feiraId && oferta.vendedorId == vendedor.id) {
-                resultado.push_back(vendedor);
-                break;
-            }
-        }
+        bool participa = false;
+        for (const ParticipacaoComprador& p : participacoes)
+            if (p.feiraId == feiraId && p.vendedorId == vendedor.id) participa = true;
+        for (const OfertaComprador& oferta : ofertas)
+            if (oferta.feiraId == feiraId && oferta.vendedorId == vendedor.id) participa = true;
+        if (participa) resultado.push_back(vendedor);
     }
     return resultado;
 }
@@ -100,7 +99,7 @@ bool CatalogoComprador::adicionar(int feiraId, int vendedorId, int produtoId, do
     const Produto* produto = buscarProduto(produtoId);
     if (!produto || !temOferta(feiraId, vendedorId, produtoId)) return false;
     if (!quantidadeValida(*produto, quantidade)) return false;
-    if (quantidadeNaSacola(produtoId) + quantidade > produto->getEstoque()) return false;
+    if (quantidadeNaSacola(produtoId) + quantidade > produto->getEstoque() + 0.000001) return false;
 
     for (ItemSacolaComprador& item : sacola) {
         if (item.feiraId == feiraId && item.vendedorId == vendedorId && item.produtoId == produtoId) {
@@ -115,8 +114,8 @@ bool CatalogoComprador::adicionar(int feiraId, int vendedorId, int produtoId, do
 bool CatalogoComprador::quantidadeValida(const Produto& produto, double quantidade) const
 {
     if (!std::isfinite(quantidade) || quantidade <= 0) return false;
-    double passos = produto.getEhPorPeso() ? quantidade * 2 : quantidade;   // kg: passos de 0,5
-    return std::floor(passos) == passos;
+    double passos = quantidade / produto.getPasso();
+    return std::abs(passos - std::round(passos)) < 0.00001;
 }
 
 bool CatalogoComprador::alterarQuantidade(int indice, double novaQuantidade)
@@ -125,24 +124,9 @@ bool CatalogoComprador::alterarQuantidade(int indice, double novaQuantidade)
     ItemSacolaComprador& item = sacola[indice];
     const Produto* produto = buscarProduto(item.produtoId);
     if (!produto || !quantidadeValida(*produto, novaQuantidade)) return false;
-    if (quantidadeNaSacola(item.produtoId) - item.quantidade + novaQuantidade > produto->getEstoque()) return false;
+    if (quantidadeNaSacola(item.produtoId) - item.quantidade + novaQuantidade > produto->getEstoque() + 0.000001) return false;
     item.quantidade = novaQuantidade;
     return true;
-}
-
-std::vector<ItemSacolaComprador> CatalogoComprador::finalizarReserva()
-{
-    if (sacola.empty()) return {};
-    for (const ItemSacolaComprador& item : sacola) {
-        const Produto* produto = buscarProduto(item.produtoId);
-        if (!produto || !temOferta(item.feiraId, item.vendedorId, item.produtoId)) return {};
-        if (quantidadeNaSacola(item.produtoId) > produto->getEstoque()) return {};
-    }
-    for (const ItemSacolaComprador& item : sacola)
-        produtoMutavel(item.produtoId)->deduzirEstoque(static_cast<float>(item.quantidade));
-    std::vector<ItemSacolaComprador> reservados = sacola;
-    sacola.clear();
-    return reservados;
 }
 
 void CatalogoComprador::remover(int indice)
@@ -157,7 +141,7 @@ double CatalogoComprador::totalEstimado() const
     double total = 0;
     for (const ItemSacolaComprador& item : sacola) {
         const Produto* produto = buscarProduto(item.produtoId);
-        if (produto) total += produto->getPreco() * item.quantidade;
+        if (produto) total += std::round(produto->getPreco() * item.quantidade * 100) / 100;
     }
     return total;
 }

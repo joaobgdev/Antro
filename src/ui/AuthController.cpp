@@ -33,7 +33,7 @@ QString calcularHash(const QString &senha, const QString &sal)
     return QString::fromLatin1(h.toHex());
 }
 
-} // namespace
+}
 
 AuthController::AuthController(QObject *parent) : QObject(parent)
 {
@@ -58,15 +58,6 @@ QString AuthController::perfilUsuario() const
 QString AuthController::subtituloUsuario() const
 {
     return m_usuario ? QString::fromStdString(m_usuario->getSubtitulo()) : QString();
-}
-
-QString AuthController::telefoneUsuario() const
-{
-    return m_usuario
-        ? QString::fromStdString(
-            m_usuario->getTelefone()
-        )
-        : QString();
 }
 
 std::unique_ptr<Usuario> AuthController::criarUsuario(const QString &perfil, const QString &nome,
@@ -98,6 +89,9 @@ bool AuthController::cadastrar(const QString &perfil, const QString &nome, const
 {
     if (!m_bancoPronto)
         return falhar("Não foi possível abrir o banco de dados: " + m_repo.ultimoErro());
+
+    if (perfil != "comprador" && perfil != "feirante")
+        return falhar("Escolha o perfil de comprador ou feirante.");
 
     const QString digitos = somenteDigitos(telefone);
     auto usuario = criarUsuario(perfil, nome.trimmed(), digitos,

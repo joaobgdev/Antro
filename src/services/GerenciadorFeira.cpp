@@ -4,8 +4,6 @@
 
 using namespace std;
 
-// Catálogo de Produtos
-
 void GerenciadorFeira::cadastrarProduto(const Produto& p) {
     catalogo.erase(p.getId());
     catalogo.emplace(p.getId(), p);
@@ -33,8 +31,6 @@ void GerenciadorFeira::exibirCatalogo() const {
     }
 }
 
-// Processamento de pedidos
-
 void GerenciadorFeira::receberPedido(Pedido* p) {
     if (!p) return;
     filaProcessamento.push(p);
@@ -50,20 +46,18 @@ void GerenciadorFeira::processarProximoPedido() {
     Pedido* p = filaProcessamento.front();
     filaProcessamento.pop();
 
-    p->setStatus(StatusPedido::EM_SEPARACAO);
     cout << "Processando pedido #" << p->getId() << "..." << endl;
 
-    p->setStatus(StatusPedido::AGUARDANDO_PAGAMENTO);
+    p->setStatus(StatusPedido::CONFIRMADO);
     cout << "Total do pedido #" << p->getId() << ": R$ "
          << fixed << setprecision(2) << p->calcularValorTotal() << endl;
 }
 
-// Pedidos abandonados
-
 void GerenciadorFeira::tratarAbandonoPedido(Pedido* p) {
     if (!p) return;
     if (p->getStatus() == StatusPedido::RETIRADO ||
-        p->getStatus() == StatusPedido::ABANDONADO) {
+        p->getStatus() == StatusPedido::CANCELADO ||
+        p->getStatus() == StatusPedido::RECUSADO) {
         return;
     }
 
@@ -72,11 +66,9 @@ void GerenciadorFeira::tratarAbandonoPedido(Pedido* p) {
         if (prod) prod->reporEstoque(item.getQtdSolicitada());
     }
 
-    p->setStatus(StatusPedido::ABANDONADO);
+    p->setStatus(StatusPedido::CANCELADO);
     cout << "Pedido #" << p->getId() << " abandonado. Estoque devolvido." << endl;
 }
-
-// Relatório
 
 void GerenciadorFeira::gerarRelatorioColheita() const {
     cout << "===== RELATORIO DE COLHEITA =====" << endl;

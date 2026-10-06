@@ -11,7 +11,7 @@ std::string Usuario::getNome() const { return nome; }
 std::string Usuario::getTelefone() const { return telefone; }
 
 std::string Usuario::validar() const {
-    // Nome completo: pelo menos duas palavras
+
     std::istringstream palavras(nome);
     std::string palavra;
     int quantidade = 0;
@@ -19,7 +19,6 @@ std::string Usuario::validar() const {
     if (quantidade < 2)
         return "Informe o nome completo.";
 
-    // Telefone: DDD + número = 10 (fixo) ou 11 (celular) dígitos
     int digitos = 0;
     for (unsigned char c : telefone)
         if (std::isdigit(c)) ++digitos;

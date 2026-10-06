@@ -2,98 +2,61 @@
 #define VENDEDORCONTROLLER_HPP
 
 #include <QObject>
-#include <QString>
-#include <QStringList>
+#include <QPointer>
 #include <QVariantList>
 #include <QtQmlIntegration>
+#include "services/RepositorioCatalogo.hpp"
 
-#include "services/RepositorioVendedor.hpp"
+class AuthController;
 
 class VendedorController : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
-
-    Q_PROPERTY(
-        QVariantList feiras
-        READ feiras
-        NOTIFY perfilChanged
-    )
-
-    Q_PROPERTY(
-        QVariantList produtos
-        READ produtos
-        NOTIFY perfilChanged
-    )
+    Q_PROPERTY(QVariantList feiras READ feiras NOTIFY perfilChanged)
+    Q_PROPERTY(QVariantList produtos READ produtos NOTIFY perfilChanged)
+    Q_PROPERTY(QStringList feirasPendentes READ feirasPendentes NOTIFY perfilChanged)
+    Q_PROPERTY(QString erro READ erro NOTIFY erroChanged)
 
 public:
-    explicit VendedorController(
-        QObject *parent = nullptr
-    );
-
+    explicit VendedorController(QObject *parent = nullptr);
+    void definirAutenticacao(AuthController *auth);
     QVariantList feiras() const;
     QVariantList produtos() const;
-
-    Q_INVOKABLE bool carregarPerfil(
-        const QString &telefone
-    );
-
-    Q_INVOKABLE bool feiraSelecionada(
-        const QString &nome
-    ) const;
-
-    Q_INVOKABLE bool alternarFeira(
-        const QString &nome
-    );
-
-    Q_INVOKABLE bool adicionarFeira(
-        const QString &nome
-    );
-
-    Q_INVOKABLE bool removerFeira(
-        const QString &nome
-    );
-
-    Q_INVOKABLE bool adicionarProduto(
-        const QString &nome
-    );
-
-    Q_INVOKABLE bool removerProduto(
-        int indice
-    );
-
-    Q_INVOKABLE bool definirTipoVenda(
-        int indice,
-        const QString &tipo
-    );
-
-    Q_INVOKABLE bool definirPreco(
-        int indice,
-        const QString &texto
-    );
-
+    QStringList feirasPendentes() const;
+    QString erro() const;
+    Q_INVOKABLE bool carregarPerfil();
+    Q_INVOKABLE bool alternarFeira(int id);
+    Q_INVOKABLE bool participarFeira(int id);
+    Q_INVOKABLE bool adicionarProduto(const QString &nome);
+    Q_INVOKABLE bool removerProduto(int indice);
+    Q_INVOKABLE bool definirTipoVenda(int indice, const QString &tipo);
+    Q_INVOKABLE bool definirPreco(int indice, const QString &texto);
+    Q_INVOKABLE bool definirEstoque(int indice, const QString &texto);
+    Q_INVOKABLE bool definirAtivo(int indice, bool ativo);
     Q_INVOKABLE bool salvarPerfil();
-
-    Q_INVOKABLE QString ultimoErro() const;
+    Q_INVOKABLE QVariantList pedidos();
+    Q_INVOKABLE bool alterarPedido(int id, const QString &status);
+    Q_INVOKABLE void atualizarPedidos();
 
 signals:
     void perfilChanged();
+    void pedidosChanged();
+    void catalogoChanged();
+    void erroChanged();
 
 private:
-    bool produtoExiste(
-        const QString &nome
-    ) const;
-
-    QString m_telefone;
-
-    QStringList m_feiras;
-
-    QList<RegistroProdutoVendedor>
-        m_produtos;
-
-    RepositorioVendedor m_repo;
-
+    bool autorizado();
+    bool falhar(const QString &texto);
+    void limparErro();
+    QVector<int> m_feiras;
+    QVector<RegistroProdutoFeirante> m_produtos;
+    QVector<RegistroProdutoFeirante> m_anteriores;
+    QStringList m_pendentes;
+    QString m_erro;
+    RepositorioCatalogo m_repo;
+    QPointer<AuthController> m_auth;
     bool m_bancoPronto = false;
 };
 

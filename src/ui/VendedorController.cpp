@@ -1,384 +1,189 @@
 #include "ui/VendedorController.hpp"
+#include "ui/AuthController.hpp"
+#include <cmath>
 
-VendedorController::VendedorController(
-    QObject *parent
-)
-    : QObject(parent)
+VendedorController::VendedorController(QObject *parent) : QObject(parent)
 {
-    m_bancoPronto =
-        m_repo.abrir();
+    m_bancoPronto = m_repo.abrir();
+    if (!m_bancoPronto) falhar(m_repo.ultimoErro());
 }
 
-QVariantList
-VendedorController::feiras() const
+void VendedorController::definirAutenticacao(AuthController *auth)
+{
+    m_auth = auth;
+    connect(auth, &AuthController::usuarioChanged, this, [this]() {
+        m_feiras.clear(); m_produtos.clear(); m_anteriores.clear(); m_pendentes.clear(); limparErro();
+        if (m_auth->perfilUsuario() == "feirante") carregarPerfil();
+        emit perfilChanged(); emit pedidosChanged();
+    });
+}
+
+bool VendedorController::falhar(const QString &texto)
+{
+    m_erro = texto;
+    emit erroChanged();
+    return false;
+}
+
+void VendedorController::limparErro() { m_erro.clear(); emit erroChanged(); }
+QString VendedorController::erro() const { return m_erro; }
+QStringList VendedorController::feirasPendentes() const { return m_pendentes; }
+
+bool VendedorController::autorizado()
+{
+    if (!m_bancoPronto) return falhar("Não foi possível abrir o catálogo: " + m_repo.ultimoErro());
+    if (!m_auth || m_auth->perfilUsuario() != "feirante") return falhar("Entre com um perfil de feirante.");
+    return true;
+}
+
+bool VendedorController::carregarPerfil()
+{
+    if (!autorizado()) return false;
+    limparErro();
+    m_feiras = m_repo.feirasDoFeirante(m_auth->telefoneUsuario());
+    m_produtos = m_repo.produtosDoFeirante(m_auth->telefoneUsuario());
+    m_anteriores = m_produtos;
+    m_pendentes = m_repo.feirasPendentes(m_auth->telefoneUsuario());
+    if (!m_repo.ultimoErro().isEmpty()) return falhar(m_repo.ultimoErro());
+    emit perfilChanged();
+    return true;
+}
+
+QVariantList VendedorController::feiras() const
 {
     QVariantList lista;
-
-    for (
-        const QString &nome :
-        m_feiras
-    ) {
-        lista.append(
-            QVariantMap{
-                {"nome", nome}
-            }
-        );
-    }
-
+    for (int id : m_feiras) lista.append(id);
     return lista;
 }
 
-QVariantList
-VendedorController::produtos() const
+QVariantList VendedorController::produtos() const
 {
     QVariantList lista;
-
-    for (
-        const RegistroProdutoVendedor &produto :
-        m_produtos
-    ) {
-        lista.append(
-            QVariantMap{
-                {"id", produto.id},
-                {"nome", produto.nome},
-                {
-                    "tipoVenda",
-                    produto.tipoVenda
-                },
-                {
-                    "preco",
-                    produto.preco
-                }
-            }
-        );
-    }
-
+    for (const RegistroProdutoFeirante &p : m_produtos)
+        lista.append(QVariantMap{{"id", p.id}, {"nome", p.nome}, {"tipoVenda", p.tipoVenda},
+            {"preco", p.preco}, {"estoque", p.estoque}, {"reservado", p.reservado}, {"ativo", p.ativo}});
     return lista;
 }
 
-bool VendedorController::carregarPerfil(
-    const QString &telefone
-)
+bool VendedorController::alternarFeira(int id)
 {
-    if (!m_bancoPronto)
-        return false;
-
-    const QString telefoneLimpo =
-        telefone.trimmed();
-
-    if (telefoneLimpo.isEmpty())
-        return false;
-
-    m_telefone =
-        telefoneLimpo;
-
-    m_feiras =
-        m_repo.listarFeiras(
-            m_telefone
-        );
-
-    m_produtos =
-        m_repo.listarProdutos(
-            m_telefone
-        );
-
-    emit perfilChanged();
-
+    if (!autorizado()) return false;
+    bool existe = false;
+    for (const FeiraComprador &f : m_repo.carregar().feiras) if (f.id == id) existe = true;
+    if (!existe) return falhar("Feira não encontrada.");
+    if (m_feiras.contains(id)) m_feiras.removeAll(id);
+    else m_feiras.append(id);
+    limparErro(); emit perfilChanged();
     return true;
 }
 
-bool VendedorController::feiraSelecionada(
-    const QString &nome
-) const
+bool VendedorController::participarFeira(int id)
 {
-    for (
-        const QString &feira :
-        m_feiras
-    ) {
-        if (
-            feira.compare(
-                nome.trimmed(),
-                Qt::CaseInsensitive
-            ) == 0
-        ) {
-            return true;
-        }
-    }
-
-    return false;
+    if (!carregarPerfil()) return false;
+    if (!m_feiras.contains(id) && !alternarFeira(id)) return false;
+    return salvarPerfil();
 }
 
-bool VendedorController::alternarFeira(
-    const QString &nome
-)
+bool VendedorController::adicionarProduto(const QString &nome)
 {
-    const QString nomeLimpo =
-        nome.trimmed();
-
-    if (nomeLimpo.isEmpty())
-        return false;
-
-    for (
-        int i = 0;
-        i < m_feiras.size();
-        ++i
-    ) {
-        if (
-            m_feiras[i].compare(
-                nomeLimpo,
-                Qt::CaseInsensitive
-            ) == 0
-        ) {
-            m_feiras.removeAt(i);
-
-            emit perfilChanged();
-
-            return true;
-        }
-    }
-
-    m_feiras.append(
-        nomeLimpo
-    );
-
-    emit perfilChanged();
-
+    if (!autorizado()) return false;
+    QString texto = nome.trimmed();
+    if (texto.isEmpty()) return falhar("Digite o nome do produto.");
+    for (const RegistroProdutoFeirante &p : m_produtos)
+        if (p.nome.compare(texto, Qt::CaseInsensitive) == 0) return falhar("Esse produto já está na lista.");
+    RegistroProdutoFeirante produto;
+    produto.nome = texto; produto.tipoVenda = "unidade";
+    m_produtos.append(produto);
+    limparErro(); emit perfilChanged();
     return true;
 }
 
-bool VendedorController::adicionarFeira(
-    const QString &nome
-)
+bool VendedorController::removerProduto(int indice)
 {
-    const QString nomeLimpo =
-        nome.trimmed();
-
-    if (
-        nomeLimpo.isEmpty()
-        || feiraSelecionada(nomeLimpo)
-    ) {
-        return false;
-    }
-
-    m_feiras.append(
-        nomeLimpo
-    );
-
-    emit perfilChanged();
-
+    if (!autorizado() || indice < 0 || indice >= m_produtos.size()) return false;
+    m_produtos.removeAt(indice);
+    limparErro(); emit perfilChanged();
     return true;
 }
 
-bool VendedorController::removerFeira(
-    const QString &nome
-)
+bool VendedorController::definirTipoVenda(int indice, const QString &tipo)
 {
-    for (
-        int i = 0;
-        i < m_feiras.size();
-        ++i
-    ) {
-        if (
-            m_feiras[i].compare(
-                nome.trimmed(),
-                Qt::CaseInsensitive
-            ) == 0
-        ) {
-            m_feiras.removeAt(i);
-
-            emit perfilChanged();
-
-            return true;
-        }
-    }
-
-    return false;
-}
-
-bool VendedorController::produtoExiste(
-    const QString &nome
-) const
-{
-    for (
-        const RegistroProdutoVendedor &produto :
-        m_produtos
-    ) {
-        if (
-            produto.nome.compare(
-                nome.trimmed(),
-                Qt::CaseInsensitive
-            ) == 0
-        ) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-bool VendedorController::adicionarProduto(
-    const QString &nome
-)
-{
-    const QString nomeLimpo =
-        nome.trimmed();
-
-    if (
-        nomeLimpo.isEmpty()
-        || produtoExiste(nomeLimpo)
-    ) {
-        return false;
-    }
-
-    RegistroProdutoVendedor produto;
-
-    produto.id = -1;
-    produto.nome = nomeLimpo;
-    produto.tipoVenda = "unidade";
-    produto.preco = 0.0;
-
-    m_produtos.append(
-        produto
-    );
-
-    emit perfilChanged();
-
+    if (!autorizado() || indice < 0 || indice >= m_produtos.size()) return false;
+    if (tipo != "unidade" && tipo != "kg" && tipo != "100g") return falhar("Unidade inválida.");
+    RegistroProdutoFeirante &p = m_produtos[indice];
+    if (p.tipoVenda == tipo) return true;
+    if (p.reservado > 0) return falhar("A unidade não pode mudar enquanto houver reservas desse produto.");
+    if (p.tipoVenda == "100g") p.preco *= 10;
+    if (tipo == "100g") p.preco /= 10;
+    p.tipoVenda = tipo;
+    limparErro(); emit perfilChanged();
     return true;
 }
 
-bool VendedorController::removerProduto(
-    int indice
-)
+bool VendedorController::definirPreco(int indice, const QString &texto)
 {
-    if (
-        indice < 0
-        || indice >= m_produtos.size()
-    ) {
-        return false;
-    }
-
-    m_produtos.removeAt(
-        indice
-    );
-
-    emit perfilChanged();
-
+    if (!autorizado() || indice < 0 || indice >= m_produtos.size()) return false;
+    bool ok;
+    QString numero = texto.trimmed();
+    if (numero.contains(',')) numero.remove('.');
+    double valor = numero.replace(',', '.').toDouble(&ok);
+    if (!ok || !std::isfinite(valor) || valor <= 0) return falhar("Informe um preço maior que zero.");
+    valor = std::round(valor * 100) / 100;
+    if (valor <= 0) return falhar("O preço mínimo é R$ 0,01.");
+    m_produtos[indice].preco = valor;
+    limparErro();
     return true;
 }
 
-bool VendedorController::definirTipoVenda(
-    int indice,
-    const QString &tipo
-)
+bool VendedorController::definirEstoque(int indice, const QString &texto)
 {
-    if (
-        indice < 0
-        || indice >= m_produtos.size()
-    ) {
-        return false;
-    }
-
-    if (
-        tipo != "unidade"
-        && tipo != "100g"
-    ) {
-        return false;
-    }
-
-    m_produtos[indice]
-        .tipoVenda = tipo;
-
-    emit perfilChanged();
-
-    return true;
-}
-
-bool VendedorController::definirPreco(
-    int indice,
-    const QString &texto
-)
-{
-    if (
-        indice < 0
-        || indice >= m_produtos.size()
-    ) {
-        return false;
-    }
-
-    QString valor =
-        texto.trimmed();
-
-    valor.remove("R$");
-
-    valor =
-        valor.trimmed();
-
-    valor.replace(
-        ",",
-        "."
-    );
-
-    bool ok = false;
-
-    const double preco =
-        valor.toDouble(
-            &ok
-        );
-
-    if (
-        !ok
-        || preco < 0
-    ) {
-        return false;
-    }
-
-    m_produtos[indice]
-        .preco = preco;
-
-    emit perfilChanged();
-
+    if (!autorizado() || indice < 0 || indice >= m_produtos.size()) return false;
+    bool ok;
+    QString numero = texto.trimmed();
+    if (numero.contains(',')) numero.remove('.');
+    double valor = numero.replace(',', '.').toDouble(&ok);
+    double passo = m_produtos[indice].tipoVenda == "100g" ? 0.1 : m_produtos[indice].tipoVenda == "kg" ? 0.5 : 1.0;
+    if (!ok || !std::isfinite(valor) || valor < 0 || std::abs(valor / passo - std::round(valor / passo)) > 0.00001)
+        return falhar("O estoque deve ser zero ou um múltiplo de " + QString::number(passo) + ".");
+    m_produtos[indice].estoque = valor;
+    limparErro();
     return true;
 }
 
 bool VendedorController::salvarPerfil()
 {
-    if (
-        !m_bancoPronto
-        || m_telefone.isEmpty()
-    ) {
-        return false;
-    }
-
-    const bool sucesso =
-        m_repo.salvarPerfil(
-            m_telefone,
-            m_feiras,
-            m_produtos
-        );
-
-    if (!sucesso)
-        return false;
-
-    // Recarrega para receber os IDs
-    // dos produtos recém-criados.
-
-    m_feiras =
-        m_repo.listarFeiras(
-            m_telefone
-        );
-
-    m_produtos =
-        m_repo.listarProdutos(
-            m_telefone
-        );
-
-    emit perfilChanged();
-
+    if (!autorizado()) return false;
+    if (!m_repo.salvarPerfil(m_auth->telefoneUsuario(), m_feiras, m_produtos, m_anteriores)) return falhar(m_repo.ultimoErro());
+    carregarPerfil(); emit catalogoChanged();
     return true;
 }
 
-QString
-VendedorController::ultimoErro() const
+bool VendedorController::definirAtivo(int indice, bool ativo)
 {
-    return m_repo.ultimoErro();
+    if (!autorizado() || indice < 0 || indice >= m_produtos.size()) return false;
+    m_produtos[indice].ativo = ativo;
+    limparErro();
+    return true;
 }
+
+QVariantList VendedorController::pedidos()
+{
+    QVariantList lista;
+    if (!autorizado()) return lista;
+    for (const RegistroReserva &r : m_repo.reservasDoUsuario(m_auth->telefoneUsuario(), true)) lista.append(r.comoMapa());
+    if (!m_repo.ultimoErro().isEmpty()) falhar(m_repo.ultimoErro());
+    return lista;
+}
+
+bool VendedorController::alterarPedido(int id, const QString &status)
+{
+    if (!autorizado()) return false;
+    if (!m_repo.alterarReserva(m_auth->telefoneUsuario(), true, id, status)) {
+        emit pedidosChanged();
+        return falhar(m_repo.ultimoErro());
+    }
+    limparErro(); emit pedidosChanged(); emit catalogoChanged();
+    return true;
+}
+
+void VendedorController::atualizarPedidos() { emit pedidosChanged(); }

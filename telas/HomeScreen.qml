@@ -4,128 +4,101 @@ import QtQuick.Layouts
 import Antro
 
 PaginaComprador {
-    id: homePage
-    readonly property bool isFarmer: AuthController.perfilUsuario === "feirante"
+    id: home
     inicio: true
     mostrarVoltar: false
-    mostrarSacola: !isFarmer
-    property var meusProdutos: []
+    property var feiras: []
+    property string aviso: ""
 
-    function atualizarProdutos() {
-        meusProdutos = isFarmer ? CompradorController.produtosDoFeirante(AuthController.telefoneUsuario) : []
+    function atualizar() { feiras = CompradorController.feiras() }
+    Component.onCompleted: atualizar()
+    StackView.onActivated: {
+        if (feirante) VendedorController.carregarPerfil()
+        CompradorController.recarregar()
+        atualizar()
     }
-    Component.onCompleted: atualizarProdutos()
     Connections {
         target: CompradorController
-        function onProdutosChanged() { homePage.atualizarProdutos() }
+        function onProdutosChanged() { home.atualizar() }
     }
+    Timer { interval: 60000; running: home.visible; repeat: true; onTriggered: home.atualizar() }
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 36
-        spacing: 18
+        anchors.margins: home.width < 800 ? 20 : 36
+        spacing: 16
+        Label { text: "Feiras do Recife"; font.pixelSize: 36; font.bold: true; color: "#17201B" }
         Label {
-            text: homePage.isFarmer ? "Seus produtos" : "Feiras do Recife"
-            font.pixelSize: 36
-            font.bold: true
-            color: "#17201B"
-        }
-        ColumnLayout {
-            visible: homePage.isFarmer
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            spacing: 18
-            RowLayout {
-                Layout.fillWidth: true
-                Label {
-                    Layout.fillWidth: true
-                    text: homePage.meusProdutos.length === 0 ? "Você ainda não cadastrou nenhum produto." : "Produtos cadastrados: " + homePage.meusProdutos.length
-                    color: "#66706A"
-                }
-                BotaoAntro { text: "Adicionar produto"; onClicked: homePage.StackView.view.push(Qt.resolvedUrl("ProdutoFeiranteScreen.qml")) }
-            }
-            ListView {
-                id: listaMeusProdutos
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                clip: true
-                spacing: 18
-                model: homePage.meusProdutos
-                ScrollBar.vertical: ScrollBar {}
-                delegate: Rectangle {
-                    id: produtoCard
-                    required property var modelData
-                    width: listaMeusProdutos.width
-                    height: produtoLinha.implicitHeight + 56
-                    color: "white"
-                    radius: 14
-                    border.color: "#E4E8E5"
-                    RowLayout {
-                        id: produtoLinha
-                        anchors.fill: parent
-                        anchors.margins: 28
-                        ColumnLayout {
-                            Layout.fillWidth: true
-                            Label { text: produtoCard.modelData.nome; font.bold: true; font.pixelSize: 24; color: "#22543D" }
-                            Label { text: "R$ " + Number(produtoCard.modelData.preco).toLocaleString(Qt.locale("pt_BR"), 'f', 2) + " / " + produtoCard.modelData.unidade + " · estoque: " + produtoCard.modelData.estoque + " " + produtoCard.modelData.unidade }
-                            Label { text: "Feiras: " + produtoCard.modelData.feiras; color: "#66706A"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
-                        }
-                        BotaoAntro { secundario: true; text: "Remover"; onClicked: CompradorController.removerProdutoFeirante(AuthController.telefoneUsuario, produtoCard.modelData.id) }
-                    }
-                }
-            }
-        }
-        Label {
-            visible: !homePage.isFarmer
-            text: "Escolha uma feira para conhecer os vendedores e seus produtos."
+            text: home.feirante ? "Escolha as feiras onde você vai vender seus produtos." : "Escolha uma feira e conheça os produtores que participam dela."
             color: "#66706A"
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
+        RowLayout {
+            Layout.fillWidth: true
+            Label {
+                text: "As feiras em andamento aparecem primeiro, conforme os horários cadastrados. Confirme eventuais mudanças com a organização."
+                font.pixelSize: 13
+                color: "#66706A"
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            BotaoAntro { text: "Atualizar"; secundario: true; onClicked: CompradorController.recarregar() }
+        }
         Label {
-            visible: !homePage.isFarmer
-            text: "Demonstração: vendedores e produtos de exemplo. Confirme os horários com a organização."
-            color: "#66706A"
-            font.pixelSize: 12
+            text: home.aviso || (home.feirante ? VendedorController.erro : CompradorController.erro)
+            visible: text.length > 0
+            color: "#B3261E"
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
+        Label { visible: lista.count === 0; text: "Nenhuma feira disponível." }
         ListView {
-            id: listaFeiras
-            visible: !homePage.isFarmer
+            id: lista
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
-            spacing: 18
-            model: CompradorController.feiras()
+            spacing: 16
+            model: home.feiras
             ScrollBar.vertical: ScrollBar {}
             delegate: Rectangle {
+                id: card
                 required property var modelData
-                width: listaFeiras.width
-                height: conteudo.implicitHeight + 56
-                color: "white"
+                readonly property bool participa: VendedorController.feiras.indexOf(modelData.id) >= 0
+                width: lista.width
+                height: conteudo.implicitHeight + 44
                 radius: 14
-                border.color: "#E4E8E5"
-                RowLayout {
+                color: "white"
+                border.color: "#E2E7E3"
+                GridLayout {
                     id: conteudo
                     anchors.fill: parent
-                    anchors.margins: 28
-                    Rectangle {
-                        Layout.preferredWidth: 72
-                        Layout.preferredHeight: 72
-                        radius: 36
-                        color: "#E5EEE8"
-                        Label { anchors.centerIn: parent; text: "⌂"; font.pixelSize: 36; color: "#22543D" }
-                    }
+                    anchors.margins: 22
+                    columns: home.width < 850 ? 1 : 2
+                    rowSpacing: 12
                     ColumnLayout {
                         Layout.fillWidth: true
-                        Label { text: modelData.bairro; color: "#66706A"; font.pixelSize: 13 }
-                        Label { text: modelData.nome; font.bold: true; font.pixelSize: 24; color: "#22543D"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
-                        Label { text: modelData.local + " · " + modelData.horario; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        spacing: 6
+                        Label { text: card.modelData.situacao; color: "#22543D"; font.bold: card.modelData.aberta }
+                        Label { text: card.modelData.nome; font.pixelSize: 24; font.bold: true; color: "#17201B"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        Label { text: card.modelData.local + " · " + card.modelData.horario; color: "#66706A"; wrapMode: Text.WordWrap; Layout.fillWidth: true }
+                        Label { text: card.modelData.vendedores + " produtores participantes"; color: "#66706A" }
                     }
                     BotaoAntro {
-                        text: "Ver vendedores"
-                        onClicked: homePage.StackView.view.push(Qt.resolvedUrl("FeiraScreen.qml"), {feiraId: modelData.id})
+                        objectName: "abrirFeira"
+                        text: home.feirante ? (card.participa ? "Participando · ver perfil" : "Participar da feira") : "Ver produtores"
+                        secundario: home.feirante && card.participa
+                        onClicked: {
+                            var pilha = home.StackView.view
+                            var perfil = Qt.resolvedUrl("PerfilVendedorScreen.qml")
+                            var feira = Qt.resolvedUrl("FeiraScreen.qml")
+                            var id = card.modelData.id
+                            if (!home.feirante) {
+                                pilha.push(feira, {feiraId: id})
+                            } else if (card.participa || VendedorController.participarFeira(id)) {
+                                Qt.callLater(function() { pilha.push(perfil) })
+                            }
+                        }
                     }
                 }
             }

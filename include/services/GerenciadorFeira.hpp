@@ -12,25 +12,22 @@ using namespace std;
 
 class GerenciadorFeira {
 private:
-    map<int, Produto> catalogo;          // map para busca e ordenação
-    queue<Pedido*> filaProcessamento;    // queue para ordem de chegada 
+    map<int, Produto> catalogo;
+    queue<Pedido*> filaProcessamento;
 
 public:
     GerenciadorFeira() = default;
 
-    // --- Catálogo de Produtos 
     void cadastrarProduto(const Produto& p);
     Produto* buscarProduto(int id);
     void exibirCatalogo() const;
 
-    // Processamento de pedidos
     void receberPedido(Pedido* p);
-    void processarProximoPedido(); // Retira da fila, ajusta pesos e calcula total
+    void processarProximoPedido();
 
-    //Pedidos abandonados
     void tratarAbandonoPedido(Pedido* p);
 
     void gerarRelatorioColheita() const;
 };
 
-#endif // GERENCIADORFEIRA_HPP
+#endif

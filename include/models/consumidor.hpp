@@ -5,10 +5,10 @@
 
 class Consumidor : public Usuario {
 public:
-    using Usuario::Usuario;   // reaproveita o construtor de Usuario
+    using Usuario::Usuario;
 
     std::string getPerfil() const override;
     std::string getSubtitulo() const override;
 };
 
-#endif // CONSUMIDOR_HPP
+#endif

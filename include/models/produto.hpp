@@ -9,23 +9,23 @@ class Produto {
 private:
     int id;
     string nome;
-    float precoUnitarioOuKg;
+    double precoUnitarioOuKg;
     bool ehPorPeso;
-    float estoqueDisponivel;
+    double estoqueDisponivel;
+    double passoVenda;
 
 public:
-    Produto(int id, string nome, float preco, bool ehPorPeso, float estoque);
+    Produto(int id, string nome, double preco, bool ehPorPeso, double estoque, double passo = 0);
 
-    // Getters
     int getId() const;
     string getNome() const;
-    float getPreco() const;
+    double getPreco() const;
     bool getEhPorPeso() const;
-    float getEstoque() const;
+    double getPasso() const;
+    double getEstoque() const;
 
-    // Métodos de negócio
-    bool deduzirEstoque(float qtd);
-    void reporEstoque(float qtd);
+    bool deduzirEstoque(double qtd);
+    void reporEstoque(double qtd);
 };
 
-#endif 
+#endif

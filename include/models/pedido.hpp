@@ -9,14 +9,12 @@
 
 using namespace std;
 
-// Tabela de Estados do Pedido
 enum class StatusPedido {
     SOLICITADO,
-    EM_SEPARACAO,
-    AGUARDANDO_PAGAMENTO,
-    PRONTO_PARA_RETIRADA,
+    CONFIRMADO,
+    RECUSADO,
     RETIRADO,
-    ABANDONADO
+    CANCELADO
 };
 
 class Pedido {
@@ -40,4 +38,4 @@ public:
     void imprimirResumo() const;
 };
 
-#endif // PEDIDO_HPP
+#endif
