@@ -24,9 +24,10 @@ class CompradorController : public QObject
 public:
     explicit CompradorController(QObject *parent = nullptr);
     void definirAutenticacao(AuthController *auth);
-    Q_INVOKABLE QVariantList feiras() const;
+    Q_INVOKABLE QVariantList feiras() const; // Q_INVOKABLE permite que este método C++ seja chamado diretamente pelo QML.
     Q_INVOKABLE QVariantMap feira(int id) const;
     Q_INVOKABLE QVariantMap vendedor(int id) const;
+    // Métodos expostos ao QML para operações realizadas pelo comprador.
     Q_INVOKABLE QVariantList vendedores(int feiraId) const;
     Q_INVOKABLE QVariantList produtos(int feiraId, int vendedorId) const;
     Q_INVOKABLE bool adicionar(int feiraId, int vendedorId, int produtoId, double quantidade);
@@ -60,6 +61,7 @@ private:
     RepositorioCatalogo m_repo;
     CatalogoComprador m_catalogo;
     QVector<AgendamentoReserva> m_agendamentos;
+    //Obs.: Acerca do QPointer, ele é um ponteiro do próprio Qt que herdam o QObject 
     QPointer<AuthController> m_auth;
     bool m_bancoPronto = false;
     QString m_erro;

@@ -10,12 +10,14 @@
 #include "services/RepositorioUsuario.hpp"
 
 using namespace std;
+// Controller responsável pela autenticação e pelo estado do usuário logado.
+// Herda de QObject para poder ser utilizado pela interface QML.
 
 class AuthController : public QObject
 {
-    Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
+    Q_OBJECT // Habilita o sistema de metaobjetos do Qt, necessário para signals, slots e propriedades acessíveis pelo QML.
+    QML_ELEMENT // Expõe esta classe ao QML.
+    QML_SINGLETON // Mantém uma única instância do controller disponível para toda a interface.
 
     Q_PROPERTY(bool logado READ logado NOTIFY usuarioChanged)
     Q_PROPERTY(QString nomeUsuario READ nomeUsuario NOTIFY usuarioChanged)
