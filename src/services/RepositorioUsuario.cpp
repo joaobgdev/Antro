@@ -9,28 +9,38 @@
 
 using namespace std;
 
+// Namespace anônimo para manter constante e função restritas a este arquivo de tradução
 namespace {
+// Nome da conexão personalizada para a base de dados do Qt
 const char *kConexao = "antro_connection";
 
+// Retorna a instância do banco de dados configurada com o nome da conexão
 QSqlDatabase banco() { return QSqlDatabase::database(kConexao); }
 }
 
+// Destrutor responsável por fechar e remover a conexão com o banco de dados
 RepositorioUsuario::~RepositorioUsuario()
 {
     {
+        // Obtém a conexão sem tentar abrir caso esteja fechada
         QSqlDatabase conexao = QSqlDatabase::database(kConexao, false);
         if (conexao.isValid() && conexao.isOpen())
             conexao.close();
     }
+    // Remove o registro da conexão da memória do Qt
     QSqlDatabase::removeDatabase(kConexao);
 }
 
+// Configura o caminho do arquivo SQLite e abre a conexão com o banco
 bool RepositorioUsuario::abrir()
 {
+    // Obtém o diretório de dados apropriado para a aplicação no sistema operacional
     const QString pasta = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    // Garante que o diretório exista no disco
     QDir().mkpath(pasta);
     const QString caminho = pasta + "/antro.db";
 
+    // Adiciona o driver do SQLite para a conexão nomeada
     QSqlDatabase conexao = QSqlDatabase::addDatabase("QSQLITE", kConexao);
     conexao.setDatabaseName(caminho);
     if (!conexao.open()) {
@@ -39,6 +49,7 @@ bool RepositorioUsuario::abrir()
     }
     qDebug() << "Banco de dados em:" << caminho;
 
+    // Executa a instrução DDL para criar a tabela de usuários caso não exista
     QSqlQuery q(conexao);
     const bool ok = q.exec(
         "CREATE TABLE IF NOT EXISTS users ("
@@ -56,21 +67,26 @@ bool RepositorioUsuario::abrir()
     return ok;
 }
 
+// Verifica se já existe um usuário cadastrado com o número de telefone informado
 bool RepositorioUsuario::existe(const QString &telefone)
 {
     QSqlQuery q(banco());
+    // Utiliza consulta preparada para prevenir injeção de SQL
     q.prepare("SELECT 1 FROM users WHERE phone = ?");
     q.addBindValue(telefone);
     if (!q.exec()) {
         m_ultimoErro = q.lastError().text();
         return false;
     }
+    // Retorna true se houver ao menos um registro retornado
     return q.next();
 }
 
+// Insere um novo registro de usuário na tabela
 bool RepositorioUsuario::inserir(const RegistroUsuario &r)
 {
     QSqlQuery q(banco());
+    // Prepara a instrução de inserção parametrizada
     q.prepare("INSERT INTO users (phone, role, name, market_name, ocs_number, password_hash, salt) "
               "VALUES (?, ?, ?, ?, ?, ?, ?)");
     q.addBindValue(r.telefone);
@@ -87,6 +103,7 @@ bool RepositorioUsuario::inserir(const RegistroUsuario &r)
     return true;
 }
 
+// Busca os dados de um usuário pelo telefone e retorna uma instância de RegistroUsuario caso encontrado
 optional<RegistroUsuario> RepositorioUsuario::buscarPorTelefone(const QString &telefone)
 {
     QSqlQuery q(banco());
@@ -97,9 +114,11 @@ optional<RegistroUsuario> RepositorioUsuario::buscarPorTelefone(const QString &t
         m_ultimoErro = q.lastError().text();
         return nullopt;
     }
+    // Retorna nulo caso o usuário não exista no banco
     if (!q.next())
         return nullopt;
 
+    // Mapeia os dados da consulta para a estrutura RegistroUsuario
     RegistroUsuario r;
     r.perfil    = q.value(0).toString();
     r.nome      = q.value(1).toString();
