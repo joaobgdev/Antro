@@ -18,7 +18,9 @@ PaginaComprador {
         produtos = CompradorController.produtos(feiraId, vendedorId)
     }
     Component.onCompleted: atualizar()
+    // Recarrega os dados sempre que esta tela fica ativa.
     StackView.onActivated: { CompradorController.recarregar(); atualizar() }
+    // Atualiza a tela quando o catálogo ou a sacola mudam.
     Connections {
         target: CompradorController
         function onProdutosChanged() { catalogoPage.atualizar() }
@@ -81,6 +83,7 @@ PaginaComprador {
                             enabled: quantidade.enabled
                             onClicked: {
                                 var nome = card.modelData.nome
+                                // Converte os passos do seletor para unidades ou kg.
                                 if (CompradorController.adicionar(catalogoPage.feiraId, catalogoPage.vendedorId, card.modelData.id, quantidade.value * card.modelData.passo))
                                     catalogoPage.mensagem = nome + " adicionado ao carrinho."
                             }

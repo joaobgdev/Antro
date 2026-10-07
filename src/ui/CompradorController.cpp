@@ -16,6 +16,7 @@ CompradorController::CompradorController(QObject *parent) : QObject(parent)
 void CompradorController::definirAutenticacao(AuthController *auth)
 {
     m_auth = auth;
+    // Limpa a sacola e as retiradas quando o usuário muda.
     connect(auth, &AuthController::usuarioChanged, this, [this]() {
         limpar();
         m_erro.clear(); emit erroChanged();
@@ -39,6 +40,7 @@ bool CompradorController::autorizado()
     return true;
 }
 
+// Recarrega o catálogo e revê a sacola conforme preços, ofertas e estoque.
 void CompradorController::recarregar()
 {
     if (!m_bancoPronto) return;
@@ -50,6 +52,7 @@ void CompradorController::recarregar()
     if (antes != m_catalogo.getSacola().size()) falhar("Alguns itens saíram do carrinho porque a oferta ou o estoque mudou.");
     else if (abs(totalAntes - m_catalogo.totalEstimado()) > 0.000001) falhar("Os preços mudaram. Confira o carrinho antes de solicitar a reserva.");
     podarAgendamentos();
+    // Avisa as telas que os dados foram atualizados.
     emit produtosChanged(); emit sacolaChanged(); emit reservasChanged();
 }
 
@@ -146,6 +149,7 @@ bool CompradorController::alterarQuantidade(int indice, double quantidade)
     return true;
 }
 
+// Remove retiradas inválidas ou de feiras que saíram da sacola.
 void CompradorController::podarAgendamentos()
 {
     for (int i = m_agendamentos.size() - 1; i >= 0; --i) {
@@ -195,6 +199,7 @@ bool CompradorController::agendar(int feiraId, const QString &data, const QStrin
     const FeiraComprador *f = m_catalogo.buscarFeira(feiraId);
     AgendamentoReserva retirada{feiraId, data, inicio, fim};
     if (!f || !AgendaFeira::validar(*f, retirada)) return falhar("Esse horário não está disponível. Escolha outra opção.");
+    // Mantém uma retirada escolhida por feira.
     bool existe = false;
     for (AgendamentoReserva &a : m_agendamentos) if (a.feiraId == feiraId) { a = retirada; existe = true; break; }
     if (!existe) m_agendamentos.append(retirada);
@@ -217,6 +222,7 @@ QVariantList CompradorController::retiradas() const
     return lista;
 }
 
+// Solicita a gravação das reservas e devolve o resultado para a tela.
 QVariantMap CompradorController::finalizarReserva()
 {
     if (!autorizado()) return {{"ok", false}, {"erro", m_erro}};
@@ -230,6 +236,7 @@ QVariantMap CompradorController::finalizarReserva()
     QVariantList reservas;
     for (const RegistroReserva &r : m_repo.reservasDoUsuario(m_auth->telefoneUsuario(), false))
         if (ids.contains(r.id)) reservas.append(r.comoMapa());
+    // Limpa a sacola depois que as reservas foram gravadas.
     limpar(); recarregar();
     m_erro.clear(); emit erroChanged();
     return {{"ok", true}, {"reservas", reservas}, {"total", total}};

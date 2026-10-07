@@ -15,7 +15,7 @@ bool AgendaFeira::aberta(const FeiraComprador &feira, const QDateTime &momento)
         && momento.time() >= inicio && momento.time() < fim;
 }
 
-// Checagem de dias abertos
+// Busca até cinco datas de feira dentro dos próximos 35 dias.
 QStringList AgendaFeira::datas(const FeiraComprador &feira, const QDateTime &momento)
 {
     QStringList lista;
@@ -29,7 +29,7 @@ QStringList AgendaFeira::datas(const FeiraComprador &feira, const QDateTime &mom
     return lista;
 }
 
-// Janelas de horários
+// Divide o horário da feira em janelas de até uma hora.
 QVector<AgendamentoReserva> AgendaFeira::janelas(const FeiraComprador &feira, const QString &dataTexto,
                                                const QDateTime &momento)
 {
@@ -43,6 +43,7 @@ QVector<AgendamentoReserva> AgendaFeira::janelas(const FeiraComprador &feira, co
     for (QTime hora = inicio; hora < fim;) {
         QTime proxima = hora.addSecs(3600);
         if (proxima > fim || proxima < hora) proxima = fim;
+        // Mantém somente as janelas que ainda não terminaram.
         if (data > momento.date() || proxima > momento.time())
             lista.append({feira.id, dataTexto, hora.toString("HH:mm"), proxima.toString("HH:mm")});
         hora = proxima;

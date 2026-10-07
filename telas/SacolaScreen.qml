@@ -9,6 +9,7 @@ PaginaComprador {
     property string aviso: ""
 
     function dinheiro(valor) { return "R$ " + Number(valor).toLocaleString(Qt.locale("pt_BR"), 'f', 2) }
+    // Solicita a reserva e abre a confirmação somente se der certo.
     function finalizar() {
         var resultado = CompradorController.finalizarReserva()
         if (!resultado.ok) { aviso = resultado.erro; return }
@@ -65,6 +66,7 @@ PaginaComprador {
                     }
                 }
             }
+            // Pede uma data e um horário para cada feira da sacola.
             Repeater {
                 model: CompradorController.retiradas
                 delegate: Rectangle {
@@ -123,6 +125,7 @@ PaginaComprador {
                                     displayText: currentIndex < 0 ? "Escolha um horário" : currentText
                                     onActivated: {
                                         var janela = retirada.janelas[currentIndex]
+                                        // Guarda a janela de retirada escolhida para esta feira.
                                         CompradorController.agendar(retirada.modelData.feiraId, retirada.diaSelecionado, janela.inicio, janela.fim)
                                     }
                                 }

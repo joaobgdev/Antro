@@ -11,10 +11,10 @@
 using namespace std;
 
 namespace {
-int numeroConexao = 0; // Padrão de nomeação dinâmica (Linha 40: antro_catalago_0, antro_catalogo_1, antro_catalogo_2...)
+int numeroConexao = 0; // Contador usado nos nomes das conexões.
 // Evita que as conexões sejam sobrepostas por possuirem o mesmo nome
 
-// Descobrir se uma coluna da tabela SQL Lite já existe ou não
+// Confere se a coluna já existe antes de atualizar a tabela.
 bool colunaExiste(QSqlDatabase db, const QString &tabela, const QString &coluna)
 {
     QSqlQuery q(db);
@@ -26,13 +26,13 @@ bool colunaExiste(QSqlDatabase db, const QString &tabela, const QString &coluna)
     return false;
 }
 
-// Valida se a quantidade definida é valida (Múltipla de 100 gramas / passo)
+// Confere se a quantidade respeita o passo de venda.
 bool quantidadeValida(double quantidade, const QString &tipo)
 {
-    if (!isfinite(quantidade) || quantidade <= 0) return false; // Se for inválido (Não numeral) ou 0, retorna falso
-    double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0; // Tipo define incremento (100g incremente 0.1, Kg incrementa em 0.5 e unidade 1.0)
+    if (!isfinite(quantidade) || quantidade <= 0) return false; // Rejeita valores não finitos ou menores ou iguais a zero.
+    double passo = tipo == "100g" ? 0.1 : tipo == "kg" ? 0.5 : 1.0; // Passo de venda em kg para peso ou inteiro para unidade.
     double partes = quantidade / passo; // Quantidade de porções definidas
-    return abs(partes - round(partes)) < 0.00001; // Proteção contra bug de divisão
+    return abs(partes - round(partes)) < 0.00001; // Tolera pequenas diferenças de ponto flutuante.
 }
 }
 
@@ -129,6 +129,7 @@ bool RepositorioCatalogo::inserirFeiras()
     return true;
 }
 
+// Migra os dados antigos uma única vez.
 bool RepositorioCatalogo::migrar()
 {
     QSqlDatabase db = QSqlDatabase::database(m_conexao);
@@ -315,6 +316,7 @@ bool RepositorioCatalogo::salvarPerfil(const QString &telefone, const QVector<in
     int vendedor = vendedorDoUsuario(telefone, true);
     if (!vendedor) { db.rollback(); return false; }
     QSqlQuery q(db);
+    // Confere se os produtos mudaram depois de abrir o perfil.
     q.prepare("SELECT id, versao FROM produtos WHERE vendedor_id = ? AND removido = 0"); q.addBindValue(vendedor);
     if (!q.exec()) { db.rollback(); return falhar(q.lastError().text()); }
     int encontrados = 0;
@@ -347,6 +349,7 @@ bool RepositorioCatalogo::salvarPerfil(const QString &telefone, const QVector<in
             db.rollback(); return falhar("Confira o nome, preço, unidade e estoque de todos os produtos.");
         }
         if (ids.isEmpty() && p.ativo) { db.rollback(); return falhar("Selecione uma feira ou pause os produtos antes de salvar."); }
+        // Converte o preço por 100 g para o preço por kg usado no banco.
         double preco = p.preco * (p.tipoVenda == "100g" ? 10 : 1);
         int produto = p.id;
         if (produto > 0) {
@@ -400,6 +403,7 @@ bool RepositorioCatalogo::removerProduto(const QString &telefone, int produtoId)
     return q.numRowsAffected() == 1;
 }
 
+// Valida os itens e grava as reservas com o desconto de estoque.
 QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
     const vector<ItemSacolaComprador> &itens, const QVector<AgendamentoReserva> &agendamentos,
     const DadosCatalogo &dadosEsperados)
@@ -409,7 +413,9 @@ QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
     if (itens.empty()) { falhar("Seu carrinho está vazio."); return {}; }
     QSqlDatabase db = QSqlDatabase::database(m_conexao);
     QSqlQuery q(db);
+    // Reserva a escrita no banco antes de conferir e descontar o estoque.
     if (!q.exec("BEGIN IMMEDIATE")) { falhar(q.lastError().text()); return {}; }
+    // Desfaz toda a operação se alguma etapa falhar.
     auto erro = [&](const QString &texto) {
         db.rollback();
         falhar(texto);
@@ -435,6 +441,7 @@ QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
         if ((tipo != "unidade" && tipo != "kg" && tipo != "100g")
             || !quantidadeValida(item.quantidade, tipo) || !isfinite(item.quantidade * preco))
             return erro("A quantidade de " + nome + " é inválida.");
+        // Confere se preço e unidade mudaram desde a seleção.
         if (!esperado || !isfinite(preco) || preco <= 0
             || abs(esperado->getPreco() - preco) > 0.000001
             || abs(esperado->getPasso() - passo) > 0.000001)
@@ -451,10 +458,12 @@ QVector<int> RepositorioCatalogo::salvarReservas(const QString &telefone,
             if (a.feiraId == item.feiraId) { retirada = a; break; }
         if (!AgendaFeira::validar(feira, retirada))
             return erro("Escolha uma data e um horário disponíveis para " + QString::fromStdString(feira.nome) + ".");
+        // Desconta o estoque somente se ainda houver a quantidade solicitada.
         q.prepare("UPDATE produtos SET estoque = MAX(0, ROUND(estoque - ?, 6)), versao = versao + 1 WHERE id = ? AND ativo = 1 AND estoque + 0.000001 >= ?");
         q.addBindValue(item.quantidade); q.addBindValue(item.produtoId); q.addBindValue(item.quantidade);
         if (!q.exec()) return erro(q.lastError().text());
         if (q.numRowsAffected() != 1) return erro("O estoque de " + nome + " mudou. Revise a quantidade no carrinho.");
+        // Separa as reservas por vendedor e feira.
         QString chave = QString::number(item.vendedorId) + ":" + QString::number(item.feiraId);
         int reserva = grupos.value(chave, 0);
         if (!reserva) {
@@ -508,6 +517,7 @@ QVector<RegistroReserva> RepositorioCatalogo::reservasDoUsuario(const QString &t
     return lista;
 }
 
+// Confere as mudanças de status permitidas para cada perfil.
 bool RepositorioCatalogo::alterarReserva(const QString &telefone, bool vendedor, int id, const QString &status)
 {
     m_ultimoErro.clear();
@@ -541,6 +551,7 @@ bool RepositorioCatalogo::alterarReserva(const QString &telefone, bool vendedor,
     q.addBindValue(status); q.addBindValue(id); q.addBindValue(anterior);
     if (!q.exec()) return erro(q.lastError().text());
     if (q.numRowsAffected() != 1) return erro("Essa reserva já foi atualizada.");
+    // Devolve o estoque quando a reserva é cancelada ou recusada.
     if (status == "RECUSADA" || status == "CANCELADA") {
         QSqlQuery itens(db);
         itens.prepare("SELECT produto_id, quantidade FROM reserva_itens WHERE reserva_id = ?"); itens.addBindValue(id);
@@ -555,6 +566,7 @@ bool RepositorioCatalogo::alterarReserva(const QString &telefone, bool vendedor,
     return true;
 }
 
+// Prepara a reserva e as ações disponíveis para as telas.
 QVariantMap RegistroReserva::comoMapa() const
 {
     QVariantList produtos;

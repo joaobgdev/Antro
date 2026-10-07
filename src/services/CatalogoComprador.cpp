@@ -5,7 +5,7 @@ using namespace std;
 
 //Carrinho = Sacola
 
-// Carrega a base de dados do catálogo recebida do servidor
+// Atualiza o catálogo e remove da sacola os itens inválidos.
 void CatalogoComprador::definirDados(const DadosCatalogo& dados)
 {
     feiras = dados.feiras;

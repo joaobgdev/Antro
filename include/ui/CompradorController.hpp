@@ -55,13 +55,13 @@ signals:
     void erroChanged();
 
 private:
-    bool autorizado(); // Verifica se existe uma sessão válida para executar operações do comprador.
+    bool autorizado(); // Confere se o banco está aberto e o usuário é comprador.
     bool falhar(const QString &texto);
-    void podarAgendamentos(); // Remove da lista interna agendamentos inativos.
+    void podarAgendamentos(); // Remove retiradas inválidas ou de feiras que saíram da sacola.
     RepositorioCatalogo m_repo;
     CatalogoComprador m_catalogo;
     QVector<AgendamentoReserva> m_agendamentos;
-    //Obs.: Acerca do QPointer, ele é um ponteiro do próprio Qt que herdam o QObject 
+    // Fica nulo se o objeto de autenticação for destruído.
     QPointer<AuthController> m_auth;
     bool m_bancoPronto = false;
     QString m_erro;

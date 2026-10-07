@@ -19,6 +19,7 @@ QString somenteDigitos(const QString &texto)
     return saida;
 }
 
+// Gera um valor aleatório para diferenciar os hashes das senhas.
 QString gerarSal()
 {
     QByteArray bytes(16, 0);
@@ -26,10 +27,12 @@ QString gerarSal()
     return QString::fromLatin1(bytes.toHex());
 }
 
+// Calcula o hash da senha com o sal do usuário.
 QString calcularHash(const QString &senha, const QString &sal)
 {
     const QByteArray dados = sal.toUtf8() + senha.toUtf8();
     QByteArray h = QCryptographicHash::hash(dados, QCryptographicHash::Sha256);
+    // Repete o cálculo para aumentar o custo de testar senhas.
     for (int i = 0; i < 10000; ++i)
         h = QCryptographicHash::hash(h + dados, QCryptographicHash::Sha256);
     return QString::fromLatin1(h.toHex());
@@ -62,6 +65,7 @@ QString AuthController::subtituloUsuario() const
     return m_usuario ? QString::fromStdString(m_usuario->getSubtitulo()) : QString();
 }
 
+// Cria Agricultor ou Consumidor conforme o perfil escolhido.
 unique_ptr<Usuario> AuthController::criarUsuario(const QString &perfil, const QString &nome,
                                                       const QString &telefone,
                                                       const QString &nomeBanca,

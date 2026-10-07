@@ -14,6 +14,7 @@ class VendedorController : public QObject
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
+    // Expõe os dados ao QML e indica o sinal que avisa suas mudanças.
     Q_PROPERTY(QVariantList feiras READ feiras NOTIFY perfilChanged)
     Q_PROPERTY(QVariantList produtos READ produtos NOTIFY perfilChanged)
     Q_PROPERTY(QStringList feirasPendentes READ feirasPendentes NOTIFY perfilChanged)
@@ -47,7 +48,7 @@ signals:
     void erroChanged();
 
 private:
-    bool autorizado(); // Verifica se existe uma sessão válida para executar operações do comprador.
+    bool autorizado(); // Confere se o banco está aberto e o usuário é feirante.
     bool falhar(const QString &texto); // Centraliza o tratamento de falhas: armazena a mensagem de erro, notifica o QML e retorna false.
     void limparErro();
     QVector<int> m_feiras;
@@ -56,7 +57,7 @@ private:
     QStringList m_pendentes;
     QString m_erro;
     RepositorioCatalogo m_repo;
-    QPointer<AuthController> m_auth; //Obs.: Acerca do QPointer, ele é um ponteiro do próprio Qt que herdam o QObject 
+    QPointer<AuthController> m_auth; // Fica nulo se o objeto de autenticação for destruído.
     bool m_bancoPronto = false;
 };
 

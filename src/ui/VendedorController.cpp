@@ -114,7 +114,9 @@ bool VendedorController::definirTipoVenda(int indice, const QString &tipo)
     if (tipo != "unidade" && tipo != "kg" && tipo != "100g") return falhar("Unidade inválida.");
     RegistroProdutoFeirante &p = m_produtos[indice];
     if (p.tipoVenda == tipo) return true;
+    // Mantém a unidade de venda enquanto houver reservas desse produto.
     if (p.reservado > 0) return falhar("A unidade não pode mudar enquanto houver reservas desse produto.");
+    // Converte o preço ao entrar ou sair da venda por 100 g.
     if (p.tipoVenda == "100g") p.preco *= 10;
     if (tipo == "100g") p.preco /= 10;
     p.tipoVenda = tipo;
@@ -156,6 +158,7 @@ bool VendedorController::salvarPerfil()
 {
     if (!autorizado()) return false;
     if (!m_repo.salvarPerfil(m_auth->telefoneUsuario(), m_feiras, m_produtos, m_anteriores)) return falhar(m_repo.ultimoErro());
+    // Recarrega o perfil e avisa o comprador para atualizar o catálogo.
     carregarPerfil(); emit catalogoChanged();
     return true;
 }
@@ -177,6 +180,7 @@ QVariantList VendedorController::pedidos()
     return lista;
 }
 
+// Solicita a mudança de status e avisa as telas após a atualização.
 bool VendedorController::alterarPedido(int id, const QString &status)
 {
     if (!autorizado()) return false;
