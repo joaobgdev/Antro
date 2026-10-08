@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Antro</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                Projeto de Programação
+            </span>
+
+            <h1>Antro</h1>
+
+            <p class="subtitle">
+                Uma plataforma para aproximar consumidores e produtores
+                de feiras agroecológicas.
+            </p>
+
+            <p class="authors">
+                João Bernardo Gomes Alves de Carvalho ·
+                Lucas Medrado Santos ·
+                Luis Eduardo Lustosa Brito ·
+                Maria Luiza de Paula Portela
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://github.com/joaobgdev/Antro"
+                    target="_blank"
+                    class="button primary"
+                >
+                    Código no GitHub
+                </a>
+<!-- alterar aqui -->
+                <a
+                    href="#" 
+                    target="_blank"
+                    class="button"
+                >
+                    Relatório
+                </a>
+<!-- alterar aqui -->
+                <a
+                    href="#"
+                    target="_blank"
+                    class="button"
+                >
+                    Vídeo
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="intro">
+
+            <img
+                src="images/hero.png"
+                alt="Telas do sistema Antro"
+                class="hero-image"
+            >
+
+        </section>
+
+
+        <section>
+
+            <h2>Sobre o projeto</h2>
+
+            <p>
+                O Antro é uma aplicação voltada para feiras agroecológicas,
+                desenvolvida com o objetivo de facilitar a interação entre
+                consumidores e feirantes.
+            </p>
+
+            <p>
+                Por meio do sistema, consumidores podem visualizar feiras,
+                consultar produtos disponíveis, realizar reservas e acompanhar
+                seus pedidos. Os feirantes podem gerenciar os produtos
+                oferecidos, controlar preços e estoque e acompanhar as
+                reservas realizadas pelos consumidores.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>Principais funcionalidades</h2>
+
+            <div class="features">
+
+                <article class="feature-card">
+
+                    <h3>Cadastro e autenticação</h3>
+
+                    <p>
+                        O sistema permite o cadastro e login de consumidores
+                        e feirantes, apresentando funcionalidades específicas
+                        para cada perfil.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>Visualização de feiras</h3>
+
+                    <p>
+                        Consumidores podem visualizar as feiras cadastradas
+                        e acessar os produtores e produtos disponíveis em
+                        cada uma delas.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>Catálogo de produtos</h3>
+
+                    <p>
+                        Os produtos disponíveis podem ser consultados com
+                        informações como nome, preço, tipo de venda e
+                        disponibilidade.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>Reservas</h3>
+
+                    <p>
+                        O consumidor pode adicionar produtos à sacola,
+                        selecionar uma data e horário de retirada e realizar
+                        uma reserva.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>Gerenciamento do feirante</h3>
+
+                    <p>
+                        Feirantes podem cadastrar produtos, definir preços,
+                        controlar estoque e selecionar as feiras das quais
+                        participam.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <h3>Acompanhamento de pedidos</h3>
+
+                    <p>
+                        Os pedidos podem ser acompanhados tanto pelo consumidor
+                        quanto pelo feirante, permitindo aceitar, cancelar,
+                        recusar ou registrar a retirada das reservas.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Interface do sistema</h2>
+
+            <p class="section-description">
+                Algumas das principais telas desenvolvidas para o Antro.
+            </p>
+
+            <div class="screenshots">
+
+                <figure>
+
+                    <img
+                        src="images/login.png"
+                        alt="Tela de login do Antro"
+                    >
+
+                    <figcaption>
+                        Login e cadastro
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/comprador.png"
+                        alt="Tela do comprador"
+                    >
+
+                    <figcaption>
+                        Área do consumidor
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/vendedor.png"
+                        alt="Tela do vendedor"
+                    >
+
+                    <figcaption>
+                        Área do feirante
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/reservas.png"
+                        alt="Tela de reservas"
+                    >
+
+                    <figcaption>
+                        Gerenciamento de reservas
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Como o sistema funciona</h2>
+
+            <div class="flow">
+
+                <div class="flow-item">
+                    Interface QML
+                </div>
+
+                <span>↓</span>
+
+                <div class="flow-item">
+                    Controllers
+                </div>
+
+                <span>↓</span>
+
+                <div class="flow-item">
+                    Services
+                </div>
+
+                <span>↓</span>
+
+                <div class="flow-item">
+                    SQLite
+                </div>
+
+            </div>
+
+            <p>
+                A interface gráfica foi desenvolvida em QML e se comunica
+                com os controllers escritos em C++. Os controllers fazem
+                a ligação entre as ações realizadas pelo usuário e as regras
+                do sistema, enquanto os serviços são responsáveis pela lógica
+                e pelo acesso ao banco de dados.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>Tecnologias</h2>
+
+            <div class="technologies">
+
+                <span>C++17</span>
+                <span>Qt 6</span>
+                <span>QML</span>
+                <span>Qt Quick</span>
+                <span>Qt SQL</span>
+                <span>SQLite</span>
+                <span>CMake</span>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Demonstração</h2>
+
+            <p class="section-description">
+                Confira uma demonstração do funcionamento do Antro.
+            </p>
+
+            <div class="video-container">
+
+                <iframe
+                    src="https://www.youtube.com/embed/ID_DO_VIDEO"
+                    title="Demonstração do Antro"
+                    allowfullscreen
+                ></iframe>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Materiais</h2>
+
+            <div class="materials">
+
+                <a
+                    href="https://github.com/joaobgdev/Antro"
+                    target="_blank"
+                >
+                    Código-fonte
+                </a>
+<!-- alterar aqui -->
+                <a
+                    href="#"
+                    target="_blank"
+                >
+                    Relatório do projeto
+                </a>
+<!-- alterar aqui -->
+                <a
+                    href="#"
+                    target="_blank"
+                >
+                    Vídeo de apresentação
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Equipe</h2>
+
+            <div class="team">
+
+                <div class="member">
+                    João Bernardo Gomes Alves de Carvalho
+                </div>
+
+                <div class="member">
+                    Lucas Medrado Santos
+                </div>
+
+                <div class="member">
+                    Luis Eduardo Lustosa Brito
+                </div>
+
+                <div class="member">
+                    Maria Luiza de Paula Portela
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Antro · Projeto acadêmico
+        </p>
+
+    </footer>
+
+</body>
+</html>
